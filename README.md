@@ -1,0 +1,3 @@
+# Default user
+
+admin : admin
