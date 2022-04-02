@@ -1,0 +1,98 @@
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+    background-color: #f7f7f7;
+}
+
+header {
+  display: grid;
+  grid-template-areas: 
+    " . logo . " 
+    " darkmode logo navigation " 
+    "app-name app-name app-name";
+  grid-template-columns: 2fr 1fr 2fr;
+  grid-template-rows: 20px;
+  width: 100%;
+  height: 150px;
+  box-sizing: border-box;
+  text-align: center;
+  box-shadow: 0px 5px 10px #e9e7e7;
+  padding: 10px;
+  background-color: #fff;
+}
+
+header > * {
+  display: flex;
+  align-items: center;
+}
+
+.dark-mode-container {
+  grid-area: darkmode;
+  justify-content: flex-start;
+}
+
+.dark-mode-switcher {
+  width: 75px;
+  display: flex;
+  height: 30px;
+  border-radius: 17px;
+  background-color: rgb(209, 209, 209);
+  align-items: center;
+  padding: 0 4px;
+  cursor: pointer;
+}
+
+.dark-mode-toggler {
+  background-color: white;
+  border-radius: 50%;
+  width: 25px;
+  height: 25px;
+  transition: all 0.5s;
+}
+
+.dark-mode-switcher.active .dark-mode-toggler {
+  margin-left: 50px;
+}
+
+.logo-container {
+  grid-area: logo;
+  justify-content: start;
+  height: 100%;
+  flex-direction: column;
+}
+
+.app-title {
+  grid-area: app-name;
+  justify-content: center;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+  font-size: 30px;
+}
+
+.app-content {
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.navigation {
+  justify-content: flex-end;
+  grid-area: navigation;
+}
+
+.navigation button {
+  font-family: "Urbanist", sans-serif;
+  font-weight: 800;
+  border-radius: 20px;
+  border: none;
+  background-color: white;
+  font-size: 22px;
+  padding: 7px 15px;
+  box-shadow: 0px 3px 7px 2px #e9e7e7;
+  margin: 0 10px;
+  cursor: pointer;
+}
