@@ -10,10 +10,21 @@
   height: auto;
   border-radius: 2.5em;
   text-align: center;
+  display: flex;
+  flex-direction: column;
   align-content: center;
   justify-content: center;
   margin: 3em auto 0 auto;
   padding: 0.5em;
+}
+
+.square.login {
+    max-width: 420px; 
+    margin: 5em auto 0 auto;
+}
+
+.square.login > p {
+    margin-bottom: 2em;
 }
 
 .form-inputs {
@@ -21,6 +32,17 @@
   justify-content: space-between;
   flex-wrap: wrap;
   padding: 1em 2em;
+}
+
+.login .form-inputs > *{
+    width: 100%;
+} 
+
+.square .forgotpassword p{
+    font-size: 0.75em;
+    font-weight: 600;
+    text-align: right;
+    letter-spacing: 0px;
 }
 
 .square p {
@@ -62,7 +84,7 @@
   margin-left: 0.25em;
 }
 
-.buttonRegister {
+.buttonRegister, .buttonLogin {
   border-radius: 1em;
   background-color: #181818;
   width: 50%;
