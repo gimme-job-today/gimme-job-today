@@ -3,5 +3,19 @@
 {% load static %}
 
 {% block content %}
-    Register
+    <link rel="stylesheet" href="{% static '/styles/register.css' %}" />
+    
+        <div class="square">
+            <p>Zarejestruj się - Panel pracodawcy</p>
+            <input type="text" name="nameCompany" class="Company" placeholder="Nazwa firmy">
+            <input type="email" name="email" class="Company" placeholder="E-mail">
+            <div class="odstep">
+                <input type="password" name="password" class="Password" placeholder="Hasło">
+                <input type="password" name="passwordRepeat" class="Password" placeholder="Powtórz hasło">
+            </div>
+            <input type="checkbox" name="checkbox" id="checkbox"> <label for = "checkbox">Zapoznałem/am się i zgadzam się z treścią regulaminu serwisu oraz polityki prywatności.</label>
+            <button class="buttonRegister">Zarejestruj się</button>
+            
+        </div>
+   
 {% endblock %}
