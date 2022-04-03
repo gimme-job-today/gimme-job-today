@@ -1,68 +1,75 @@
-*{
-    font-family: 'Montserrat', sans-serif;
+* {
+  font-family: "Montserrat", sans-serif;
 }
-.square{
-    background-color: white;
-    box-shadow: 0px 5px 10px #e9e7e7;
-    border: none;
-    width: 38%;
-    height: auto;
-    border-radius: 50px;
-    text-align: center;
-    align-content: center;
-    justify-content: center;
-    margin: 5em auto 0 auto;
-    padding: 10px;
-    
-}
-
-.square p{
-    
-    font-size: 30px;
-    font-weight: 600;
-    letter-spacing: 2px;
-    margin-bottom: 60px;
+.square {
+  background-color: white;
+  box-shadow: 0px 5px 10px #e9e7e7;
+  border: none;
+  width: 60%;
+  max-width: 550px;
+  height: auto;
+  border-radius: 2.5em;
+  text-align: center;
+  align-content: center;
+  justify-content: center;
+  margin: 3em auto 0 auto;
+  padding: 0.5em;
 }
 
-.Company,.Password{
-    
-    background-color: #f7f7f7;
-    border-radius: 20px;
-    width: 80%;
-    font-size: 20px;
-    padding: 25px;
-    border: none;
+.form-inputs {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding: 1em 2em;
+}
+
+.square p {
+  font-size: 1.4em;
+  font-weight: 600;
+  letter-spacing: 2px;
+  margin-bottom: 1em;
+}
+
+.Company,
+.Password {
+  background-color: #f7f7f7;
+  border-radius: 1em;
+  font-size: 1em;
+  padding: 1.25em;
+  border: none;
+  align-items: center;
+  display: inline-block;
+  margin-bottom: 2.25em;
+}
+
+.Company {
+    width: 100%;
+}
+
+.Password {
+  width: 38%;
+  margin-bottom: 0.5em;
+}
+
+.policy-container {
+    display: flex;
     align-items: center;
-    display: inline-block;
-    margin: 0 auto 40px auto;
-    
-
-   
+    padding: 0 2em;
 }
 
-.Password{
-     
-    width: 33%;
-    
-}
-.Password:first-child{
-
-    margin-right:6%;
+.policy-container label {
+  font-size: 0.6em;
+  margin-left: 0.25em;
 }
 
-label{
-    font-size: 12px;
-}
-
-.buttonRegister{
-    border-radius:20px;
-    background-color: #181818;
-    width: 50%;
-    border: none;
-    color: white;
-    padding: 20px;
-    margin-top: 30px;
-    font-size: 22px;
-    font-weight: 600;
-
+.buttonRegister {
+  border-radius: 1em;
+  background-color: #181818;
+  width: 50%;
+  border: none;
+  color: white;
+  padding: 1em;
+  margin: 1.25em auto 1em auto;
+  font-size: 1.1em;
+  font-weight: 600;
 }
