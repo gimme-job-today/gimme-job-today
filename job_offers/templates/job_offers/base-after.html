@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <link rel="stylesheet" href="{% static '/styles/style-after.css' %}" />
+    {% block styles %}{% endblock %}
+    {% block title %}{% endblock %}
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+      integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Urbanist:wght@400;800&display=swap"
+      rel="stylesheet"
+    />
+    <script async src="{% static '/scripts/scripts.js' %}"></script>
+  </head>
+
+  <body>
+    <header>
+      <div class="dark-mode-container">
+        <div class="dark-mode-switcher">
+          <div class="dark-mode-toggler">🔅</div>
+        </div>
+      </div>
+      <div class="logo-container">
+        <a href="/"
+          ><img height="64px" src="{% static '/images/logo3-03.png'  %}"
+        /></a>
+        <div class="app-title">GIMME JOB TODAY</div>
+      </div>
+      <nav class="navigationAfter">
+
+        <div class="navigationContent">
+ 
+            <a href="/add-offer"><button>Dodaj ofertę</button></a>
+            <i class="fa-solid fa-plus fa-xl"></i>
+        </div>
+
+        <div class="navigationContent">
+            <a href="/profil"><button>Profil</button></a>
+            <i class="fa-solid fa-user fa-xl"></i>
+        </div>
+
+        <div class="liContent">
+            <ol>
+                <li><a href="#"><i class="fa-solid fa-ellipsis fa-xl"></i></a>
+            <ul>
+                <li><a href="/offers">Moje oferty</a></li>
+                <li><a href="/offers">Moje oferty</a></li>
+                    <li><a href="/offers">Moje oferty</a></li>
+            <ul>
+            </li>
+            </ol>
+        </div>
+     
+
+      </nav>
+
+      
+
+      
+
+      
+
+    </header>
+    <section class="app-content">
+      {% block content %}NIE PODANO CONTENTU{% endblock %}
+    </section>
+  </body>
+</html>

@@ -5,6 +5,8 @@
 
 
 .searching{
+    justify-content: center;
+    margin-top: 4.5em;
     display: flex;
     width: 100%;
     box-sizing: border-box;
@@ -21,19 +23,21 @@
 .searchContent{
     position: relative;
     justify-content: flex-start;
-    margin-top: 2em;
-    width: 55%;
-    margin-left: 2.5em;
+    width: 50%;
     flex-direction: row;
+    margin-right: 1em;
 }
 
 .search{
     padding: 1em;
-    border-radius: 25px;
     border: none;
     min-width: 100%;
-    box-shadow: 0 0 0.5em #c7c7c7;
+   
     background-color: #FFFFFF;
+    margin-right: 1em;
+    border-radius: 25px 0px 0px 25px;
+    border-top: 1px solid #CCCCCC;
+    border-bottom: 1px solid #CCCCCC;
 
 }
 
@@ -52,23 +56,23 @@
 }
 
 .buttonFilter{
-    padding: 0.625em;
-    border-radius: 25px;
+    padding: 0.590em;
     border: none;
     min-width: 100%;
-    box-shadow: 0 0 0.5em #c7c7c7;
+    
     background-color: #FFFFFF;
     font-size: 18px;
     text-align: left;
+    border-top: 1px solid #CCCCCC;
+    border-bottom: 1px solid #CCCCCC;
+    border-left: 1px solid #CCCCCC;
     color: #CCCCCC;
 }
 
 .filterContent{
     position: relative;
     justify-content: center;
-    margin-top: 2em;
     width: 15%;
-    margin-left: 4em;
     flex-direction: column;
     
 }
@@ -81,24 +85,23 @@
 
 .buttonSearch{
     justify-content: flex-end;
-    margin-top: 2em;
-    margin-left: 2em;
     flex-direction: column;
     min-width: 9%;
     font-family: Urbanist;
     font-weight: 600;
     padding: 0.625em;
-    border-radius: 15px;
     border: none;
     background-color: #202020;
     font-size: 18px;
     color: #CCCCCC;
-    box-shadow: 0 0 0.5em #c7c7c7;
+    border-radius: 0px 25px 25px 0px;
+    border-top: 1px solid #CCCCCC;
+    border-bottom: 1px solid #CCCCCC;
 }
 
 .appointmentsContent{
    
-    min-width: 55%;
+    min-width: 50%;
   
 }
 
@@ -106,7 +109,7 @@
    
     justify-content: flex-start;
     margin-top: 2em;
-    margin-left: 2.5em;
+    
     padding: 1em;
     border-radius: 25px;
     border: none;
@@ -119,11 +122,11 @@
 
 .appointmentDetails{
    
-    min-width: 35%;
+    max-width: 100%;
     flex-direction: column;
     justify-content: flex-end;
     margin-top: 2em;
-    margin-left: 7em;
+    margin-left: 5em;
     padding: 1em;
     border-radius: 30px;
     border: none;
@@ -134,8 +137,17 @@
 
 }
 .detailsTags{
-    width: 100%;
-    text-align: right;
+    display: flex;
+    justify-content: flex-end;
+    min-width: 100%;
+    font-family: Urbanist;
+    font-size: 14px;
+    font-weight: 500;
+    margin-bottom: 0.5em;
+}
+
+.detailsTags p{
+    padding: 0em 2em 0em 0em;
 }
 
 
@@ -143,8 +155,9 @@
     display: flex;
     width: 100%;
     box-sizing: border-box;
-    
+    justify-content: center;
     flex-wrap: wrap;
+    margin-top: 2em;
 }
 
 
@@ -285,18 +298,31 @@
 .profession{
     display: flex;
     flex-direction: column;
-    text-align: left;
-    align-content: left;
+    min-width: 100%;
+    text-align: left !important;
+    
 }
-.titleProfession{
+.profession p{
+    text-align: left !important;
+}
+.profession .titleProfession{
+    margin-left: 3.5em;
+    display: flex;
+    min-width: 100%;
     font-weight: 600;
     font-size: 20px;
-    margin-left: 0px;
+    margin-top: 2em;
+    margin-bottom: 0;
+    text-align: left !important;
+    align-content: left;
 }
 .profession .descriptionProfession{
-    width: 35em;
-    text-align: justify;
-
+    width: 36em;
+    font-size: 15px;
+    font-family: Montserrat;
+    line-height: 1.5em;
+    margin-left: 0;
+    text-align: justify !important;
 }
 
 
@@ -347,4 +373,23 @@
     margin-right: 3em;
 
     
+}
+
+.detailsButton{
+    text-align: center;
+    min-width: 10%;
+    font-family: Urbanist;
+    font-weight: 600;
+    padding: 0.625em;
+    border-radius: 10px;
+    border: none;
+    background-color: #202020;
+    font-size: 18px;
+    color: #CCCCCC;
+}
+.buttonDetailsContent{
+    margin-top: 1em;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
 }
