@@ -100,3 +100,28 @@
   font-size: 1.1em;
   font-weight: 600;
 }
+
+/* Logout file */
+
+p.logoutTitle {
+  margin-top: 3em;
+}
+
+a.logoutLink {
+  margin: 3em 0 1em 3em;
+  text-align:left;
+  font-size: 1em;
+  font-weight:bold;
+  letter-spacing: 1px;
+  text-decoration: none;
+  color:#202020;
+}
+
+a.logoutLink i {
+  font-size: 1.5em;
+  margin-right:2.5em;
+  position: relative;
+  top: 0.2em;
+  
+}
+
