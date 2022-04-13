@@ -1,8 +1,19 @@
 
 {% extends "base.html" %}
-
 {% load static %}
-
+{% block styles %}<link rel="stylesheet" href="{% static '/styles/register.css' %}" />{% endblock %}
+{% block title %}<title>Logowanie</title>{% endblock %}
 {% block content %}
-    Login
+
+<div class="square login">
+  <p>Zaloguj się</p>
+    <div class="form-inputs">
+        <input type="email" name="email" class="Company" placeholder="E-mail" />
+
+        <input type="password" name="password" class="Password" placeholder="Hasło" />
+
+  <button class="buttonLogin">Zaloguj się</button>
+  <div class = "forgotpassword"><p>Nie pamiętam hasła</p></div>
+    </div>
+</div>
 {% endblock %}

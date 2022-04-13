@@ -1,0 +1,395 @@
+*{
+    color: #202020;
+    font-family: "Montserrat", sans-serif;
+}
+
+
+.searching{
+    justify-content: center;
+    margin-top: 4.5em;
+    display: flex;
+    width: 100%;
+    box-sizing: border-box;
+    text-align: center;
+    flex-wrap: wrap;
+}
+
+.searching > * {
+    display: flex;
+    align-items: center;
+}
+
+
+.searchContent{
+    position: relative;
+    justify-content: flex-start;
+    width: 50%;
+    flex-direction: row;
+    margin-right: 1em;
+}
+
+.search{
+    padding: 1em;
+    border: none;
+    min-width: 100%;
+   
+    background-color: #FFFFFF;
+    margin-right: 1em;
+    border-radius: 25px 0px 0px 25px;
+    border-top: 1px solid #CCCCCC;
+    border-bottom: 1px solid #CCCCCC;
+
+}
+
+.searchContent i {
+    position: absolute;
+    right: 0;
+    color: #9B9B9B;
+   
+}
+
+
+::placeholder{
+    color: #CCCCCC;
+    font-size: 18px;
+    padding-left: 1em;
+}
+
+.buttonFilter{
+    padding: 0.590em;
+    border: none;
+    min-width: 100%;
+    
+    background-color: #FFFFFF;
+    font-size: 18px;
+    text-align: left;
+    border-top: 1px solid #CCCCCC;
+    border-bottom: 1px solid #CCCCCC;
+    border-left: 1px solid #CCCCCC;
+    color: #CCCCCC;
+}
+
+.filterContent{
+    position: relative;
+    justify-content: center;
+    width: 15%;
+    flex-direction: column;
+    
+}
+.filterContent i {
+    position: absolute;
+    right: 0;
+    color: #9B9B9B;
+    padding-right: 0.5em;
+}
+
+.buttonSearch{
+    justify-content: flex-end;
+    flex-direction: column;
+    min-width: 9%;
+    font-family: Urbanist;
+    font-weight: 600;
+    padding: 0.625em;
+    border: none;
+    background-color: #202020;
+    font-size: 18px;
+    color: #CCCCCC;
+    border-radius: 0px 25px 25px 0px;
+    border-top: 1px solid #CCCCCC;
+    border-bottom: 1px solid #CCCCCC;
+}
+
+.appointmentsContent{
+   
+    min-width: 50%;
+  
+}
+
+.appointment{
+   
+    justify-content: flex-start;
+    margin-top: 2em;
+    
+    padding: 1em;
+    border-radius: 25px;
+    border: none;
+    min-width: 100%;
+    box-shadow: 0 0 0.5em #c7c7c7;
+    background-color: #FFFFFF;
+
+}
+
+
+.appointmentDetails{
+   
+    max-width: 100%;
+    flex-direction: column;
+    justify-content: flex-end;
+    margin-top: 2em;
+    margin-left: 5em;
+    padding: 1em;
+    border-radius: 30px;
+    border: none;
+    height: 200px;
+    box-shadow: 0 0 0.5em #c7c7c7;
+    background-color: #FFDF96;
+    min-height: 900px;
+
+}
+.detailsTags{
+    display: flex;
+    justify-content: flex-end;
+    min-width: 100%;
+    font-family: Urbanist;
+    font-size: 14px;
+    font-weight: 500;
+    margin-bottom: 0.5em;
+}
+
+.detailsTags p{
+    padding: 0em 2em 0em 0em;
+}
+
+
+.appointmentAll{
+    display: flex;
+    width: 100%;
+    box-sizing: border-box;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 2em;
+}
+
+
+.appointmentsContent > * {
+    display: flex;
+    align-items: center;
+}
+.detailsIcons{
+    
+    margin-top: 2em;
+    margin-left: 2em;
+}
+.icons{
+    width: 60px;
+    height: 60px;
+    border-radius: 100%;
+    box-shadow: 0 0 0.5em #c7c7c7;
+    background-color: #FFFFFF;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.appointmentDetails > * {
+    display: flex;
+    align-items: center;
+}
+
+
+.logo{
+    justify-content: flex-start;
+    min-width: 10%;
+    text-align: center;
+
+}
+
+.detailsLogoTitle{
+    width: 100%;
+}
+.detailsLogo{
+    justify-content: flex-start;
+    padding-left: 2em;
+}
+.detailsLogo img{
+    
+    min-width: 20%;
+    height: 100px;
+    padding: 1em;
+    border: none;
+    background-color: #FFFFFF;
+    border-radius: 20px;
+    box-shadow: 0 0 0.5em #c7c7c7;
+
+}
+
+.detailsTitle{
+    justify-content: center;
+    flex-direction: column;
+    width: 80%;
+    padding-left: 2em;
+    text-align: left;
+}
+
+.appointmentTitle{
+   
+    flex-direction: row;
+    display: flex;
+    padding-left: 2em;
+  
+}
+
+.appointmentTags{
+    justify-content: flex-end;
+    flex-direction: row;
+    padding: 0.3em 0.5em 0.3em 0.5em;
+    align-items: center;
+    background-color: rgb(230, 185, 101);
+    text-align: center;
+    border-radius: 10px;
+    margin-left: 1.2em;
+    align-items: center;
+   
+}
+.appointmentMain{
+    min-width: 100%;
+}
+.iconsWalletCity{
+    justify-content: flex-start;
+    font-family: Montserrat;
+    color: #9B9B9B;
+    font-weight: 500;
+    flex-direction: row;
+    padding: 0.3em;
+    align-items: center;
+}
+
+.positionJob{
+    justify-content: flex-start;
+    font-family: Montserrat;
+    font-weight: 700;
+    font-size: 25px;
+    flex-direction: row;
+    align-items: center;
+    min-width: 80%;
+}
+.buttonApp{
+    text-align: right;
+    align-items: right;
+    width: 100%;
+}
+.appointmentContentButton{
+ 
+    flex-direction: row;
+    display: flex;
+    margin-top: 1.5em;
+    margin-left: 2.5em;
+    margin-right: 1em;
+}
+
+.buttonAppointment{
+    text-align: center;
+    min-width: 10%;
+    justify-content: flex-end;
+    font-family: Urbanist;
+    font-weight: 600;
+    padding: 0.625em;
+    border-radius: 10px;
+    border: none;
+    background-color: #202020;
+    font-size: 15px;
+    color: #CCCCCC;
+    box-shadow: 0 0 0.5em #c7c7c7;
+    
+
+}
+.profession{
+    display: flex;
+    flex-direction: column;
+    min-width: 100%;
+    text-align: left !important;
+    
+}
+.profession p{
+    text-align: left !important;
+}
+.profession .titleProfession{
+    margin-left: 3.5em;
+    display: flex;
+    min-width: 100%;
+    font-weight: 600;
+    font-size: 20px;
+    margin-top: 2em;
+    margin-bottom: 0;
+    text-align: left !important;
+    align-content: left;
+}
+.profession .descriptionProfession{
+    width: 36em;
+    font-size: 15px;
+    font-family: Montserrat;
+    line-height: 1.5em;
+    margin-left: 0;
+    text-align: justify !important;
+}
+
+
+.detailsPositionJob{
+
+    min-width: 100%;
+    font-family: Montserrat;
+    font-weight: 700;
+    font-size: 25px;
+   
+}
+
+.iconsWalletBuilding{
+    min-width: 100%;
+    font-family: Montserrat;
+    color: #9B9B9B;
+    font-weight: 500;
+    margin-top: 2em;
+}
+
+.iconsWalletCity .fa-location-dot{
+   color: #FFC370;
+   padding-right: 0.4em;
+}
+
+.fa-wallet{
+    padding-left: 1.5em;
+    padding-right: 0.4em;
+}
+.iconsWalletBuilding .fa-building{
+
+    padding-right: 0.4em;
+    
+}
+
+
+.iconsText p{
+  
+    font-size: 10px;
+    font-family: Montserrat;
+    
+}
+.iconsText{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-right: 3em;
+
+    
+}
+
+.detailsButton{
+    text-align: center;
+    min-width: 10%;
+    font-family: Urbanist;
+    font-weight: 600;
+    padding: 0.625em;
+    border-radius: 10px;
+    border: none;
+    background-color: #202020;
+    font-size: 18px;
+    color: #CCCCCC;
+}
+.buttonDetailsContent{
+    margin-top: 1em;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
