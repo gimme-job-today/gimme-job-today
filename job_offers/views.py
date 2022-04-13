@@ -10,3 +10,6 @@ def login(request):
 
 def register(request):
     return render(request, 'job_offers/register.html')
+
+def logout(request):
+    return render(request, 'job_offers/logout.html')
