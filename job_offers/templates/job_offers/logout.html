@@ -1,12 +1,12 @@
 
 {% extends "base.html" %}
 {% load static %}
-{% block styles %}<link rel="stylesheet" href="{% static '/styles/register.css' %}" />{% endblock %}
+{% block styles %}<link rel="stylesheet" href="{% static '/styles/password_change.css' %}" />{% endblock %}
 {% block title %}<title>Pomyślnie wylogowano</title>{% endblock %}
 {% block content %}
 
 <div class="square login">
-  <p class="logoutTitle">Poprawnie wylogowano</p>
+  <h3 class="logoutTitle">Poprawnie wylogowano</h3>
   <a class="logoutLink" href="/"><i class="fa-solid fa-angle-left"></i><span class="linkDoGory">Wróć na stronę główną</span></a>
 </div>
 {% endblock %}
