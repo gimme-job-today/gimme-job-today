@@ -39,6 +39,7 @@ header > * {
   align-items: center;
   padding: 0 4px;
   cursor: pointer;
+  margin-left: 2em;
 }
 
 .dark-mode-toggler {
@@ -62,7 +63,10 @@ header > * {
 .app-title {
   font-family: "Montserrat", sans-serif;
   font-weight: 700;
-  font-size: 30px;
+  font-size: 1.5em;
+  color: #202020;
+  letter-spacing: 0.1em;
+
 }
 
 .app-content {
@@ -83,9 +87,9 @@ header > * {
   border: none;
   background-color: white;
   font-size: 1.2em;
-  padding: 0.5em 0.75em;
+  padding: 0.75em 1.2em;
   box-shadow: 0px 3px 7px 2px #e9e7e7;
-  margin: 0 0.5em;
+  margin: 0 1.5em;
   cursor: pointer;
 }
 
