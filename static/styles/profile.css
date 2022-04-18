@@ -4,15 +4,21 @@
     margin: 0;
     padding: 0;
   }
+
+.container {
+  padding: 0px 50px 50px;
+  display: inline-grid;
+  grid-template-columns: repeat(7, 20px);
+  grid-template-areas: "left left left left left right right right right right";
+  gap: 50px;
+}
+
 .square {
     background-color: white;
     box-shadow: 0px 5px 10px #e9e7e7;
-    border: solid;
-    max-width: 550px;
     height: auto;
     border-radius: 2.5em;
     text-align: center;
-    display: flex;
     float: left;
     flex-direction: column;
     justify-content: center;
@@ -23,16 +29,31 @@
 .square h3 {
     font-size: 1em;
     font-weight: 600;
+    text-align: left;
     letter-spacing: 2px;
     margin-bottom: 1em;
   }
 
 .left {
-    width:15%;
-    margin-right: 5%
+    grid-area: left;
 }
 
 .right {
-    width:100%;
-    margin-left: 5%;
+    grid-area: right;
 }
+
+.Image {
+  width: 150px;
+  height: 150px;
+  border-radius: 20px;
+}
+
+.Tresc {
+  background-color: #f7f7f7;
+  border-radius: 1em;
+  font-size: 1em;
+  padding: 1.25em;
+  width: auto;
+  border: none;
+  margin-bottom: 1em;
+  }

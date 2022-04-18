@@ -4,20 +4,20 @@
 {% block title %}<title>Profil</title>{% endblock %}
 {% block content %}
 
-<div class="square left">
-    <div class="logo">
+<div class="container">
+    <div class="square left">
+        <img src="/static/images/logolidl.png" class="Image">
+        <h3>Nazwa firmy</h3>
+        <input type="text" class="Tresc" placeholder="Nazwa Firmy" disabled="disabled">
+        <h3>Dane kontaktowe</h3>
+        <input type="text" class="Tresc" placeholder="E-mail" disabled="disabled">
+        <input type="text" class="Tresc" placeholder="Numer telefonu" disabled="disabled">
     </div>
-    <h3>Nazwa firmy</h3>
-    <input type="text" class="Tresc" placeholder="Nazwa Firmy" disabled="disabled">
-    <h3>Dane kontaktowe</h3>
-    <input type="text" class="Tresc" placeholder="E-mail" disabled="disabled">
-    <input type="text" class="Tresc" placeholder="Numer telefonu" disabled="disabled">
-</div>
-<div class="square right">
-    <h3>Adres firmy</h3>
-    <input type="text" class="Tresc" placeholder="al. Jana Pawła II 21/37, 12-345 Warszawa" disabled="disabled">
-    <h3>Dane kontaktowe</h3>
-    <textarea class="Tresc" rows="10" cols="80" disabled="disabled">
+    <div class="square right">
+        <h3>Adres firmy</h3>
+        <input type="text" class="Tresc" placeholder="al. Jana Pawła II 21/37, 12-345 Warszawa" disabled="disabled">
+        <h3>Dane kontaktowe</h3>
+        <textarea class="Tresc" rows="10" cols="80" disabled="disabled">
         Lorem ipsum dolor sit amet, 
 consectetur adipiscing elit. Nullam sit amet nisl dignissim, auctor quam a, mollis 
 nulla. Integer leo lorem, elementum ac fringilla sit amet, vulputate ac elit. 
@@ -27,7 +27,8 @@ Sed in dui auctor erat lacinia posuere eget vel mi. Nullam volutpat felis metus,
 non venenatis lacus congue non. Class aptent taciti sociosqu ad litora torquent per 
 conubia nostra, per inceptos himenaeos. Mauris nec tellus a ante maximus efficitur. 
 Pellentesque vel tempor nulla.
-    </textarea>
+        </textarea>
+    </div>
 </div>
 
 {% endblock %}
