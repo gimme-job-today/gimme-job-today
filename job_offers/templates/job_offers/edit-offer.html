@@ -2,9 +2,113 @@
 {% extends "base.html" %}
 {% load static %}
 {% block styles %}<link rel="stylesheet" href="{% static '/styles/add_offer.css' %}" />{% endblock %}
-{% block title %}<title>Edytuj ofertę</title>{% endblock %}
+{% block title %}<title>Dodaj ofertę</title>{% endblock %}
 {% block content %}
 
-Edytuj ofertę
+<div class="addOfferContener">
+
+    <div class="addOfferFrame">
+
+        
+        <div class="addOfferTitle">Edytuj ofertę</div>
+
+
+        <div class="addOfferProfession">
+            <p>Nazwa stanowiska</p>
+            <input type="text" placeholder="Doradca finansowy klienta"/>
+        </div>
+
+
+        <div class="addOfferOptions">
+            <div class="addOfferOptionGroupOne">
+                <p>Forma zatrudnienia</p>
+                <div class="addOfferSelect">
+                    <select name="formEmployment" id="formEmployment">
+                        <option value="Umowa zlecenie">Umowa zlecenie</option>
+                        <option value="Umowa o pracę">Umowa o pracę</option>
+                    </select>
+                    <i class="fa-solid fa-angle-down fa-xl"></i>
+                </div>
+            </div>
+            <div class="addOfferOptionGroupTwo">
+                <p>Tryb pracy</p>
+                <div class="addOfferSelect">
+                    <select name="formEmployment" id="formEmployment">
+                        <option value="Praca zdalna">Praca zdalna</option>
+                        <option value="Praca z biura">Praca z biura</option>
+                    </select>
+                    <i class="fa-solid fa-angle-down fa-xl"></i>
+                </div>
+            </div>
+            <div class="addOfferOptionGroupThree">
+                <p>Wymiar pracy</p>
+                <div class="addOfferSelect">
+                    <select name="formEmployment" id="formEmployment">
+                        <option value="Niepełny etat">Niepełny etat</option>
+                        <option value="Pełny etat">Pełny etat</option>
+                    </select>
+                    <i class="fa-solid fa-angle-down fa-xl"></i>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="addOfferSalary">
+            <div class="addOfferMinSalary">
+                <p>Minimalne wynagrodzenie brutto</p>
+                <div class="addOfferPositionZl">
+                    <div class="addOfferZl">zł</div>
+                    <input type="text"/>
+                </div>
+            </div>
+            <div class="addOfferMaxSalary">
+                <p>Maksymalne wynagrodzenie brutto</p>
+                <div class="addOfferPositionZl">
+                    <div class="addOfferZl">zł</div>
+                    <input type="text"/>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="addOfferLocation">
+            <p>Lokalizacja pracy</p>
+            <input type="text" placeholder="Warszawa"/>
+        </div>
+
+
+        <div class="addOfferSalary">
+            <div class="addOfferMinSalary">
+                <div class="addOfferPositionZl">
+                    <p>Adres e-mail kontaktowy</p>
+                    <input type="text"/>
+                </div>
+            </div>
+            <div class="addOfferMaxSalary">
+                <div class="addOfferPositionZl">
+                    <p>Numer telefonu kontaktowy</p>
+                    <input type="text"/>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="addOfferDescriptionTags">
+            <div class="addOfferDescription">
+                <p>Opis stanowiska</p>
+                <div class="addOfferTextarea">
+                    <i class="fa-solid fa-b fa-xl"></i>
+                    <i class="fa-solid fa-list-ul fa-xl"></i>
+                </div>
+                <textarea>
+                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+                </textarea>
+            </div>
+        </div>
+
+
+        <button>Edytuj</button>
+    </div>
+</div>
 
 {% endblock %}
