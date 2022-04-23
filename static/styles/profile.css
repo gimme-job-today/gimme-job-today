@@ -1,0 +1,75 @@
+/* Shared attributes */
+* {
+    font-family: "Montserrat", sans-serif;
+    font-size: 1em;
+    margin: 0;
+    padding: 0;
+  }
+
+html {
+  overflow: hidden;
+}
+
+.container {
+  padding: 0px 50px 50px;
+  display: inline-grid;
+  grid-template-columns: repeat(5,1fr);
+  grid-template-areas: "left right right right right";
+  gap: 50px;
+}
+
+.square {
+    background-color: white;
+    box-shadow: 0px 5px 10px #e9e7e7;
+    height: auto;
+    border-radius: 2.5em;
+    text-align: center;
+    float: left;
+    margin-top: 1.5em;
+    padding: 2em 2em 1em 2em;
+  }
+
+.square h3 {
+    font-size: 1em;
+    font-weight: 600;
+    text-align: left;
+    letter-spacing: 1px;
+    margin-bottom: 1em;
+    margin-top: 1em;
+  }
+
+.left {
+    grid-area: left;
+}
+
+.right {
+    grid-area: right;
+}
+
+.Image {
+  width: 150px;
+  height: 150px;
+  border-radius: 20px;
+  margin-bottom: 20px;
+  box-shadow: 0px 5px 10px #e9e7e7;
+}
+
+.Tresc {
+  background-color: #f7f7f7;
+  color: #878787;
+  border-radius: 1em;
+  padding: 1em;
+  width: -moz-available;
+  width: -webkit-fill-available;
+  width: stretch;
+  border: none;
+  margin-bottom: 1em;
+  }
+
+.square h3:nth-child(1){
+margin-top: 0px;  
+}
+
+textarea {
+  resize: none;
+}
