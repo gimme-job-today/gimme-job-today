@@ -42,6 +42,16 @@ var modalProfile = document.getElementsByClassName("modalProfile")[0];
 var CloseBtnOffer = document.getElementsByClassName("BackLinkOffer")[0];
 var CloseBtnProfile = document.getElementsByClassName("BackLinkProfile")[0];
 
+//Delete profile button in pop-up
+var BtnDeleteProfile = document.getElementsByClassName("ButtonDeleteProfile")[0];
+
+BtnDeleteProfile.onclick = function() {
+
+  //Place for password check code
+
+  window.location.replace('profile-after-delete');
+}
+
 CloseBtnOffer.onclick = function() {
   modalOffer.style.display = "none";
 }

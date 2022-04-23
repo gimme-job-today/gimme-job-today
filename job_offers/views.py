@@ -34,3 +34,6 @@ def editOffer(request):
 
 def passwordChange(request):
     return render(request, 'job_offers/password-change.html')
+
+def profileDelete(request):
+    return render(request, 'job_offers/profile-after-delete.html')
