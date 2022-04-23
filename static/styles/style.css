@@ -2,6 +2,7 @@ html,
 body {
   margin: 0;
   padding: 0;
+  height: 100%;
 }
 
 body {
@@ -73,6 +74,7 @@ header > * {
   width: 100%;
   padding: 10px;
   box-sizing: border-box;
+  height: calc(100% - 120px);
 }
 
 .navigation {
@@ -174,7 +176,7 @@ header > * {
   right: 25px;
   top: -15px;
   position: absolute;
-  filter: drop-shadow(1px 1px 0px rgba(0,0,0,.5));
+  filter: drop-shadow(0px 0px 0px rgba(0,0,0,.5));
 }
 
 .hidden {

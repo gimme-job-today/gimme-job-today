@@ -1,0 +1,145 @@
+.offers > * {
+  display: flex;
+  align-items: center;
+  text-align: center;
+}
+
+.app-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 0;
+}
+
+.offers {
+  display: flex;
+  width: 80%;
+  box-sizing: border-box;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+  padding: 1em;
+  border-radius: 50px 50px 0 0;
+  border: none;
+  box-shadow: 0 0 0.7em #c7c7c7;
+  background-color: #ffffff;
+  height: 95%;
+}
+
+.titleOffersContent {
+  justify-content: center;
+  width: 100%;
+  flex-direction: column;
+  font-family: Montserrat;
+  font-weight: 600;
+  font-size: 1.5em;
+  letter-spacing: 0.1em;
+  margin-top: 1em;
+  margin-bottom: 0.5em;
+}
+
+.myOffers {
+  min-width: 100%;
+  margin-top: 2em;
+  border-radius: 20px;
+  border: none;
+  background-color: #f7f7f7;
+}
+
+.myOffersContent {
+  display: flex;
+  width: 75%;
+  box-sizing: border-box;
+  flex-wrap: wrap;
+  flex-direction: column;
+}
+
+.myOffersContent > * {
+  display: flex;
+}
+.offersTitle {
+  flex-direction: row;
+  display: flex;
+  margin-top: 1.5em;
+  padding-left: 2em;
+}
+
+.appointmentDate {
+  justify-content: flex-end;
+  flex-direction: row;
+  padding: 0.3em 0.5em 0.3em 0.5em;
+  border-radius: 10px;
+  color: #9b9b9b;
+  display: flex;
+  font-family: Montserrat;
+  font-size: 0.8em;
+  min-width: 30%;
+  margin-right: 3em;
+}
+
+.appointmentDate b {
+  margin-left: 0.3em;
+}
+
+.offersMain {
+  min-width: 100%;
+  font-size: 0.8em;
+}
+
+.iconsCity {
+  justify-content: flex-start;
+  font-family: Montserrat;
+  color: #9b9b9b;
+  font-weight: 500;
+  flex-direction: row;
+  padding: 0.3em;
+  font-size: 0.8em;
+  text-align: left;
+  width: 70%;
+}
+
+.iconsTrash {
+  justify-content: flex-start;
+  font-family: Montserrat;
+  color: #9b9b9b;
+  font-weight: 500;
+  flex-direction: row;
+  padding: 0.3em;
+  text-align: right;
+  width: 70%;
+  margin-right: 2em;
+}
+
+.iconsCity .fa-location-dot {
+  color: #ffc370;
+  padding-right: 0.4em;
+}
+.fa-pen-to-square {
+  color: #cccccc;
+  padding-right: 1em;
+}
+.fa-trash-can {
+  color: #cccccc;
+}
+
+.offersContentIcons {
+  flex-direction: row;
+  display: flex;
+  margin-top: 1.5em;
+  margin-left: 2.5em;
+  margin-right: 1em;
+  margin-bottom: 1em;
+}
+
+.offersJob {
+  justify-content: flex-start;
+  font-family: Montserrat;
+  font-weight: 700;
+  font-size: 1.1em;
+  color: #202020;
+  text-align: left;
+  flex-direction: row;
+  align-items: center;
+  min-width: 80%;
+}
