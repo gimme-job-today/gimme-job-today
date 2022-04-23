@@ -37,17 +37,24 @@ meatballsMenuContent.onclick = (evt) => {
 
 //_____________________Pop-up window_________________________
 
-var modal = document.getElementsByClassName("modal")[0];
-var CloseBtn = document.getElementsByClassName("SwitchOff")[0];
+var modalOffer = document.getElementsByClassName("modalOffer")[0];
+var modalProfile = document.getElementsByClassName("modalProfile")[0];
+var CloseBtnOffer = document.getElementsByClassName("BackLinkOffer")[0];
+var CloseBtnProfile = document.getElementsByClassName("BackLinkProfile")[0];
 
-CloseBtn.onclick = function() {
-  modal.style.display = "none";
+CloseBtnOffer.onclick = function() {
+  modalOffer.style.display = "none";
+}
+
+CloseBtnProfile.onclick = function() {
+  modalProfile.style.display = "none";
 }
 
 // When the user clicks anywhere outside of the modal, close it
 window.onclick = function(event) {
-  if (event.target == modal) {
-    modal.style.display = "none";
+  if (event.target == modalOffer || event.target == modalProfile) {
+    modalOffer.style.display = "none";
+    modalProfile.style.display = "none";
   }
 } 
 

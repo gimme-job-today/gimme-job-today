@@ -180,7 +180,20 @@ header > * {
 /* _______________Pop-up________________
 
  /* The Modal (background) */
- .modal {
+ .modalOffer {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+.modalProfile {
   display: visible; /* Hidden by default */
   position: fixed; /* Stay in place */
   z-index: 1; /* Sit on top */
@@ -196,28 +209,12 @@ header > * {
 /* Modal Content/Box */
 .modal-content {
   background-color: #fefefe;
-  margin: 15% auto; /* 15% from the top and centered */
   padding: 20px;
   border: 1px solid #888;
   width: 80%; /* Could be more or less, depending on screen size */
 }
 
-/* The Close Button */
-.SwitchOff {
-  color: #aaa;
-  float: right;
-  font-size: 28px;
-  font-weight: bold;
-}
-
-.SwitchOff:hover,
-.SwitchOff:focus {
-  color: black;
-  text-decoration: none;
-  cursor: pointer;
-} 
-
-.square {
+.PopUp {
   background-color: white;
   border: none;
   width: max-content;
@@ -230,22 +227,84 @@ header > * {
   align-content: center;
   justify-content: center;
   margin: 3em auto 0 auto;
-  padding: 2em 0.5em 1em 0.5em;
+  padding: 1em 3em;
+  margin-top: 10%;
 }
 
-a.BackLink {
-  margin: 3em 5em 1em 3em;
+.BackLinkOffer, .BackLinkProfile {
+  margin: 0.5em;
   text-align:left;
   font-size: 1em;
   font-weight:bold;
   letter-spacing: 1px;
   text-decoration: none;
   color:#202020;
+  position: relative;
+  right: 2em;
 }
 
-a.BackLink i {
+.BackLinkOffer, .BackLinkProfile i {
   font-size: 1.5em;
-  margin-right:2.2em;
+  margin-right: 0.5em;
   position: relative;
-  top: 0.2em;
+  top: 0.15em;
+}
+
+.BackLinkOffer:hover, .BackLinkProfile:hover {
+  cursor: pointer;
+}
+
+.PopUp h3 {
+  margin: 3em 1em 2em 1em;
+}
+
+.PopUp h4 {
+  font-size: 1.5em;
+  letter-spacing: 1;
+  margin-top: 0;
+}
+
+.PopUp p {
+  text-align: left;
+  margin: 2em 1em;
+  line-height: 1.6;
+}
+
+.ButtonDelete, .ButtonDeleteProfile {
+  border-radius: 1em;
+  background-color: #202020;
+  width: 50%;
+  border: none;
+  color: white;
+  padding: 1em;
+  margin: 1.25em auto 1em auto;
+  font-size: 1.1em;
+  font-weight: 600;
+}
+
+button:hover {
+  cursor: pointer;
+}
+
+.ConfirmLine {
+  display: inline-grid;
+  grid-template-columns: 40% 60%;
+}
+
+.Label {
+  text-align: left;
+  font-size: 0.9em;
+  position: relative;
+  bottom: 1em;
+}
+
+.Password {
+  background-color: #f7f7f7;
+  border-radius: 1em;
+  font-size: 1em;
+  padding: 1.25em;
+  border: none;
+  align-items: center;
+  display: inline-block;
+  margin-bottom: 2.25em;
 }
