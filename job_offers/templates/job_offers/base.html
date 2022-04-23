@@ -28,18 +28,17 @@
     <header>
       <div class="dark-mode-container">
         <div class="dark-mode-switcher">
-          <div class="dark-mode-toggler">🔅</div>
+          <div class="dark-mode-toggler"><i class="fa-solid fa-sun"></i></div>
         </div>
       </div>
       <div class="logo-container">
         <a href="/"
           ><img height="64px" src="{% static '/images/logo 500dpi-03.png'  %}"
         /></a>
-        <div class="app-title">GIMME JOB TODAY</div>
+        <div class="app-title">GIMME JOB<span class='gold'>&bull;</span>TODAY</div>
       </div>
-      {% if not isLogged %} 
-      {% include "nav-unlogged.html" %} 
-      {% else %} {% include "nav-logged.html" %}{% endif %}
+      {% if not isLogged %} {% include "nav-unlogged.html" %} {% else %} {%
+      include "nav-logged.html" %}{% endif %}
     </header>
     <section class="app-content">
       {% block content %}NIE PODANO CONTENTU{% endblock %}

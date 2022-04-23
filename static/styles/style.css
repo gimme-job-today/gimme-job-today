@@ -48,7 +48,15 @@ header > * {
   border-radius: 50%;
   width: 25px;
   height: 25px;
+  display: flex;
   transition: all 0.5s;
+  justify-content: center;
+  align-items: center;
+  color: #ffd166;
+}
+
+.gold {
+  color: #ffd166;
 }
 
 .dark-mode-switcher.active .dark-mode-toggler {
@@ -67,7 +75,6 @@ header > * {
   font-size: 1.5em;
   color: #202020;
   letter-spacing: 0.1em;
-
 }
 
 .app-content {
@@ -176,7 +183,7 @@ header > * {
   right: 25px;
   top: -15px;
   position: absolute;
-  filter: drop-shadow(0px 0px 0px rgba(0,0,0,.5));
+  filter: drop-shadow(0px 0px 0px rgba(0, 0, 0, 0.5));
 }
 
 .hidden {

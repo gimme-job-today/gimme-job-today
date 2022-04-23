@@ -6,14 +6,12 @@ const handleDarkModeTogglerClick = (evt) => {
 const darkModeSwitcher =
   document.getElementsByClassName("dark-mode-switcher")[0];
 
+const darkModeTogglerIcon = document.querySelector('.dark-mode-toggler i');
+
 darkModeSwitcher.onclick = () => {
   darkModeSwitcher.classList.toggle("active");
-  const toggler = darkModeSwitcher.children[0];
-  if (darkModeSwitcher.classList.contains("active")) {
-    toggler.innerHTML = "🌙";
-  } else {
-    toggler.innerHTML = "🔅";
-  }
+  darkModeTogglerIcon.classList.toggle('fa-sun');
+  darkModeTogglerIcon.classList.toggle('fa-moon');
 };
 
 const meatballsMenuButton = document.getElementsByClassName(
