@@ -5,6 +5,10 @@ body {
   height: 100%;
 }
 
+* {
+  font-family: "Montserrat", sans-serif;
+}
+
 body {
   background-color: #f7f7f7;
 }
@@ -52,6 +56,9 @@ header > * {
   transition: all 0.5s;
   justify-content: center;
   align-items: center;
+}
+
+.dark-mode-toggler i {
   color: #ffd166;
 }
 
@@ -114,7 +121,7 @@ header > * {
   border-radius: 20px;
   border: none;
   background-color: white;
-  font-size: 1.2em;
+  font-size: 1em;
   padding: 0.75em 1em;
   margin: 0 0.5em;
   box-shadow: 0px 3px 7px 2px #e9e7e7;
@@ -137,6 +144,10 @@ header > * {
 
 .nav-item .fa-user {
   color: #ffc370;
+}
+
+a, a:visited {
+  color: #202020;
 }
 
 .meatballs-menu i {
@@ -207,7 +218,7 @@ header > * {
 }
 
 .modalProfile {
-  display: visible; /* Hidden by default */
+  display: none; /* Hidden by default */
   position: fixed; /* Stay in place */
   z-index: 1; /* Sit on top */
   left: 0;
@@ -257,7 +268,7 @@ header > * {
 }
 
 .BackLinkOffer, .BackLinkProfile i {
-  font-size: 1.5em;
+  font-size: 1em;
   margin-right: 0.5em;
   position: relative;
   top: 0.15em;

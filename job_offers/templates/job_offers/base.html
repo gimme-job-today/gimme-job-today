@@ -21,7 +21,7 @@
       href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Urbanist:wght@400;800&display=swap"
       rel="stylesheet"
     />
-    <script async src="{% static '/scripts/scripts.js' %}"></script>
+    <script defer src="{% static '/scripts/scripts.js' %}"></script>
   </head>
 
   <body>
@@ -37,8 +37,8 @@
         /></a>
         <div class="app-title">GIMME JOB<span class='gold'>&bull;</span>TODAY</div>
       </div>
-      {% if not isLogged %} {% include "nav-unlogged.html" %} {% else %} {%
-      include "nav-logged.html" %}{% endif %}
+      {% if not isLogged %} {% include "nav-unlogged.html" %} {% else %} 
+      {% include "nav-logged.html" %}{% endif %}
     </header>
     <section class="app-content">
       {% block content %}NIE PODANO CONTENTU{% endblock %}

@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 {% extends "base.html" %}
 {% load static %}
 {% block styles %}<link rel="stylesheet" href="{% static '/styles/offers.css' %}" />{% endblock %}
@@ -22,8 +21,8 @@
             <div class="offersContentIcons">
                 <div class="offersJob">Junior Full Stack Developer</div>
                 <div class="iconsTrash">
-                    <i class="fa-regular fa-pen-to-square fa-xl"></i>
-                    <i class="fa-regular fa-trash-can fa-xl"></i>
+                    <a href='/edit-offer'><i class="fa-regular fa-pen-to-square fa-xl"></i></a>
+                    <i onClick="showModalDeleteOffer(event)" class="fa-regular fa-trash-can fa-xl"></i>
                 </div>
             </div>
         </div>

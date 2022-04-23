@@ -15,22 +15,22 @@ def register(request):
     return render(request, 'job_offers/register.html')
 
 def logout(request):
-    return render(request, 'job_offers/logout.html')
+    return render(request, 'job_offers/logout.html', {'isLogged': True})
     
 def offers(request):
-    return render(request, 'job_offers/offers.html')
+    return render(request, 'job_offers/offers.html', {'isLogged': True})
 
 def profile(request):
-    return render(request, 'job_offers/profile.html')
+    return render(request, 'job_offers/profile.html', {'isLogged': True})
 
 def editProfile(request):
-    return render(request, 'job_offers/edit-profile.html')
+    return render(request, 'job_offers/edit-profile.html', {'isLogged': True})
 
 def addOffer(request):
-    return render(request, 'job_offers/add-offer.html')
+    return render(request, 'job_offers/add-offer.html', {'isLogged': True})
 
 def editOffer(request):
-    return render(request, 'job_offers/edit-offer.html')
+    return render(request, 'job_offers/edit-offer.html', {'isLogged': True})
 
 def passwordChange(request):
     return render(request, 'job_offers/password-change.html')
