@@ -14,9 +14,6 @@
     background-color: #FFFFFF;
     margin-top: 4em;
     box-shadow: 0 0 0.5em #dddddd;
-    padding-bottom: 2em;
-    margin-bottom: 2em;
-
 }
 .addOfferTitle{
     display: flex;
@@ -240,13 +237,13 @@ textarea {
 .addOfferFrame button{
     font-family: Urbanist;
     border-radius: 15px;
-    font-size: 25px;
-    font-weight: 550;
-    padding: 0.2em 1em;
-    min-width: 10%;
+    font-size: 1.2em;
+    font-weight: 800;
+    padding: 0.4em 1em;
     color: #FFFFFF;
     background-color: #202020;
-    margin-top: 2em;
+    margin: 1em;
     border: none;
-
+    letter-spacing: 0.1em;
 }
+

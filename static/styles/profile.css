@@ -1,42 +1,43 @@
-
 html {
   overflow: hidden;
 }
 
 .container {
-  padding: 0px 50px 50px;
+  padding: 50px 50px 25px 50px;
   display: inline-grid;
-  grid-template-columns: repeat(5,1fr);
-  grid-template-areas: "left right right right right";
+  grid-template-columns: repeat(7, 1fr);
+  grid-template-areas: "left left right right right right right";
   gap: 50px;
+  box-sizing: border-box;
+  height: 100%;
+  width: 100%;
 }
 
 .square {
-    background-color: white;
-    box-shadow: 0px 5px 10px #e9e7e7;
-    height: auto;
-    border-radius: 2.5em;
-    text-align: center;
-    float: left;
-    margin-top: 1.5em;
-    padding: 2em 2em 1em 2em;
-  }
+  background-color: white;
+  box-shadow: 0px 5px 10px #e9e7e7;
+  height: auto;
+  border-radius: 2.5em;
+  text-align: center;
+  float: left;
+  padding: 2em 2em 1em 2em;
+}
 
 .square h3 {
-    font-size: 1em;
-    font-weight: 600;
-    text-align: left;
-    letter-spacing: 1px;
-    margin-bottom: 1em;
-    margin-top: 1em;
-  }
+  font-size: 1em;
+  font-weight: 600;
+  text-align: left;
+  letter-spacing: 1px;
+  margin-bottom: 1em;
+  margin-top: 1em;
+}
 
 .left {
-    grid-area: left;
+  grid-area: left;
 }
 
 .right {
-    grid-area: right;
+  grid-area: right;
 }
 
 .Image {
@@ -52,17 +53,51 @@ html {
   color: #878787;
   border-radius: 1em;
   padding: 1em;
-  width: -moz-available;
-  width: -webkit-fill-available;
-  width: stretch;
+  width: 100%;
   border: none;
   margin-bottom: 1em;
-  }
+  box-sizing: border-box;
+  text-align: justify;
+}
 
-.square h3:nth-child(1){
-margin-top: 0px;  
+.profile .Tresc {
+  background-color: transparent;
+}
+
+.square h3:nth-child(1) {
+  margin-top: 0px;
 }
 
 textarea {
   resize: none;
+  height: 60%;
+}
+
+button{
+  font-family: Urbanist;
+  border-radius: 15px;
+  font-size: 1.2em;
+  font-weight: 800;
+  padding: 0.4em 1em;
+  color: #FFFFFF;
+  background-color: #202020;
+  border: none;
+  letter-spacing: 0.1em;
+}
+
+.right p{
+  font-family: "Montserrat", sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  color: #202020;
+  text-align: left;
+  padding-left: 0.5em;
+}
+
+.left p{
+  font-family: "Montserrat", sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  color: #202020;
+  text-align: left;
 }
