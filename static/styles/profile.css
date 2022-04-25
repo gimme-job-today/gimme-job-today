@@ -51,13 +51,13 @@ html {
 .Tresc {
   background-color: #f7f7f7;
   color: #878787;
-  border-radius: 0 0 1em 1em;
   padding: 1em;
   width: 100%;
   border: none;
   margin-bottom: 1em;
   box-sizing: border-box;
   text-align: justify;
+  border-radius: 1em;
 }
 
 .profile .Tresc {
@@ -70,7 +70,11 @@ html {
 
 textarea {
   resize: none;
-  height: 60%;
+  height: 48%;
+}
+
+textarea.Tresc {
+  border-radius: 0 0 1em 1em;
 }
 
 button{
@@ -104,10 +108,11 @@ button{
 
 .editProfileTextarea {
   border-radius: 20px 20px 0px 0px;
-  width: 96.8%;
+  width: 100%;
   background-color: #E1E1E1;
-  padding: 1.2em;
+  padding: 0.6em;
   align-content: center;
   text-align: center;
   color: #202020;
+  box-sizing: border-box;
 }

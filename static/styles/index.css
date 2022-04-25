@@ -1,29 +1,27 @@
-*{
-    color: #202020;
-    font-family: "Montserrat", sans-serif;
+* {
+  color: #202020;
+  font-family: "Montserrat", sans-serif;
 }
 
-
-.searching{
-    justify-content: left;
-    column-gap: 6em;
-    margin-top: 4.5em;
-    display: flex;
-    width: 100%;
-    box-sizing: border-box;
-    text-align: center;
-    flex-wrap: wrap;
-    margin-left: 2em;
-    width: auto;
+.searching {
+  justify-content: left;
+  column-gap: 6em;
+  margin-top: 4.5em;
+  display: flex;
+  width: 100%;
+  box-sizing: border-box;
+  text-align: center;
+  flex-wrap: wrap;
+  margin-left: 2em;
+  width: auto;
 }
 
 .searching > * {
-    display: flex;
-    align-items: center;
+  display: flex;
+  align-items: center;
 }
 
-
-.searchContent{
+.searchContent {
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
@@ -33,359 +31,327 @@
   margin-bottom: 2em;
 }
 
-.search{
-    padding: 1em;
-    border: none;
-    min-width: 100%;
-    background-color: #FFFFFF;
-    margin-right: 1em;
-    border-radius: 25px;
-    box-shadow: 0px 5px 10px #e9e7e7;
+.search {
+  padding: 1em;
+  border: none;
+  min-width: 100%;
+  background-color: #ffffff;
+  margin-right: 1em;
+  border-radius: 25px;
+  box-shadow: 0px 5px 10px #e9e7e7;
 }
 
 .searchContent i {
-    color: #CCCCCC;
-    margin-top: 0.9em;
-    margin-left: -3.5em;
+  color: #cccccc;
+  margin-top: 0.9em;
+  margin-left: -3.5em;
 }
 
-
-::placeholder{
-    color: #CCCCCC;
-    font-size: 18px;
-    padding-left: 1em;
+::placeholder {
+  color: #cccccc;
+  font-size: 18px;
+  padding-left: 1em;
 }
 
-.buttonFilter{
-    padding: 0.590em;
-    border: none;
-    min-width: 100%; 
-    background-color: #FFFFFF;
-    font-size: 18px;
-    text-align: left;
-    border-radius: 25px;
-    color: #CCCCCC;
-    box-shadow: 0px 5px 10px #e9e7e7;
+.buttonFilter {
+  padding: 0.59em;
+  border: none;
+  min-width: 100%;
+  background-color: #ffffff;
+  font-size: 18px;
+  text-align: left;
+  border-radius: 25px;
+  color: #cccccc;
+  box-shadow: 0px 5px 10px #e9e7e7;
 }
 
-.filterContent{
-    position: relative;
-    justify-content: center;
-    width: 15%;
-    flex-direction: column;
-    margin-bottom: 2em;
+.filterContent {
+  position: relative;
+  justify-content: center;
+  width: 15%;
+  flex-direction: column;
+  margin-bottom: 2em;
 }
 .filterContent i {
-    position: absolute;
-    right: 0;
-    color: #CCCCCC;
-    padding-right: 0.5em;
+  position: absolute;
+  right: 0;
+  color: #cccccc;
+  padding-right: 0.5em;
 }
 
-.buttonSearch{
-    font-family: Urbanist;
-    border-radius: 15px;
-    font-size: 1em;
-    font-weight: 800;
-    padding: 0.6em 2em;
-    color: #FFFFFF;
-    background-color: #202020;
-    margin-bottom: 2em;
-    border: none;
+.buttonSearch {
+  font-family: Urbanist;
+  border-radius: 15px;
+  font-size: 1em;
+  font-weight: 800;
+  padding: 0.6em 2em;
+  color: #ffffff;
+  background-color: #202020;
+  margin-bottom: 2em;
+  border: none;
 }
 
-.appointmentsContent{
-   
-    min-width: 50%;
-  
+.appointmentsContent {
+  min-width: 50%;
 }
 
-.appointment{
-   
-    justify-content: flex-start;
-    margin-top: 2em;
-    
-    padding: 1em;
-    border-radius: 25px;
-    border: none;
-    min-width: 100%;
-    box-shadow: 0 0 0.5em #e9e7e7;
-    background-color: #FFFFFF;
-
+.appointment {
+  justify-content: flex-start;
+  margin-top: 2em;
+  padding: 1em;
+  border-radius: 25px;
+  border: none;
+  min-width: 100%;
+  box-shadow: 0 0 0.5em #e9e7e7;
+  background-color: #ffffff;
 }
 
-
-.appointmentDetails{
-    min-width: 40%;
-    flex-direction: column;
-    justify-content: flex-end;
-    margin-top: 2em;
-    margin-left: 5em;
-    padding: 1em;
-    border-radius: 30px;
-    border: none;
-    box-shadow: 0 0 0.5em #c7c7c7;
-    background-color: #FFDF96;
+.appointmentDetails {
+  width: 40%;
+  flex-direction: column;
+  justify-content: flex-end;
+  margin-top: 2em;
+  margin-left: 5em;
+  padding: 1em;
+  border-radius: 30px;
+  border: none;
+  box-shadow: 0 0 0.5em #c7c7c7;
+  background-color: #ffdf96;
 }
-.detailsTags{
-    display: flex;
-    justify-content: flex-end;
-    min-width: 100%;
-    font-family: Montserat;
-    font-size: 0.8em;
-    font-weight: 500;
-    margin-bottom: 0.5em;
-}
-
-.detailsTags p{
-    padding: 0em 2em 0em 0em;
+.detailsTags {
+  display: flex;
+  justify-content: flex-end;
+  min-width: 100%;
+  font-family: Montserat;
+  font-size: 0.8em;
+  font-weight: 500;
+  margin-bottom: 0.5em;
 }
 
-
-.appointmentAll{
-    display: flex;
-    width: 100%;
-    box-sizing: border-box;
-    justify-content: center;
-    flex-wrap: wrap;
+.detailsTags p {
+  padding: 0em 2em 0em 0em;
 }
 
+.appointmentAll {
+  display: flex;
+  width: 100%;
+  box-sizing: border-box;
+  justify-content: center;
+  flex-wrap: wrap;
+}
 
 .appointmentsContent > * {
-    display: flex;
-    align-items: center;
+  display: flex;
+  align-items: center;
 }
-.detailsIcons{
-    
-    margin-top: 2em;
-    margin-left: 3em;
-    justify-content: left;
-    column-gap: 2em;
-    display: flex;
-    box-sizing: border-box;
-    text-align: center;
-    flex-wrap: wrap;
+.detailsIcons {
+  margin-top: 2em;
+  justify-content: space-around;
+  box-sizing: border-box;
+  text-align: center;
+  flex-wrap: wrap;
+  width: 100%;
 }
-.icons{
-    width: 60px;
-    height: 60px;
-    border-radius: 100%;
-    box-shadow: 0 0 0.5em #c7c7c7;
-    background-color: #FFFFFF;
+.icons {
+  width: 60px;
+  height: 60px;
+  border-radius: 100%;
+  box-shadow: 0 0 0.5em #c7c7c7;
+  background-color: #ffffff;
 
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .appointmentDetails > * {
-    display: flex;
-    align-items: center;
+  display: flex;
+  align-items: center;
 }
 
-
-.logo{
-    justify-content: flex-start;
-    min-width: 10%;
-    text-align: center;
-
+.logo {
+  justify-content: flex-start;
+  min-width: 10%;
+  text-align: center;
 }
 
-.detailsLogoTitle{
-    width: 100%;
+.detailsLogoTitle {
+  width: 100%;
 }
-.detailsLogo{
-    justify-content: flex-start;
-    padding-left: 2em;
+.detailsLogo {
+  justify-content: flex-start;
+  padding-left: 2em;
 }
-.detailsLogo img{
-    
-    min-width: 20%;
-    height: 100px;
-    padding: 1em;
-    border: none;
-    background-color: #FFFFFF;
-    border-radius: 20px;
-    box-shadow: 0 0 0.5em #c7c7c7;
-
+.detailsLogo img {
+  min-width: 20%;
+  height: 100px;
+  padding: 1em;
+  border: none;
+  background-color: #ffffff;
+  border-radius: 20px;
+  box-shadow: 0 0 0.5em #c7c7c7;
 }
 
-.detailsTitle{
-    justify-content: center;
-    flex-direction: column;
-    width: 80%;
-    padding-left: 2em;
-    text-align: left;
+.detailsTitle {
+  justify-content: center;
+  flex-direction: column;
+  width: 80%;
+  padding-left: 2em;
+  text-align: left;
 }
 
-.appointmentTitle{
-   
-    flex-direction: row;
-    display: flex;
-    padding-left: 2em;
-  
+.appointmentTitle {
+  flex-direction: row;
+  display: flex;
+  padding-left: 2em;
 }
 
-.appointmentTags{
-    justify-content: flex-end;
-    flex-direction: row;
-    padding: 0.3em 0.5em 0.3em 0.5em;
-    align-items: center;
-    background-color: rgb(230, 185, 101);
-    text-align: center;
-    border-radius: 10px;
-    margin-left: 1.2em;
-    align-items: center;
-    font-size: 0.8em;
-   
+.appointmentTags {
+  justify-content: flex-end;
+  flex-direction: row;
+  padding: 0.3em 0.5em 0.3em 0.5em;
+  align-items: center;
+  background-color: rgb(230, 185, 101);
+  text-align: center;
+  border-radius: 10px;
+  margin-left: 1.2em;
+  align-items: center;
+  font-size: 0.8em;
 }
-.appointmentMain{
-    min-width: 100%;
+.appointmentMain {
+  min-width: 100%;
 }
-.iconsWalletCity{
-    justify-content: flex-start;
-    font-family: Montserrat;
-    color: #9B9B9B;
-    font-weight: 500;
-    flex-direction: row;
-    padding: 0.3em;
-    align-items: center;
-    font-size: 0.8em;
-}
-
-.positionJob{
-    justify-content: flex-start;
-    font-family: Montserrat;
-    font-weight: 700;
-    font-size: 1.1em;
-    flex-direction: row;
-    align-items: center;
-    min-width: 77%;
-}
-.buttonApp{
-    text-align: right;
-    align-items: right;
-    width: 100%;
-}
-.appointmentContentButton{
- 
-    flex-direction: row;
-    display: flex;
-    margin-top: 1.5em;
-    margin-left: 2.5em;
-    margin-right: 1em;
+.iconsWalletCity {
+  justify-content: flex-start;
+  font-family: Montserrat;
+  color: #9b9b9b;
+  font-weight: 500;
+  flex-direction: row;
+  padding: 0.3em;
+  align-items: center;
+  font-size: 0.8em;
 }
 
-.buttonAppointment{
-    font-family: Urbanist;
-    border-radius: 10px;
-    font-size: 1em;
-    font-weight: 800;
-    padding: 0.5em 0.6em;
-    color: #FFFFFF;
-    background-color: #202020;
-    border: none;
+.positionJob {
+  justify-content: flex-start;
+  font-family: Montserrat;
+  font-weight: 700;
+  font-size: 1.1em;
+  flex-direction: row;
+  align-items: center;
+  min-width: 77%;
+}
+.buttonApp {
+  text-align: right;
+  align-items: right;
+  width: 100%;
+}
+.appointmentContentButton {
+  flex-direction: row;
+  display: flex;
+  margin-top: 1.5em;
+  margin-left: 2.5em;
+  margin-right: 1em;
 }
 
-.profession{
-    display: flex;
-    flex-direction: column;
-    min-width: 100%;
-    text-align: left !important;
-    align-items: flex-start; 
-    margin-left: 2em;  
+.buttonAppointment {
+  font-family: Urbanist;
+  border-radius: 10px;
+  font-size: 1em;
+  font-weight: 800;
+  padding: 0.5em 0.6em;
+  color: #ffffff;
+  background-color: #202020;
+  border: none;
 }
 
-.profession p{
-    text-align: left !important;
+.profession {
+  display: flex;
+  flex-direction: column;
+  min-width: 100%;
+  text-align: left !important;
+  align-items: flex-start;
+  margin-left: 2em;
 }
 
-.profession .titleProfession{
-    display: flex;
-    min-width: 100%;
-    font-weight: 600;
-    font-size: 20px;
-    margin-top: 2em;
-    margin-bottom: 0;
-    text-align: left !important;
-    align-content: left;
-}
-.profession .descriptionProfession{
-    width: 46em;
-    font-size: 15px;
-    font-family: Montserrat;
-    line-height: 1.5em;
-    margin-left: 0;
-    text-align: justify !important;
+.profession p {
+  text-align: left !important;
 }
 
-
-.detailsPositionJob{
-
-    min-width: 100%;
-    font-family: Montserrat;
-    font-weight: 700;
-    font-size: 25px;
-   
+.profession .titleProfession {
+  display: flex;
+  min-width: 100%;
+  font-weight: 600;
+  font-size: 20px;
+  margin-top: 2em;
+  margin-bottom: 0;
+  text-align: left !important;
+  align-content: left;
+}
+.profession .descriptionProfession {
+  margin-right: 4em;
+  font-size: 15px;
+  font-family: Montserrat;
+  line-height: 1.5em;
+  text-align: justify !important;
 }
 
-.iconsWalletBuilding{
-    min-width: 100%;
-    font-family: Montserrat;
-    color: #202020;
-    font-weight: 500;
-    margin-top: 2em;
-    font-size: 0.8em;
+.detailsPositionJob {
+  min-width: 100%;
+  font-family: Montserrat;
+  font-weight: 700;
+  font-size: 25px;
 }
 
-.iconsWalletCity .fa-location-dot{
-   color: #FFC370;
-   padding-right: 0.4em;
+.iconsWalletBuilding {
+  min-width: 100%;
+  font-family: Montserrat;
+  color: #202020;
+  font-weight: 500;
+  margin-top: 2em;
+  font-size: 0.8em;
 }
 
-.fa-wallet{
-    padding-left: 1.5em;
-    padding-right: 0.4em;
-}
-.iconsWalletBuilding .fa-building{
-
-    padding-right: 0.4em;
-    
+.iconsWalletCity .fa-location-dot {
+  color: #ffc370;
+  padding-right: 0.4em;
 }
 
-
-.iconsText p{
-    font-size: 0.6em;
-    font-family: Montserrat;
-    color: #202020;
-    font-weight: 600;
- 
+.fa-wallet {
+  padding-left: 1.5em;
+  padding-right: 0.4em;
 }
-.iconsText{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    margin-right: 3em;
-
-    
+.iconsWalletBuilding .fa-building {
+  padding-right: 0.4em;
 }
 
-.detailsButton{
-    font-family: Urbanist;
-    border-radius: 15px;
-    font-size: 1em;
-    font-weight: 800;
-    padding: 0.6em 1em;
-    color: #FFFFFF;
-    background-color: #202020;
-    margin: 1em;
-    border: none;
+.iconsText p {
+  font-size: 0.6em;
+  font-family: Montserrat;
+  color: #202020;
+  font-weight: 600;
 }
-.buttonDetailsContent{
-    margin-top: 1em;
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
+.iconsText {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.detailsButton {
+  font-family: Urbanist;
+  border-radius: 15px;
+  font-size: 1em;
+  font-weight: 800;
+  padding: 0.6em 1em;
+  color: #ffffff;
+  background-color: #202020;
+  margin: 1em;
+  border: none;
+}
+.buttonDetailsContent {
+  margin-top: 1em;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
 }
