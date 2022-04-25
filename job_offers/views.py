@@ -15,7 +15,7 @@ def register(request):
     return render(request, 'job_offers/register.html')
 
 def logout(request):
-    return render(request, 'job_offers/logout.html', {'isLogged': True})
+    return render(request, 'job_offers/logout.html')
     
 def offers(request):
     return render(request, 'job_offers/offers.html', {'isLogged': True})

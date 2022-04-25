@@ -5,13 +5,16 @@
 
 
 .searching{
-    justify-content: center;
+    justify-content: left;
+    column-gap: 6em;
     margin-top: 4.5em;
     display: flex;
     width: 100%;
     box-sizing: border-box;
     text-align: center;
     flex-wrap: wrap;
+    margin-left: 2em;
+    width: auto;
 }
 
 .searching > * {
@@ -21,31 +24,29 @@
 
 
 .searchContent{
-    position: relative;
-    justify-content: flex-start;
-    width: 50%;
-    flex-direction: row;
-    margin-right: 1em;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  width: 50%;
+  height: 2em;
+  align-content: space-between;
+  margin-bottom: 2em;
 }
 
 .search{
     padding: 1em;
     border: none;
     min-width: 100%;
-   
     background-color: #FFFFFF;
     margin-right: 1em;
-    border-radius: 25px 0px 0px 25px;
-    border-top: 1px solid #CCCCCC;
-    border-bottom: 1px solid #CCCCCC;
-
+    border-radius: 25px;
+    box-shadow: 0px 5px 10px #e9e7e7;
 }
 
 .searchContent i {
-    position: absolute;
-    right: 0;
-    color: #9B9B9B;
-   
+    color: #CCCCCC;
+    margin-top: 0.9em;
+    margin-left: -3.5em;
 }
 
 
@@ -58,15 +59,13 @@
 .buttonFilter{
     padding: 0.590em;
     border: none;
-    min-width: 100%;
-    
+    min-width: 100%; 
     background-color: #FFFFFF;
     font-size: 18px;
     text-align: left;
-    border-top: 1px solid #CCCCCC;
-    border-bottom: 1px solid #CCCCCC;
-    border-left: 1px solid #CCCCCC;
+    border-radius: 25px;
     color: #CCCCCC;
+    box-shadow: 0px 5px 10px #e9e7e7;
 }
 
 .filterContent{
@@ -74,29 +73,25 @@
     justify-content: center;
     width: 15%;
     flex-direction: column;
-    
+    margin-bottom: 2em;
 }
 .filterContent i {
     position: absolute;
     right: 0;
-    color: #9B9B9B;
+    color: #CCCCCC;
     padding-right: 0.5em;
 }
 
 .buttonSearch{
-    justify-content: flex-end;
-    flex-direction: column;
-    min-width: 9%;
     font-family: Urbanist;
-    font-weight: 600;
-    padding: 0.625em;
-    border: none;
+    border-radius: 15px;
+    font-size: 1em;
+    font-weight: 800;
+    padding: 0.6em 2em;
+    color: #FFFFFF;
     background-color: #202020;
-    font-size: 18px;
-    color: #CCCCCC;
-    border-radius: 0px 25px 25px 0px;
-    border-top: 1px solid #CCCCCC;
-    border-bottom: 1px solid #CCCCCC;
+    margin-bottom: 2em;
+    border: none;
 }
 
 .appointmentsContent{
@@ -121,8 +116,7 @@
 
 
 .appointmentDetails{
-   
-    max-width: 100%;
+    min-width: 40%;
     flex-direction: column;
     justify-content: flex-end;
     margin-top: 2em;
@@ -130,18 +124,15 @@
     padding: 1em;
     border-radius: 30px;
     border: none;
-    height: 200px;
     box-shadow: 0 0 0.5em #c7c7c7;
     background-color: #FFDF96;
-    min-height: 900px;
-
 }
 .detailsTags{
     display: flex;
     justify-content: flex-end;
     min-width: 100%;
-    font-family: Urbanist;
-    font-size: 14px;
+    font-family: Montserat;
+    font-size: 0.8em;
     font-weight: 500;
     margin-bottom: 0.5em;
 }
@@ -157,7 +148,6 @@
     box-sizing: border-box;
     justify-content: center;
     flex-wrap: wrap;
-    margin-top: 2em;
 }
 
 
@@ -168,7 +158,13 @@
 .detailsIcons{
     
     margin-top: 2em;
-    margin-left: 2em;
+    margin-left: 3em;
+    justify-content: left;
+    column-gap: 2em;
+    display: flex;
+    box-sizing: border-box;
+    text-align: center;
+    flex-wrap: wrap;
 }
 .icons{
     width: 60px;
@@ -241,6 +237,7 @@
     border-radius: 10px;
     margin-left: 1.2em;
     align-items: center;
+    font-size: 0.8em;
    
 }
 .appointmentMain{
@@ -254,16 +251,17 @@
     flex-direction: row;
     padding: 0.3em;
     align-items: center;
+    font-size: 0.8em;
 }
 
 .positionJob{
     justify-content: flex-start;
     font-family: Montserrat;
     font-weight: 700;
-    font-size: 25px;
+    font-size: 1.1em;
     flex-direction: row;
     align-items: center;
-    min-width: 80%;
+    min-width: 77%;
 }
 .buttonApp{
     text-align: right;
@@ -280,33 +278,30 @@
 }
 
 .buttonAppointment{
-    text-align: center;
-    min-width: 10%;
-    justify-content: flex-end;
     font-family: Urbanist;
-    font-weight: 600;
-    padding: 0.625em;
     border-radius: 10px;
-    border: none;
+    font-size: 1em;
+    font-weight: 800;
+    padding: 0.5em 0.6em;
+    color: #FFFFFF;
     background-color: #202020;
-    font-size: 15px;
-    color: #CCCCCC;
-    box-shadow: 0 0 0.5em #c7c7c7;
-    
-
+    border: none;
 }
+
 .profession{
     display: flex;
     flex-direction: column;
     min-width: 100%;
     text-align: left !important;
-    
+    align-items: flex-start; 
+    margin-left: 2em;  
 }
+
 .profession p{
     text-align: left !important;
 }
+
 .profession .titleProfession{
-    margin-left: 3.5em;
     display: flex;
     min-width: 100%;
     font-weight: 600;
@@ -317,7 +312,7 @@
     align-content: left;
 }
 .profession .descriptionProfession{
-    width: 36em;
+    width: 46em;
     font-size: 15px;
     font-family: Montserrat;
     line-height: 1.5em;
@@ -338,9 +333,10 @@
 .iconsWalletBuilding{
     min-width: 100%;
     font-family: Montserrat;
-    color: #9B9B9B;
+    color: #202020;
     font-weight: 500;
     margin-top: 2em;
+    font-size: 0.8em;
 }
 
 .iconsWalletCity .fa-location-dot{
@@ -360,10 +356,11 @@
 
 
 .iconsText p{
-  
-    font-size: 10px;
+    font-size: 0.6em;
     font-family: Montserrat;
-    
+    color: #202020;
+    font-weight: 600;
+ 
 }
 .iconsText{
     display: flex;
@@ -376,16 +373,15 @@
 }
 
 .detailsButton{
-    text-align: center;
-    min-width: 10%;
     font-family: Urbanist;
-    font-weight: 600;
-    padding: 0.625em;
-    border-radius: 10px;
-    border: none;
+    border-radius: 15px;
+    font-size: 1em;
+    font-weight: 800;
+    padding: 0.6em 1em;
+    color: #FFFFFF;
     background-color: #202020;
-    font-size: 18px;
-    color: #CCCCCC;
+    margin: 1em;
+    border: none;
 }
 .buttonDetailsContent{
     margin-top: 1em;

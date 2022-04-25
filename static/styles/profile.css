@@ -51,7 +51,7 @@ html {
 .Tresc {
   background-color: #f7f7f7;
   color: #878787;
-  border-radius: 1em;
+  border-radius: 0 0 1em 1em;
   padding: 1em;
   width: 100%;
   border: none;
@@ -100,4 +100,14 @@ button{
   font-weight: 600;
   color: #202020;
   text-align: left;
+}
+
+.editProfileTextarea {
+  border-radius: 20px 20px 0px 0px;
+  width: 96.8%;
+  background-color: #E1E1E1;
+  padding: 1.2em;
+  align-content: center;
+  text-align: center;
+  color: #202020;
 }
