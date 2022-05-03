@@ -26,13 +26,28 @@ class Company(models.Model):
     description = models.TextField()
 
     def company_logo_directory(instance, filename):
-        return f'company_logos/{instance.id}/{filename}'
+
+        extension = filename.split('.')[-1]
+
+        if extension == filename:
+            extension = 'png'
+
+        return f'company_logos/{instance.id}.{extension}'
 
     logo = models.ImageField(upload_to=company_logo_directory, blank=True)
 
     address = models.CharField(
         max_length=100
     )
+
+    def save(self, *args, **kwargs):
+        try:
+            this = Company.objects.get(id=self.id)
+            if this.logo != self.logo:
+                this.logo.delete(save=False)
+        except Company.DoesNotExist:
+            pass
+        super().save(*args, **kwargs)
 
     def __str__(self):
         return f"{self.name}"
