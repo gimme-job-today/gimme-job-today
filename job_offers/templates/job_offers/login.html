@@ -5,15 +5,24 @@
 {% block title %}<title>Logowanie</title>{% endblock %}
 {% block content %}
 
+{% for error_message in error_messages %}
+<div class="square">
+    {{ error_message }}
+</div>
+{% endfor %}
+
 <div class="square login">
-  <p>Zaloguj się</p>
-    <div class="form-inputs">
-        <input type="email" name="email" class="Company" placeholder="E-mail" />
+    <form method="post">
+        {% csrf_token %}
+        <p>Zaloguj się</p>
+        <div class="form-inputs">
+            <input type="email" name="email" class="Company" placeholder="E-mail" />
 
-        <input type="password" name="password" class="Password" placeholder="Hasło" />
+            <input type="password" name="password" class="Password" placeholder="Hasło" />
 
-  <a href="/logged"><button class="buttonLogin">Zaloguj się</button><a/> 
- <div class = "forgotpassword"> <a href="/password-change"><p>Nie pamiętam hasła</p></a></div>
-    </div>
+            <input type="submit" class="buttonLogin" value="Zaloguj się">
+            <div class = "forgotpassword"> <a href="/password-change"><p>Nie pamiętam hasła</p></a></div>
+        </div>
+    </form>
 </div>
 {% endblock %}
