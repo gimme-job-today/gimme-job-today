@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from django.contrib.auth import login as auth_login, logout as auth_logout
+from django.contrib.auth import login as auth_login, logout as auth_logout, authenticate as auth_authenticate
 from django.contrib.auth.models import User
 
 from job_offers.models import Company
@@ -10,6 +10,22 @@ def index(request):
     return render(request, 'job_offers/index.html')
 
 def login(request):
+
+    if request.method == 'POST':
+        error_messages = []
+
+        email = request.POST.get('email')
+        password = request.POST.get('password')
+
+        user = auth_authenticate(request, username=email, password=password)
+
+        if user is not None:
+            auth_login(request, user)
+            return render(request, 'job_offers/index.html')
+        else:
+            error_messages.append('Wrong email or password')
+        return render(request, 'job_offers/login.html', {'error_messages': error_messages})
+
     return render(request, 'job_offers/login.html')
 
 def register(request):
