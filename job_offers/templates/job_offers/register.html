@@ -1,42 +1,57 @@
-{% extends "base.html" %} 
+{% extends "base.html" %}
 {% load static %}
 {% block styles %}<link rel="stylesheet" href="{% static '/styles/register.css' %}" />{% endblock %}
 {% block title %}<title>Rejestracja</title>{% endblock %}
 {% block content %}
 
+
+{% for error_message in error_messages %}
 <div class="square">
-  <p>Zarejestruj się - Panel pracodawcy</p>
-  <div class="form-inputs">
-    <input
-      type="text"
-      name="nameCompany"
-      class="Company"
-      placeholder="Nazwa firmy"
-    />
-    <input type="email" name="email" class="Company" placeholder="E-mail" />
+    {{ error_message }}
+</div>
+{% endfor %}
 
-    <input
-      type="password"
-      name="password"
-      class="Password"
-      placeholder="Hasło"
-    />
-    <input
-      type="password"
-      name="passwordRepeat"
-      class="Password"
-      placeholder="Powtórz hasło"
-    />
-  </div>
+<div class="square">
+    <p>Zarejestruj się - Panel pracodawcy</p>
+    <form method="post">
+        {% csrf_token %}
+        <div class="form-inputs">
+            <input
+            type="text"
+            name="nameCompany"
+            class="Company"
+            placeholder="Nazwa firmy"
+            />
+            <input
+                type="email"
+                name="email"
+                class="Company"
+                placeholder="E-mail"
+            />
 
-  <div class="policy-container">
-    <input type="checkbox" name="checkbox" id="checkbox" />
-    <label for="checkbox"
-      >Zapoznałem/am się i zgadzam się z treścią regulaminu serwisu oraz
-      polityki prywatności.</label
-    >
-  </div>
-  <a href="/logged"><button class="buttonRegister">Zarejestruj się</button></a>
+            <input
+                type="password"
+                name="password"
+                class="Password"
+                placeholder="Hasło"
+            />
+            <input
+                type="password"
+                name="passwordRepeat"
+                class="Password"
+                placeholder="Powtórz hasło"
+            />
+        </div>
+
+        <div class="policy-container">
+            <input type="checkbox" name="checkbox" id="checkbox" />
+            <label for="checkbox">
+            Zapoznałem/am się i zgadzam się z treścią regulaminu serwisu oraz
+            polityki prywatności.
+            </label>
+        </div>
+        <input type="submit" class="buttonRegister" value="Zarejestruj się">
+    </form>
 </div>
 
 {% endblock %}

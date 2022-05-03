@@ -19,7 +19,7 @@
 }
 
 .square.login {
-    max-width: 420px; 
+    max-width: 420px;
     margin: 5em auto 0 auto;
 }
 
@@ -36,7 +36,7 @@
 
 .login .form-inputs > *{
     width: 100%;
-} 
+}
 
 .square .forgotpassword p{
     font-size: 0.75em;
@@ -104,5 +104,5 @@
   margin: 1.25em auto 1em auto;
   font-size: 1.1em;
   font-weight: 600;
+  cursor: pointer;
 }
-
