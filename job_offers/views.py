@@ -46,7 +46,7 @@ def register(request):
             return render(request, 'job_offers/register.html', {'error_messages': error_messages})
         else:
 
-            user = User.objects.create(
+            user = User.objects.create_user(
                 username=email,
                 email=email,
                 password=password
