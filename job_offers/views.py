@@ -1,4 +1,8 @@
 from django.shortcuts import render
+from django.contrib.auth import login as auth_login, logout as auth_logout
+from django.contrib.auth.models import User
+
+from job_offers.models import Company
 
 # Create your views here.
 
@@ -61,6 +65,9 @@ def register(request):
     return render(request, 'job_offers/register.html')
 
 def logout(request):
+
+    auth_logout(request)
+
     return render(request, 'job_offers/logout.html')
 
 def offers(request):
