@@ -37,8 +37,11 @@
         /></a>
         <div class="app-title">GIMME JOB<span class='gold'>&bull;</span>TODAY</div>
       </div>
-      {% if not isLogged %} {% include "nav-unlogged.html" %} {% else %} 
-      {% include "nav-logged.html" %}{% endif %}
+    {% if user.is_authenticated %}
+        {% include "nav-logged.html" %}
+    {% else %}
+        {% include "nav-unlogged.html" %}
+    {% endif %}
     </header>
     <section class="app-content">
       {% block content %}NIE PODANO CONTENTU{% endblock %}
