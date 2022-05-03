@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% load static %}
+{% block styles %}<link rel="stylesheet" href="{% static '/styles/offers.css' %}" />{% endblock %}
+{% block title %}<title>Gimme-job.today</title>{% endblock %}
+{% block content %}
+
+<div class="offers">
+
+    <div class="titleOffersContent">Moje oferty</div>
+
+    <div class="myOffersContent">
+        <div class="myOffers">
+            <div class="offersMain">
+                <div class="offersTitle">
+                <div class="iconsCity">
+                    <i class="fa-solid fa-location-dot fa-xl"></i>Warszawa
+                </div>
+                <div class="appointmentDate">Data opublikowania: <b>13.04.2022</b></div>
+            </div>
+    
+            <div class="offersContentIcons">
+                <div class="offersJob">Junior Full Stack Developer</div>
+                <div class="iconsTrash">
+                    <a href='/edit-offer'><i class="fa-regular fa-pen-to-square fa-xl"></i></a>
+                    <i onClick="showModalDeleteOffer(event)" class="fa-regular fa-trash-can fa-xl"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+{% endblock %}

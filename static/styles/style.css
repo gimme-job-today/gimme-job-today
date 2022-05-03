@@ -1,0 +1,333 @@
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+* {
+  font-family: "Montserrat", sans-serif;
+}
+
+body {
+  background-color: #f7f7f7;
+}
+
+header {
+  display: flex;
+  width: 100%;
+  height: 120px;
+  box-sizing: border-box;
+  text-align: center;
+  box-shadow: 0px 5px 10px #e9e7e7;
+  background-color: white;
+  flex-wrap: wrap;
+}
+
+header > * {
+  display: flex;
+  align-items: center;
+}
+
+.dark-mode-container {
+  justify-content: flex-start;
+  width: 35%;
+}
+
+.dark-mode-switcher {
+  width: 75px;
+  display: flex;
+  height: 30px;
+  border-radius: 1em;
+  background-color: #ebebeb;
+  align-items: center;
+  padding: 0 4px;
+  cursor: pointer;
+  margin-left: 2em;
+}
+
+.dark-mode-toggler {
+  background-color: white;
+  border-radius: 50%;
+  width: 25px;
+  height: 25px;
+  display: flex;
+  transition: all 0.5s;
+  justify-content: center;
+  align-items: center;
+}
+
+.dark-mode-toggler i {
+  color: #ffd166;
+}
+
+.gold {
+  color: #ffd166;
+}
+
+.dark-mode-switcher.active .dark-mode-toggler {
+  margin-left: 50px;
+}
+
+.logo-container {
+  justify-content: center;
+  flex-direction: column;
+  width: 30%;
+}
+
+.app-title {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+  font-size: 1.5em;
+  color: #202020;
+  letter-spacing: 0.1em;
+}
+
+.app-content {
+  width: 100%;
+  padding: 10px;
+  box-sizing: border-box;
+  height: calc(100% - 120px);
+}
+
+.navigation {
+  justify-content: flex-end;
+  width: 35%;
+}
+
+.navigation button {
+  font-family: "Urbanist", sans-serif;
+  font-weight: 800;
+  border-radius: 1em;
+  border: none;
+  background-color: white;
+  font-size: 1.2em;
+  padding: 0.75em 1.2em;
+  box-shadow: 0px 3px 7px 2px #e9e7e7;
+  margin: 0 1.5em;
+  cursor: pointer;
+}
+
+.navigation-logged {
+  justify-content: flex-end;
+  width: 35%;
+  text-align: center;
+}
+
+.navigation-logged .nav-item {
+  font-family: "Urbanist", sans-serif;
+  font-weight: 800;
+  border-radius: 20px;
+  border: none;
+  background-color: white;
+  font-size: 1em;
+  padding: 0.75em 1em;
+  box-shadow: 0px 3px 7px 2px #e9e7e7;
+  cursor: pointer;
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  text-decoration: none;
+  height: 1.5em;
+  margin-right: 3em;
+}
+
+.nav-item i {
+  margin-right: 0.5em;
+}
+
+.nav-item .fa-plus {
+  color: #ffc370;
+}
+
+.nav-item .fa-user {
+  color: #ffc370;
+}
+
+a, a:visited {
+  color: #202020;
+}
+
+.meatballs-menu i {
+  font-size: 2em;
+  margin: 0;
+}
+
+.meatballs-menu-content {
+  position: absolute;
+  right: 0;
+  top: 140%;
+  background-color: white;
+  padding: 1em 1.5em;
+  border-radius: 1em;
+  box-shadow: 0 0 5px #d5d5d5;
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  white-space: nowrap;
+  cursor: initial;
+}
+
+.meatballs-menu-content a {
+  font-size: 0.8em;
+  margin-bottom: 1.5em;
+  font-weight: 100;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.meatballs-menu-content .logout {
+  text-align: center;
+  font-size: 1em;
+  font-weight: 800;
+  margin-bottom: 0;
+}
+
+.arrow-up {
+  width: 0;
+  height: 0;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-bottom: 15px solid white;
+  right: 25px;
+  top: -15px;
+  position: absolute;
+  filter: drop-shadow(0px 0px 0px rgba(0, 0, 0, 0.5));
+}
+
+.hidden {
+  display: none;
+}
+
+/* _______________Pop-up________________
+
+ /* The Modal (background) */
+ .modalOffer {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+.modalProfile {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content/Box */
+.modal-content {
+  background-color: #fefefe;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%; /* Could be more or less, depending on screen size */
+}
+
+.PopUp {
+  background-color: white;
+  border: none;
+  width: max-content;
+  max-width: 550px;
+  height: auto;
+  border-radius: 2.5em;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  justify-content: center;
+  margin: 3em auto 0 auto;
+  padding: 1em 3em;
+  margin-top: 10%;
+}
+
+.BackLinkOffer, .BackLinkProfile {
+  margin: 0.5em;
+  text-align:left;
+  font-size: 1em;
+  font-weight:bold;
+  letter-spacing: 1px;
+  text-decoration: none;
+  color:#202020;
+  position: relative;
+  right: 2em;
+}
+
+.BackLinkOffer, .BackLinkProfile i {
+  font-size: 1em;
+  margin-right: 0.5em;
+  position: relative;
+  top: 0.15em;
+}
+
+.BackLinkOffer:hover, .BackLinkProfile:hover {
+  cursor: pointer;
+}
+
+.PopUp h3 {
+  margin: 3em 1em 2em 1em;
+}
+
+.PopUp h4 {
+  font-size: 1.5em;
+  letter-spacing: 1;
+  margin-top: 0;
+}
+
+.PopUp p {
+  text-align: left;
+  margin: 2em 1em;
+  line-height: 1.6;
+}
+
+.ButtonDelete, .ButtonDeleteProfile {
+  border-radius: 1em;
+  background-color: #202020;
+  width: 50%;
+  border: none;
+  color: white;
+  padding: 1em;
+  margin: 1.25em auto 1em auto;
+  font-size: 1.1em;
+  font-weight: 600;
+}
+
+button:hover {
+  cursor: pointer;
+}
+
+.ConfirmLine {
+  display: inline-grid;
+  grid-template-columns: 40% 60%;
+}
+
+.Label {
+  text-align: left;
+  font-size: 0.9em;
+  position: relative;
+  bottom: 1em;
+}
+
+.Password {
+  background-color: #f7f7f7;
+  border-radius: 1em;
+  font-size: 1em;
+  padding: 1.25em;
+  border: none;
+  align-items: center;
+  display: inline-block;
+  margin-bottom: 2.25em;
+}

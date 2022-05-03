@@ -1,0 +1,249 @@
+.addOfferContener{
+    justify-content: center;
+    display: flex;
+    width: 100%;
+    box-sizing: border-box;
+    text-align: center;
+    flex-wrap: wrap;
+}
+
+
+.addOfferFrame{
+    width: 80%;
+    border-radius: 50px 50px 0 0;
+    background-color: #FFFFFF;
+    margin-top: 4em;
+    box-shadow: 0 0 0.5em #dddddd;
+}
+.addOfferTitle{
+    display: flex;
+    min-width: 100%;
+    font-family: Montserrat;
+    margin-top: 2em;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    font-size: 25px;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.addOfferProfession{
+    min-width: 100%;
+    text-align: left;
+    margin-left: 4em;
+    margin-top: 5em;
+}
+
+.addOfferProfession input{
+    border-radius: 20px;
+    background-color: #F7F7F7;
+    padding: 1.7em;
+    border: none;
+    width: 40%;
+}
+
+.addOfferContener p{
+    font-family: Montserrat;
+    font-size: 16px;
+    font-weight: 600;
+    color: #202020;
+
+}
+
+::placeholder{
+    font-family: Montserrat;
+    font-size: 16px;
+    color: #878787;
+
+}
+
+
+.addOfferOptions{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 4em;
+}
+
+.addOfferOptionGroupOne{
+    min-width: 33.3%;
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    text-align:left;
+    margin-left: 8em;
+}
+
+.addOfferOptionGroupTwo{
+    min-width: 33.3%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    text-align:left;
+}
+
+.addOfferOptionGroupThree{
+    min-width: 33.3%;
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: column;
+    text-align:left;
+    position: relative;
+}
+
+.addOfferSelect select{
+    border-radius: 20px;
+    background-color: #F7F7F7;
+    border: none;
+    font-family: Montserrat;
+    font-size: 16px;
+    color: #878787;
+    appearance: none;
+    padding: 1.2em;
+    position: relative;
+    min-width: 100%;
+}
+
+.addOfferSelect{
+    position: relative;
+    flex-direction: row;
+    width: 70%;
+}
+
+.addOfferSelect i{
+    position: absolute;
+    right:0;
+    margin-top: 1.2em;
+    padding-right: 0.6em;
+   
+}
+
+.options{
+    border-radius: 20px;
+}
+
+.fa-angle-down{
+color: #CCCCCC;
+}
+
+
+.addOfferSalary{
+    min-width: 100%;
+    display: flex;
+    margin-top: 4em;
+    margin-left: 4em;
+}
+
+.addOfferMinSalary{
+    min-width: 33.3%;
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    text-align:left;
+}
+
+.addOfferMaxSalary{
+    min-width: 33.3%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    text-align:left;
+}
+
+.addOfferPositionZl input{
+    border-radius: 20px;
+    background-color: #F7F7F7;
+    border: none;
+    min-width: 100%;
+    font-family: Montserrat;
+    font-size: 16px;
+    color: #878787;
+    padding: 1.2em 0em 1.2em 1.2em;
+
+}
+
+.addOfferPositionZl{
+    position: relative;
+    flex-direction: row;
+    width: 67%;
+}
+
+.addOfferZl{
+    position: absolute;
+    right:0;
+    padding-top: 0.8em;
+    font-family: Montserrat;
+    font-weight: 600;
+    font-size: 20px;
+    color: #878787;
+ 
+   
+}
+
+.addOfferLocation{
+    min-width: 100%;
+    text-align: left;
+    margin-left: 4em;
+    margin-top: 5em;
+}
+
+.addOfferLocation input{
+    border-radius: 20px;
+    background-color: #F7F7F7;
+    padding: 1.7em;
+    border: none;
+    width: 20%;
+}
+
+.addOfferDescriptionTags{
+    min-width: 100%;
+    text-align: left;
+    margin-left: 4em;
+    margin-top: 5em;
+}
+.addOfferTextarea{
+    border-radius: 20px 20px 0px 0px;
+    width: 100%;
+    background-color: #E1E1E1;
+    padding: 1.2em;
+    align-content: center;
+    text-align: center;
+    color: #202020;
+}
+
+textarea {
+    resize: none;
+    width: 100%;
+    border-radius: 0px 0px 20px 20px;
+    height: 22em;
+    border: none;
+    padding: 1.3em;
+    background-color: #F7F7F7;
+    font-family: Montserrat;
+    font-size: 15px;
+    color: #878787;
+    text-align: justify;
+
+}
+
+.addOfferDescription{
+    justify-content: center;
+    width: 45%;
+}
+
+.fa-b{
+    padding-right: 1em;
+}
+.addOfferFrame button{
+    font-family: Urbanist;
+    border-radius: 15px;
+    font-size: 1.2em;
+    font-weight: 800;
+    padding: 0.4em 1em;
+    color: #FFFFFF;
+    background-color: #202020;
+    margin: 1em;
+    border: none;
+    letter-spacing: 0.1em;
+}
+

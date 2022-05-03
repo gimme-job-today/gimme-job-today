@@ -1,0 +1,31 @@
+
+{% extends "base.html" %}
+{% load static %}
+{% block styles %}<link rel="stylesheet" href="{% static '/styles/profile.css' %}" />{% endblock %}
+{% block title %}<title>Edytuj Profil</title>{% endblock %}
+{% block content %}
+
+<div class="container">
+    <div class="square left">
+        <img src="/static/images/logolidl.png" class="Image">
+        <p>Nazwa firmy</p>
+        <input type="text" class="Tresc" name="CompanyName" placeholder="Nazwa Firmy">
+        <p>Dane kontaktowe</p>
+        <input type="email" class="Tresc" name="Email" placeholder="E-mail">
+        <input type="text" class="Tresc" name="PhoneNumber" placeholder="Numer telefonu">
+    </div>
+    <div class="square right">
+        <p>Adres firmy</p>
+        <input type="text" class="Tresc" name="address" placeholder="al. Jana Pawła II 21/37, 12-345 Warszawa">
+        <p>Opis firmy</p>
+        <div class="editProfileTextarea">
+            <i class="fa-solid fa-b fa-sm"></i>
+            <i class="fa-solid fa-list-ul fa-sm"></i>
+        </div>
+        <textarea class="Tresc" name="Description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam sit amet nisl dignissim, auctor quam a, mollis nulla. Integer leo lorem, elementum ac fringilla sit amet, vulputate ac elit. Quisque aliquam eu massa porttitor dapibus. Maecenas nibh orci, porttitor sed aliquet nec, bibendum vel dolor. Sed in dui auctor erat lacinia posuere eget vel mi. Nullam volutpat felis metus, non venenatis lacus congue non. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Mauris nec tellus a ante maximus efficitur. Pellentesque vel tempor nulla. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam sit amet nisl dignissim, auctor quam a, mollis nulla. Integer leo lorem, elementum ac fringilla sit amet, vulputate ac elit. Quisque aliquam eu massa porttitor dapibus. Maecenas nibh orci, porttitor sed aliquet nec, bibendum vel dolor. Sed in dui auctor erat lacinia posuere eget vel mi. Nullam volutpat felis metus, non venenatis lacus congue non. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Mauris nec tellus a ante maximus efficitur. Pellentesque vel tempor nulla.
+        </textarea>
+        <a href="/profile"><button>Zapisz</button></a>
+    </div>
+</div>
+
+{% endblock %}
