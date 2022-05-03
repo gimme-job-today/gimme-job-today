@@ -2,6 +2,11 @@ html,
 body {
   margin: 0;
   padding: 0;
+  height: 100%;
+}
+
+* {
+  font-family: "Montserrat", sans-serif;
 }
 
 body {
@@ -15,8 +20,7 @@ header {
   box-sizing: border-box;
   text-align: center;
   box-shadow: 0px 5px 10px #e9e7e7;
-  padding: 0 0.5em;
-  background-color: #fff;
+  background-color: white;
   flex-wrap: wrap;
 }
 
@@ -35,7 +39,7 @@ header > * {
   display: flex;
   height: 30px;
   border-radius: 1em;
-  background-color: rgb(209, 209, 209);
+  background-color: #ebebeb;
   align-items: center;
   padding: 0 4px;
   cursor: pointer;
@@ -47,7 +51,18 @@ header > * {
   border-radius: 50%;
   width: 25px;
   height: 25px;
+  display: flex;
   transition: all 0.5s;
+  justify-content: center;
+  align-items: center;
+}
+
+.dark-mode-toggler i {
+  color: #ffd166;
+}
+
+.gold {
+  color: #ffd166;
 }
 
 .dark-mode-switcher.active .dark-mode-toggler {
@@ -66,13 +81,13 @@ header > * {
   font-size: 1.5em;
   color: #202020;
   letter-spacing: 0.1em;
-
 }
 
 .app-content {
   width: 100%;
   padding: 10px;
   box-sizing: border-box;
+  height: calc(100% - 120px);
 }
 
 .navigation {
@@ -94,7 +109,7 @@ header > * {
 }
 
 .navigation-logged {
-  justify-content: space-evenly;
+  justify-content: flex-end;
   width: 35%;
   text-align: center;
 }
@@ -105,9 +120,8 @@ header > * {
   border-radius: 20px;
   border: none;
   background-color: white;
-  font-size: 1.2em;
+  font-size: 1em;
   padding: 0.75em 1em;
-  margin: 0 0.5em;
   box-shadow: 0px 3px 7px 2px #e9e7e7;
   cursor: pointer;
   position: relative;
@@ -116,6 +130,7 @@ header > * {
   align-items: center;
   text-decoration: none;
   height: 1.5em;
+  margin-right: 3em;
 }
 
 .nav-item i {
@@ -128,6 +143,10 @@ header > * {
 
 .nav-item .fa-user {
   color: #ffc370;
+}
+
+a, a:visited {
+  color: #202020;
 }
 
 .meatballs-menu i {
@@ -174,7 +193,7 @@ header > * {
   right: 25px;
   top: -15px;
   position: absolute;
-  filter: drop-shadow(1px 1px 0px rgba(0,0,0,.5));
+  filter: drop-shadow(0px 0px 0px rgba(0, 0, 0, 0.5));
 }
 
 .hidden {
@@ -198,7 +217,7 @@ header > * {
 }
 
 .modalProfile {
-  display: visible; /* Hidden by default */
+  display: none; /* Hidden by default */
   position: fixed; /* Stay in place */
   z-index: 1; /* Sit on top */
   left: 0;
@@ -248,7 +267,7 @@ header > * {
 }
 
 .BackLinkOffer, .BackLinkProfile i {
-  font-size: 1.5em;
+  font-size: 1em;
   margin-right: 0.5em;
   position: relative;
   top: 0.15em;

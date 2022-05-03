@@ -6,14 +6,12 @@ const handleDarkModeTogglerClick = (evt) => {
 const darkModeSwitcher =
   document.getElementsByClassName("dark-mode-switcher")[0];
 
+const darkModeTogglerIcon = document.querySelector('.dark-mode-toggler i');
+
 darkModeSwitcher.onclick = () => {
   darkModeSwitcher.classList.toggle("active");
-  const toggler = darkModeSwitcher.children[0];
-  if (darkModeSwitcher.classList.contains("active")) {
-    toggler.innerHTML = "🌙";
-  } else {
-    toggler.innerHTML = "🔅";
-  }
+  darkModeTogglerIcon.classList.toggle('fa-sun');
+  darkModeTogglerIcon.classList.toggle('fa-moon');
 };
 
 
@@ -34,16 +32,15 @@ meatballsMenuContent.onclick = (evt) => {
   evt.stopPropagation();
 } 
 
-
 //_____________________Pop-up window_________________________
 
-var modalOffer = document.getElementsByClassName("modalOffer")[0];
-var modalProfile = document.getElementsByClassName("modalProfile")[0];
-var CloseBtnOffer = document.getElementsByClassName("BackLinkOffer")[0];
-var CloseBtnProfile = document.getElementsByClassName("BackLinkProfile")[0];
+const modalOffer = document.getElementsByClassName("modalOffer")[0];
+const modalProfile = document.getElementsByClassName("modalProfile")[0];
+const CloseBtnOffer = document.getElementsByClassName("BackLinkOffer")[0];
+const CloseBtnProfile = document.getElementsByClassName("BackLinkProfile")[0];
 
 //Delete profile button in pop-up
-var BtnDeleteProfile = document.getElementsByClassName("ButtonDeleteProfile")[0];
+const BtnDeleteProfile = document.getElementsByClassName("ButtonDeleteProfile")[0];
 
 BtnDeleteProfile.onclick = function() {
 
@@ -68,3 +65,12 @@ window.onclick = function(event) {
   }
 } 
 
+function showModalDeleteProfile (evt) {
+  evt.preventDefault();
+  console.log(modalProfile)
+  modalProfile.style.display = 'block';
+}
+
+function showModalDeleteOffer () {
+  modalOffer.style.display = 'block';
+}
