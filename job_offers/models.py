@@ -52,6 +52,43 @@ class Offer(models.Model):
         max_length=100
     )
 
+    class WorkModes(models.TextChoices):
+        STATIONARY = 'stationary', 'Stationary'
+        REMOTE = 'remote', 'Remote'
+        HYBRID = 'hybrid', 'Hybrid'
+
+    work_mode = models.CharField(
+        max_length=100,
+        choices=WorkModes.choices,
+        default=WorkModes.STATIONARY
+    )
+
+    class WorkTimes(models.TextChoices):
+        FULL = 'full', 'Full'
+        THREE_FOURTH = 'three_fourth', '3/4'
+        ONE_SECOND = 'one_second', '1/2'
+        ONE_FOURTH = 'one_fourth', '1/4'
+        OTHER = 'other', 'Other'
+
+    work_time = models.CharField(
+        max_length=100,
+        choices=WorkTimes.choices,
+        default=WorkTimes.FULL
+    )
+
+    class ContractTypes(models.TextChoices):
+        CONTRACT_OF_EMPLOYMENT = 'contract_of_employment', 'Contract of employment'
+        CONTRACT_OF_MANDATE = 'contract_of_mandate', 'Contract of mandate'
+        CONTRACT_OF_COMMISSION = 'contract_of_commission', 'Contract of commission'
+        BUSINESS_TO_BUSINESS = 'business_to_business', 'B2B'
+        OTHER = 'other', 'Other'
+
+    contract_type = models.CharField(
+        max_length=100,
+        choices=ContractTypes.choices,
+        default=ContractTypes.OTHER
+    )
+
     description = models.TextField()
 
     email = models.EmailField()
@@ -77,7 +114,6 @@ class Offer(models.Model):
     tags = models.ManyToManyField("Tag")
 
     def __str__(self):
-
         all_tags = ", ".join([tag.text for tag in self.tags.all()])
 
         return f"{self.position} in {self.company.name} in {self.city}: {all_tags}"
@@ -102,18 +138,5 @@ class Tag(models.Model):
         ]
     )
 
-    class Catogories(models.TextChoices):
-        WORK_MODE = 'work-mode', 'Work Mode'
-        CONTRACT_TYPE = 'contract-type', 'Contract Type'
-        CITY = 'city', 'City'
-        OTHER = 'other', 'Other'
-
-    category = models.CharField(
-        max_length=100,
-        choices=Catogories.choices,
-        default=Catogories.OTHER
-    )
-
     def __str__(self):
-
-        return f"{self.text} ({self.slug}) [{self.category}]"
+        return f"{self.text} ({self.slug})"
