@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.contrib.auth import login as auth_login, logout as auth_logout, authenticate as auth_authenticate
 from django.contrib.auth.models import User
 
@@ -11,6 +11,9 @@ def index(request):
 
 def login(request):
 
+    if request.user.is_authenticated:
+        return redirect('index')
+
     if request.method == 'POST':
         error_messages = []
 
@@ -21,7 +24,7 @@ def login(request):
 
         if user is not None:
             auth_login(request, user)
-            return render(request, 'job_offers/index.html')
+            return redirect('index')
         else:
             error_messages.append('Wrong email or password')
         return render(request, 'job_offers/login.html', {'error_messages': error_messages})
@@ -29,6 +32,9 @@ def login(request):
     return render(request, 'job_offers/login.html')
 
 def register(request):
+
+    if request.user.is_authenticated:
+        return redirect('index')
 
     if request.method == 'POST':
         error_messages = []

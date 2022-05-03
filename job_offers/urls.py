@@ -2,7 +2,7 @@ from .views import index, login, register, logout, offers, addOffer, editOffer, 
 from django.urls import path
 
 urlpatterns = [
-    path('', index),
+    path('', index, name="index"),
     path('login', login),
     path('register', register),
     path('logout', logout),
