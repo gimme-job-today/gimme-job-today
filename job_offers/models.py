@@ -16,14 +16,21 @@ class Company(models.Model):
         max_length=100
     )
 
-    email = models.EmailField()
-
-    phone_number = models.CharField(
-        max_length=100,
-        blank=True, null=True
+    email = models.EmailField(
+        default="",
+        blank=True
     )
 
-    description = models.TextField()
+    phone_number = models.CharField(
+        default="",
+        max_length=100,
+        blank=True,
+    )
+
+    description = models.TextField(
+        default="",
+        blank=True,
+    )
 
     def company_logo_directory(instance, filename):
 
@@ -37,7 +44,9 @@ class Company(models.Model):
     logo = models.ImageField(upload_to=company_logo_directory, blank=True)
 
     address = models.CharField(
-        max_length=100
+        max_length=100,
+        default="",
+        blank=True,
     )
 
     def save(self, *args, **kwargs):
