@@ -9,9 +9,6 @@ from job_offers.models import Company
 def index(request):
     return render(request, 'job_offers/index.html')
 
-def logged(request):
-    return render(request, 'job_offers/index.html')
-
 def login(request):
     return render(request, 'job_offers/login.html')
 
