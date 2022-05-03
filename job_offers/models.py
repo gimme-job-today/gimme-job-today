@@ -16,26 +16,54 @@ class Company(models.Model):
         max_length=100
     )
 
-    email = models.EmailField()
-
-    phone_number = models.CharField(
-        max_length=100,
-        blank=True, null=True
+    email = models.EmailField(
+        default="",
+        blank=True
     )
 
-    description = models.TextField()
+    phone_number = models.CharField(
+        default="",
+        max_length=100,
+        blank=True,
+    )
+
+    description = models.TextField(
+        default="",
+        blank=True,
+    )
 
     def company_logo_directory(instance, filename):
-        return f'company_logos/{instance.id}/{filename}'
+
+        extension = filename.split('.')[-1]
+
+        if extension == filename:
+            extension = 'png'
+
+        return f'company_logos/{instance.id}.{extension}'
 
     logo = models.ImageField(upload_to=company_logo_directory, blank=True)
 
     address = models.CharField(
-        max_length=100
+        max_length=100,
+        default="",
+        blank=True,
     )
+
+    def save(self, *args, **kwargs):
+        try:
+            this = Company.objects.get(id=self.id)
+            if this.logo != self.logo:
+                this.logo.delete(save=False)
+        except Company.DoesNotExist:
+            pass
+        super().save(*args, **kwargs)
 
     def __str__(self):
         return f"{self.name}"
+
+    class Meta:
+        verbose_name = 'Company'
+        verbose_name_plural = 'Companies'
 
 
 class Offer(models.Model):
@@ -50,6 +78,43 @@ class Offer(models.Model):
 
     city = models.CharField(
         max_length=100
+    )
+
+    class WorkModes(models.TextChoices):
+        STATIONARY = 'stationary', 'Stationary'
+        REMOTE = 'remote', 'Remote'
+        HYBRID = 'hybrid', 'Hybrid'
+
+    work_mode = models.CharField(
+        max_length=100,
+        choices=WorkModes.choices,
+        default=WorkModes.STATIONARY
+    )
+
+    class WorkTimes(models.TextChoices):
+        FULL = 'full', 'Full'
+        THREE_FOURTH = 'three_fourth', '3/4'
+        ONE_SECOND = 'one_second', '1/2'
+        ONE_FOURTH = 'one_fourth', '1/4'
+        OTHER = 'other', 'Other'
+
+    work_time = models.CharField(
+        max_length=100,
+        choices=WorkTimes.choices,
+        default=WorkTimes.FULL
+    )
+
+    class ContractTypes(models.TextChoices):
+        CONTRACT_OF_EMPLOYMENT = 'contract_of_employment', 'Contract of employment'
+        CONTRACT_OF_MANDATE = 'contract_of_mandate', 'Contract of mandate'
+        CONTRACT_OF_COMMISSION = 'contract_of_commission', 'Contract of commission'
+        BUSINESS_TO_BUSINESS = 'business_to_business', 'B2B'
+        OTHER = 'other', 'Other'
+
+    contract_type = models.CharField(
+        max_length=100,
+        choices=ContractTypes.choices,
+        default=ContractTypes.OTHER
     )
 
     description = models.TextField()
@@ -77,7 +142,6 @@ class Offer(models.Model):
     tags = models.ManyToManyField("Tag")
 
     def __str__(self):
-
         all_tags = ", ".join([tag.text for tag in self.tags.all()])
 
         return f"{self.position} in {self.company.name} in {self.city}: {all_tags}"
@@ -102,18 +166,5 @@ class Tag(models.Model):
         ]
     )
 
-    class Catogories(models.TextChoices):
-        WORK_MODE = 'work-mode', 'Work Mode'
-        CONTRACT_TYPE = 'contract-type', 'Contract Type'
-        CITY = 'city', 'City'
-        OTHER = 'other', 'Other'
-
-    category = models.CharField(
-        max_length=100,
-        choices=Catogories.choices,
-        default=Catogories.OTHER
-    )
-
     def __str__(self):
-
-        return f"{self.text} ({self.slug}) [{self.category}]"
+        return f"{self.text} ({self.slug})"

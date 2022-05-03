@@ -12,9 +12,9 @@ class CompanyAdmin(admin.ModelAdmin):
 
 @admin.register(Offer)
 class OfferAdmin(admin.ModelAdmin):
-    list_display = ('company', 'position', 'city', 'description', 'email', 'phone_number', 'salary_min', 'salary_max')
+    list_display = ('company', 'position', 'city', 'work_mode', 'work_time', 'contract_type', 'email', 'phone_number', 'salary_min', 'salary_max')
 
 
 @admin.register(Tag)
 class TagAdmin(admin.ModelAdmin):
-    list_display = ('text',"slug", "color", "category")
+    list_display = ('text',"slug", "color")
