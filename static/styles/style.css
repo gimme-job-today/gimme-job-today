@@ -184,6 +184,19 @@ a, a:visited {
   margin-bottom: 0;
 }
 
+.meatballs-menu-content .userName {
+  text-align: center;
+  font-size: 0.8em;
+  font-weight: 800;
+  margin-bottom: 1.5em;
+}
+
+.meatballs-menu-content .horizontalLine{
+  border-top: 1px solid #d5d5d5;
+  flex-grow: 1;
+  margin-bottom: 1.5em;
+}
+
 .arrow-up {
   width: 0;
   height: 0;
