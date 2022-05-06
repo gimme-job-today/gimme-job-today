@@ -19,12 +19,21 @@
 }
 
 .square.login {
-    max-width: 420px;
-    margin: 5em auto 0 auto;
+  max-width: 420px;
+  margin: 5em auto 0 auto;
+}
+
+.square.error-message {
+  margin-top: 1em;
+  margin-bottom: -3em;
+  width: 420px;
+  font-weight: bold;
+  border-radius: 1em;
+  padding: 0.5em;
 }
 
 .square.login > p {
-    margin-bottom: 2em;
+  margin-bottom: 2em;
 }
 
 .form-inputs {
@@ -34,20 +43,20 @@
   padding: 1em 2em;
 }
 
-.login .form-inputs > *{
-    width: 100%;
+.login .form-inputs > * {
+  width: 100%;
 }
 
-.square .forgotpassword p{
-    font-size: 0.75em;
-    font-weight: 600;
-    text-align: right;
-    letter-spacing: 0px;
+.square .forgotpassword p {
+  font-size: 0.75em;
+  font-weight: 600;
+  text-align: right;
+  letter-spacing: 0px;
 }
 
-.square .forgotpassword a{
+.square .forgotpassword a {
   text-decoration: none;
-  color:#202020
+  color: #202020;
 }
 
 .square p {
@@ -69,13 +78,12 @@
   margin-bottom: 2.25em;
 }
 
-.jakasKlasa{
+.jakasKlasa {
   background-color: #f7f7f7;
-
 }
 
 .Company {
-    width: 100%;
+  width: 100%;
 }
 
 .Password {
@@ -84,9 +92,9 @@
 }
 
 .policy-container {
-    display: flex;
-    align-items: center;
-    padding: 0 2em;
+  display: flex;
+  align-items: center;
+  padding: 0 2em;
 }
 
 .policy-container label {
@@ -94,7 +102,8 @@
   margin-left: 0.25em;
 }
 
-.buttonRegister, .buttonLogin {
+.buttonRegister,
+.buttonLogin {
   border-radius: 1em;
   background-color: #202020;
   width: 50%;
