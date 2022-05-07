@@ -81,6 +81,8 @@ def register(request):
 
             auth_login(request, user)
 
+            return redirect('index')
+
     return render(request, 'job_offers/register.html')
 
 def logout(request):
