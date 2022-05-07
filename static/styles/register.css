@@ -43,8 +43,33 @@
   padding: 1em 2em;
 }
 
-.login .form-inputs > * {
+.login .form-inputs > div,
+.login input {
   width: 100%;
+}
+
+.form-inputs > div.no-margin {
+  margin-bottom: 0;
+}
+
+.form-inputs > div {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin-bottom: 2.25em;
+}
+
+.form-inputs > div:last-child {
+  margin-bottom: 0;
+}
+
+.form-inputs .error-message {
+  width: 100%;
+  color: rgb(215, 86, 86);
+  text-align: left;
+  font-size: 0.8em;
+  padding: 0.4em 0 0 0.4em;
 }
 
 .square .forgotpassword p {
@@ -75,7 +100,7 @@
   border: none;
   align-items: center;
   display: inline-block;
-  margin-bottom: 2.25em;
+  box-sizing: border-box;
 }
 
 .jakasKlasa {
@@ -87,8 +112,7 @@
 }
 
 .Password {
-  width: 38%;
-  margin-bottom: 0.5em;
+  width: 44%;
 }
 
 .policy-container {

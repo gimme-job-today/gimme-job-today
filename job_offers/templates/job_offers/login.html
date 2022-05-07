@@ -1,27 +1,29 @@
-
 {% extends "base.html" %}
 {% load static %}
-{% block styles %}<link rel="stylesheet" href="{% static '/styles/register.css' %}" />{% endblock %}
+{% block styles %}
+<link rel="stylesheet" href="{% static '/styles/register.css' %}" />{% endblock %}
 {% block title %}<title>Logowanie</title>{% endblock %}
 {% block content %}
-
-{% for error_message in error_messages %}
-<div class="square error-message">
-    {{ error_message }}
-</div>
-{% endfor %}
 
 <div class="square login">
     <form method="post">
         {% csrf_token %}
         <p>Zaloguj się</p>
         <div class="form-inputs">
-            <input type="email" name="email" class="Company" placeholder="E-mail" />
+            <div>
+                <input type="email" name="email" class="Company" placeholder="E-mail" />
+            </div>
+            <div class="no-margin">
+                <input type="password" name="password" class="Password" placeholder="Hasło" />
+            </div>
 
-            <input type="password" name="password" class="Password" placeholder="Hasło" />
-
+            {% for error_message in error_messages %}
+            <span class="error-message">{{ error_message }}</span>
+            {% endfor %}
             <input type="submit" class="buttonLogin" value="Zaloguj się">
-            <div class = "forgotpassword"> <a href="/password-change"><p>Nie pamiętam hasła</p></a></div>
+            <div class="forgotpassword"> <a href="/password-change">
+                    <p>Nie pamiętam hasła</p>
+                </a></div>
         </div>
     </form>
 </div>
