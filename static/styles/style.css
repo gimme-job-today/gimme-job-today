@@ -147,6 +147,7 @@ header > * {
 
 a, a:visited {
   color: #202020;
+  text-decoration: none;
 }
 
 .meatballs-menu i {
@@ -189,6 +190,11 @@ a, a:visited {
   font-size: 0.8em;
   font-weight: 800;
   margin-bottom: 1.5em;
+  cursor:default;
+}
+
+.meatballs-menu-content .logged-as {
+  cursor: default;
 }
 
 .meatballs-menu-content .horizontalLine{
