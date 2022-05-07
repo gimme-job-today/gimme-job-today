@@ -4,6 +4,9 @@
 {% block title %}<title>Rejestracja</title>{% endblock %}
 {% block content %}
 
+<head>
+    <script defer src="{% static '/scripts/registration-validation.js' %}"></script>
+</head>
 
 {% for error_message in error_messages %}
 <div class="square">
@@ -13,7 +16,7 @@
 
 <div class="square">
     <p>Zarejestruj się - Panel pracodawcy</p>
-    <form method="post">
+    <form name="register" method="post">
         {% csrf_token %}
         <div class="form-inputs">
             <input
