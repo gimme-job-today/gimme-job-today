@@ -34,10 +34,9 @@
         </div>
       </div>
       <div class="logo-container">
-        <a href="/"
-          ><img height="64px" src="{% static '/images/logo 500dpi-03.png'  %}"
-        /></a>
-        <div class="app-title">GIMME JOB<span class='gold'>&bull;</span>TODAY</div>
+        <a href="/">
+          <img height="64px" src="{% static '/images/logo 500dpi-03.png'  %}"/>
+        <div class="app-title">GIMME JOB<span class='gold'>&bull;</span>TODAY</div></a>
       </div>
     {% if user.is_authenticated %}
         {% include "nav-logged.html" %}

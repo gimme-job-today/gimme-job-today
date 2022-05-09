@@ -37,7 +37,7 @@ def register(request):
         return redirect('index')
 
     if request.method == 'POST':
-        error_messages = []
+        error_messages = {}
 
         company_name = request.POST.get('nameCompany')
         email = request.POST.get('email')
@@ -49,22 +49,22 @@ def register(request):
             user = User.objects.filter(username=email).first()
             assert user is None
         except AssertionError:
-            error_messages.append('User already exists')
+            error_messages["username"] = "User already exists"
 
         # Checking password are the same
         try:
             assert password
             assert password == passwordRepeat
         except AssertionError:
-            error_messages.append('Passwords are not the same')
+            error_messages["password"] = "Passwords are not the same"
 
         # Checking if there is a company name
         try:
             assert company_name
         except AssertionError:
-            error_messages.append('No comapny name provided')
+            error_messages["company"] = "No company name provided"
 
-        if error_messages:
+        if len(error_messages):
             return render(request, 'job_offers/register.html', {'error_messages': error_messages})
         else:
 

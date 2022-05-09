@@ -13,8 +13,8 @@
     <i class="fa-solid fa-ellipsis fa-xl"></i>
     <div class='meatballs-menu-content hidden'>
         <div class='arrow-up'></div>
-        <a>Zalogowany jako</a>
-        {% if user.is_authenticated %}<a class='userName'>{{ user.get_username }}</a><div class='horizontalLine'></div>{% endif %}
+        <a class='logged-as'>Zalogowany jako</a>
+        <a class='userName'>{{ user.get_username }}</a><div class='horizontalLine'></div>
         <a href="/offers">Moje oferty</a>
         <a href="/edit-profile">Edytuj profil</a>
         <a onClick="showModalDeleteProfile(event)">Usuń konto</a>
@@ -37,7 +37,7 @@
       <p>Po naciśnięciu przycisku Twoje konto wraz ze wszystkimi danymi zostanie trwale i nieodwracalnie usunięte</p>
       <div class="ConfirmLine">
         <p class="Label">Aby potwierdzić usunięcie wprowadź hasło</p>
-        <input type="password" class="Password" name="Password" placeholder="Hasło">
+        <input type="password" class="delete_user-password" name="Password" placeholder="Hasło">
       </div>
       <button class="ButtonDeleteProfile">Usuń</button>
     </div>
