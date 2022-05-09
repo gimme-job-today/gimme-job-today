@@ -19,12 +19,21 @@
 }
 
 .square.login {
-    max-width: 420px; 
-    margin: 5em auto 0 auto;
+  max-width: 420px;
+  margin: 5em auto 0 auto;
+}
+
+.square.error-message {
+  margin-top: 1em;
+  margin-bottom: -3em;
+  width: 420px;
+  font-weight: bold;
+  border-radius: 1em;
+  padding: 0.5em;
 }
 
 .square.login > p {
-    margin-bottom: 2em;
+  margin-bottom: 2em;
 }
 
 .form-inputs {
@@ -34,20 +43,45 @@
   padding: 1em 2em;
 }
 
-.login .form-inputs > *{
-    width: 100%;
-} 
-
-.square .forgotpassword p{
-    font-size: 0.75em;
-    font-weight: 600;
-    text-align: right;
-    letter-spacing: 0px;
+.login .form-inputs > div,
+.login input {
+  width: 100%;
 }
 
-.square .forgotpassword a{
+.form-inputs > div.no-margin {
+  margin-bottom: 0;
+}
+
+.form-inputs > div {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin-bottom: 2.25em;
+}
+
+.form-inputs > div:last-child {
+  margin-bottom: 0;
+}
+
+.form-inputs .error-message {
+  width: 100%;
+  color: rgb(215, 86, 86);
+  text-align: left;
+  font-size: 0.8em;
+  padding: 0.4em 0 0 0.4em;
+}
+
+.square .forgotpassword p {
+  font-size: 0.75em;
+  font-weight: 600;
+  text-align: right;
+  letter-spacing: 0px;
+}
+
+.square .forgotpassword a {
   text-decoration: none;
-  color:#202020
+  color: #202020;
 }
 
 .square p {
@@ -66,27 +100,25 @@
   border: none;
   align-items: center;
   display: inline-block;
-  margin-bottom: 2.25em;
+  box-sizing: border-box;
 }
 
-.jakasKlasa{
+.jakasKlasa {
   background-color: #f7f7f7;
-
 }
 
 .Company {
-    width: 100%;
+  width: 100%;
 }
 
 .Password {
-  width: 38%;
-  margin-bottom: 0.5em;
+  width: 44%;
 }
 
 .policy-container {
-    display: flex;
-    align-items: center;
-    padding: 0 2em;
+  display: flex;
+  align-items: center;
+  padding: 0 2em;
 }
 
 .policy-container label {
@@ -94,7 +126,8 @@
   margin-left: 0.25em;
 }
 
-.buttonRegister, .buttonLogin {
+.buttonRegister,
+.buttonLogin {
   border-radius: 1em;
   background-color: #202020;
   width: 50%;
@@ -104,5 +137,5 @@
   margin: 1.25em auto 1em auto;
   font-size: 1.1em;
   font-weight: 600;
+  cursor: pointer;
 }
-

@@ -147,6 +147,7 @@ header > * {
 
 a, a:visited {
   color: #202020;
+  text-decoration: none;
 }
 
 .meatballs-menu i {
@@ -182,6 +183,24 @@ a, a:visited {
   font-size: 1em;
   font-weight: 800;
   margin-bottom: 0;
+}
+
+.meatballs-menu-content .userName {
+  text-align: center;
+  font-size: 0.8em;
+  font-weight: 800;
+  margin-bottom: 1.5em;
+  cursor:default;
+}
+
+.meatballs-menu-content .logged-as {
+  cursor: default;
+}
+
+.meatballs-menu-content .horizontalLine{
+  border-top: 1px solid #d5d5d5;
+  flex-grow: 1;
+  margin-bottom: 1.5em;
 }
 
 .arrow-up {
@@ -321,7 +340,7 @@ button:hover {
   bottom: 1em;
 }
 
-.Password {
+.delete_user-password {
   background-color: #f7f7f7;
   border-radius: 1em;
   font-size: 1em;

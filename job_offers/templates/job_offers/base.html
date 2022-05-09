@@ -6,22 +6,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <link rel="stylesheet" href="{% static '/styles/style.css' %}" />
-    {% block styles %}{% endblock %} {% block title %}{% endblock %}
+    {% block styles %}{% endblock %}
+    {% block title %}{% endblock %}
 
     <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
       integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
-    />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
+      />
+      <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Urbanist:wght@400;800&display=swap"
       rel="stylesheet"
-    />
-    <script defer src="{% static '/scripts/scripts.js' %}"></script>
+      />
+      <script defer src="{% static '/scripts/scripts.js' %}"></script>
+      {% block scripts %}{% endblock %}
   </head>
 
   <body>
@@ -32,13 +34,15 @@
         </div>
       </div>
       <div class="logo-container">
-        <a href="/"
-          ><img height="64px" src="{% static '/images/logo 500dpi-03.png'  %}"
-        /></a>
-        <div class="app-title">GIMME JOB<span class='gold'>&bull;</span>TODAY</div>
+        <a href="/">
+          <img height="64px" src="{% static '/images/logo 500dpi-03.png'  %}"/>
+        <div class="app-title">GIMME JOB<span class='gold'>&bull;</span>TODAY</div></a>
       </div>
-      {% if not isLogged %} {% include "nav-unlogged.html" %} {% else %} 
-      {% include "nav-logged.html" %}{% endif %}
+    {% if user.is_authenticated %}
+        {% include "nav-logged.html" %}
+    {% else %}
+        {% include "nav-unlogged.html" %}
+    {% endif %}
     </header>
     <section class="app-content">
       {% block content %}NIE PODANO CONTENTU{% endblock %}

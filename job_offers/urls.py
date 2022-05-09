@@ -1,9 +1,8 @@
-from .views import index, login, register, logout, logged, offers, addOffer, editOffer, editProfile, profile, passwordChange, profileDelete
+from .views import index, login, register, logout, offers, addOffer, editOffer, editProfile, profile, passwordChange, profileDelete
 from django.urls import path
 
 urlpatterns = [
-    path('', index),
-    path('logged', logged),
+    path('', index, name="index"),
     path('login', login),
     path('register', register),
     path('logout', logout),

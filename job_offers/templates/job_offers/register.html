@@ -1,42 +1,49 @@
-{% extends "base.html" %} 
+{% extends "base.html" %}
 {% load static %}
-{% block styles %}<link rel="stylesheet" href="{% static '/styles/register.css' %}" />{% endblock %}
+{% block styles %}
+<link rel="stylesheet" href="{% static '/styles/register.css' %}" />{% endblock %}
 {% block title %}<title>Rejestracja</title>{% endblock %}
+
+{% block scripts %}
+<script defer src="{% static '/scripts/registration-validation.js' %}"></script>
+{% endblock %}
 {% block content %}
 
+{% comment %} {% for error_message in error_messages %}
 <div class="square">
-  <p>Zarejestruj się - Panel pracodawcy</p>
-  <div class="form-inputs">
-    <input
-      type="text"
-      name="nameCompany"
-      class="Company"
-      placeholder="Nazwa firmy"
-    />
-    <input type="email" name="email" class="Company" placeholder="E-mail" />
+    {{ error_message }}
+</div>
+{% endfor %} {% endcomment %}
 
-    <input
-      type="password"
-      name="password"
-      class="Password"
-      placeholder="Hasło"
-    />
-    <input
-      type="password"
-      name="passwordRepeat"
-      class="Password"
-      placeholder="Powtórz hasło"
-    />
-  </div>
+<div class="square">
+    <p>Zarejestruj się - Panel pracodawcy</p>
+    <form name="register" method="post">
+        {% csrf_token %}
+        <div class="form-inputs">
+            <div>
+                <input type="text" name="nameCompany" class="Company" placeholder="Nazwa firmy" />
+                <span class="error-message">{{ error_messages.company }}</span>
+            </div>
+            <div>
+                <input type="email" name="email" class="Company" placeholder="E-mail" />
+                <span class="error-message">{{ error_messages.username }}</span>
+            </div>
+            <div>
+                <input type="password" name="password" class="Password" placeholder="Hasło" />
+                <input type="password" name="passwordRepeat" class="Password" placeholder="Powtórz hasło" />
+                <span class="error-message">{{ error_messages.password }}</span>
+            </div>
+        </div>
 
-  <div class="policy-container">
-    <input type="checkbox" name="checkbox" id="checkbox" />
-    <label for="checkbox"
-      >Zapoznałem/am się i zgadzam się z treścią regulaminu serwisu oraz
-      polityki prywatności.</label
-    >
-  </div>
-  <a href="/logged"><button class="buttonRegister">Zarejestruj się</button></a>
+        <div class="policy-container">
+            <input type="checkbox" name="acceptPolicyCheckbox" id="checkbox" required/>
+            <label for="checkbox">
+                Zapoznałem/am się i zgadzam się z treścią regulaminu serwisu oraz
+                polityki prywatności.
+            </label>
+        </div>
+        <input type="submit" class="buttonRegister" value="Zarejestruj się">
+    </form>
 </div>
 
 {% endblock %}
