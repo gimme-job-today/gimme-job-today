@@ -2,11 +2,11 @@
 {% load static %}
 {% block styles %}<link rel="stylesheet" href="{% static '/styles/register.css' %}" />{% endblock %}
 {% block title %}<title>Rejestracja</title>{% endblock %}
-{% block content %}
 
-<head>
-    <script defer src="{% static '/scripts/registration-validation.js' %}"></script>
-</head>
+{% block scripts %}
+<script defer src="{% static '/scripts/registration-validation.js' %}"></script>
+{% endblock %}
+{% block content %}
 
 {% for error_message in error_messages %}
 <div class="square">
@@ -24,12 +24,14 @@
             name="nameCompany"
             class="Company"
             placeholder="Nazwa firmy"
+            required
             />
             <input
                 type="email"
                 name="email"
                 class="Company"
                 placeholder="E-mail"
+                required
             />
 
             <input
@@ -37,17 +39,19 @@
                 name="password"
                 class="Password"
                 placeholder="Hasło"
+                required
             />
             <input
                 type="password"
                 name="passwordRepeat"
                 class="Password"
                 placeholder="Powtórz hasło"
+                required
             />
         </div>
 
         <div class="policy-container">
-            <input type="checkbox" name="checkbox" id="checkbox" />
+            <input type="checkbox" name="acceptPolicyCheckbox" id="checkbox" required/>
             <label for="checkbox">
             Zapoznałem/am się i zgadzam się z treścią regulaminu serwisu oraz
             polityki prywatności.
