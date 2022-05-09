@@ -91,6 +91,22 @@ def logout(request):
 
     return render(request, 'job_offers/logout.html')
 
+def delete_account(request):
+
+    try:
+        assert request.method == 'POST'
+
+        delete_account_password_confirmation = request.POST.get('password')
+
+        assert delete_account_password_confirmation is not None
+        assert request.user.check_password(delete_account_password_confirmation)
+    except AssertionError:
+        return redirect('index')
+
+    request.user.delete()
+
+    return redirect('index')
+
 def offers(request):
     return render(request, 'job_offers/offers.html')
 
