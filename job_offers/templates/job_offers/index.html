@@ -19,49 +19,38 @@
     <button class="buttonFilter">Więcej filtrów</button>
     <i class="fa-solid fa-angle-down fa-xl"></i>
   </div>
-  
+
     <button class="buttonSearch">Szukaj</button>
 </div>
 
 <div class="appointmentAll">
   <div class="appointmentsContent">
 
-    <div class="appointment">
-      <div class="logo">
-        <img height="64px" src="{% static '/images/logolidl.png'  %}"/>
-      </div>
-      <div class="appointmentMain">
-        <div class="appointmentTitle">
-          <div class="iconsWalletCity">
-            <i class="fa-solid fa-location-dot fa-xl"></i>Warszawa
-            <i class="fa-solid fa-wallet fa-xl"></i>5000 zł
-          </div>
-          <div class="appointmentTags">Bankowość</div>
-          <div class="appointmentTags">Finanse</div>
-          <div class="appointmentTags">Podatki</div>
-        </div>
+    {% for offer in offers %}
+        <div class="appointment">
+        <div class="logo">
+            <img height="64px" src="{{offer.company.logo.url}}"/>
+            </div>
+        <div class="appointmentMain">
+            <div class="appointmentTitle">
+            <div class="iconsWalletCity">
+                <i class="fa-solid fa-location-dot fa-xl"></i>{{offer.city}}
+                <i class="fa-solid fa-wallet fa-xl"></i>{{offer.salary_min}}-{{offer.salary_max}} zł
+            </div>
+            {% for tag in offer.tags.all %}
+                <div class="appointmentTags" style="background-color: {{tag.color}};">{{tag.text}}</div>
+            {% endfor %}
+            </div>
 
-        <div class="appointmentContentButton">
-          <div class="positionJob">Junior Full Stack Developer</div>
-          <button class="buttonAppointment">Szczegóły</button>
+            <div class="appointmentContentButton">
+            <div class="positionJob">{{offer.position}}</div>
+            <button class="offer__show-details-button" data-offer-id="{{offer.id}}">Szczegóły</button>
+            </div>
+            </div>
         </div>
-      </div>
-    </div>
+    {% endfor %}
 
-    <div class="appointment">
-      <div class="logo">
-        <img height="64px" src="{% static '/images/logolidl.png'  %}"/>
-      </div>
-      <div class="appointmentMain">
-        <div class="appointmentTitle">
-          <div class="iconsWalletCity">
-            <i class="fa-solid fa-location-dot fa-xl"></i>Warszawa
-            <i class="fa-solid fa-wallet fa-xl"></i>5000 zł
-          </div>
-          <div class="appointmentTags">Bankowość</div>
-          <div class="appointmentTags">Finanse</div>
-          <div class="appointmentTags">Podatki</div>
-        </div>
+  </div>
 
         <div class="appointmentContentButton">
           <div class="positionJob">Junior Full Stack Developer</div>
