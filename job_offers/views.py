@@ -1,8 +1,11 @@
+import uuid
+
+from django.http import JsonResponse
 from django.shortcuts import render, redirect
 from django.contrib.auth import login as auth_login, logout as auth_logout, authenticate as auth_authenticate
 from django.contrib.auth.models import User
 
-from job_offers.models import Company
+from job_offers.models import Company, Offer
 
 # Create your views here.
 
@@ -127,3 +130,27 @@ def passwordChange(request):
 
 def profileDelete(request):
     return render(request, 'job_offers/profile-after-delete.html')
+
+def api__offer_details(request):
+
+    try:
+        assert request.method == 'GET'
+
+        offerId = request.GET.get('id')
+        assert offerId
+
+        offer = Offer.objects.filter(id=uuid.UUID(offerId)).first()
+        assert offer
+    except AssertionError:
+        return JsonResponse(
+            data = {
+                "status": "error",
+            }
+        )
+
+    return JsonResponse(
+        data = {
+            "status": "success",
+            "data": offer.json()
+        }
+    )
