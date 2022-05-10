@@ -113,7 +113,7 @@ def delete_account(request):
 
     request.user.delete()
 
-    return redirect('index')
+    return redirect('account-deleted')
 
 def offers(request):
     return render(request, 'job_offers/offers.html')
@@ -133,7 +133,7 @@ def editOffer(request):
 def passwordChange(request):
     return render(request, 'job_offers/password-change.html')
 
-def profileDelete(request):
+def account_deleted(request):
     return render(request, 'job_offers/profile-after-delete.html')
 
 def api__offer_details(request):
