@@ -58,6 +58,19 @@ class Company(models.Model):
             pass
         super().save(*args, **kwargs)
 
+    def json(self):
+        return {
+            "id": self.id,
+            "name": self.name,
+            "email": self.email,
+            "phone_number": self.phone_number,
+            "description": self.description,
+            "address": self.address,
+            "logo": {
+                "url": self.logo.url,
+            }
+        }
+
     def __str__(self):
         return f"{self.name}"
 
@@ -141,6 +154,23 @@ class Offer(models.Model):
 
     tags = models.ManyToManyField("Tag")
 
+    def json(self):
+        return {
+            "id": self.id,
+            "company": self.company.json(),
+            "position": self.position,
+            "city": self.city,
+            "work_mode": self.work_mode,
+            "work_time": self.work_time,
+            "contract_type": self.contract_type,
+            "description": self.description,
+            "phone_number": self.phone_number,
+            "salary_min": self.salary_min,
+            "salary_max": self.salary_max,
+            "visit_counter": self.visit_counter,
+            "tags": [tag.json() for tag in self.tags.all()],
+        }
+
     def __str__(self):
         all_tags = ", ".join([tag.text for tag in self.tags.all()])
 
@@ -165,6 +195,14 @@ class Tag(models.Model):
             RegexValidator(regex=r"^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$")
         ]
     )
+
+    def json(self):
+        return {
+            "id": self.id,
+            "text": self.text,
+            "slug": self.slug,
+            "color": self.color,
+        }
 
     def __str__(self):
         return f"{self.text} ({self.slug})"
