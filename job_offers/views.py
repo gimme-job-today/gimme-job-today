@@ -10,7 +10,12 @@ from job_offers.models import Company, Offer
 # Create your views here.
 
 def index(request):
-    return render(request, 'job_offers/index.html')
+    context = {}
+
+    offer_objects = Offer.objects.all()
+    context["offers"] = offer_objects
+
+    return render(request, 'job_offers/index.html', context)
 
 def login(request):
 
