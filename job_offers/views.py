@@ -134,7 +134,7 @@ def passwordChange(request):
     return render(request, 'job_offers/password-change.html')
 
 def account_deleted(request):
-    return render(request, 'job_offers/profile-after-delete.html')
+    return render(request, 'job_offers/account-deleted.html')
 
 def api__offer_details(request):
 
