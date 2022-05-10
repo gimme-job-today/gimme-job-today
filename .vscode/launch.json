@@ -15,7 +15,7 @@
             ],
             "django": true,
             "justMyCode": true,
-            "envFile": "${workspaceFolder}/development.env",
+            "envFile": "${workspaceFolder}/.env.development",
         }
     ],
     "inputs": [
