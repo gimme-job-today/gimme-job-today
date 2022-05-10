@@ -30,7 +30,7 @@ meatballsMenuButton.onclick = (evt) => {
 meatballsMenuContent.onclick = (evt) => {
   //prevent closing menu when clicking on content
   evt.stopPropagation();
-} 
+}
 
 //_____________________Pop-up window_________________________
 
@@ -46,7 +46,7 @@ BtnDeleteProfile.onclick = function() {
 
   //Place for password check code
 
-  window.location.replace('profile-after-delete');
+  window.location.replace('account-deleted');
 }
 
 CloseBtnOffer.onclick = function() {
@@ -63,7 +63,7 @@ window.onclick = function(event) {
     modalOffer.style.display = "none";
     modalProfile.style.display = "none";
   }
-} 
+}
 
 function showModalDeleteProfile (evt) {
   evt.preventDefault();

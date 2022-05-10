@@ -1,13 +1,21 @@
+import uuid
+
+from django.http import JsonResponse
 from django.shortcuts import render, redirect
 from django.contrib.auth import login as auth_login, logout as auth_logout, authenticate as auth_authenticate
 from django.contrib.auth.models import User
 
-from job_offers.models import Company
+from job_offers.models import Company, Offer
 
 # Create your views here.
 
 def index(request):
-    return render(request, 'job_offers/index.html')
+    context = {}
+
+    offer_objects = Offer.objects.all()
+    context["offers"] = offer_objects
+
+    return render(request, 'job_offers/index.html', context)
 
 def login(request):
 
@@ -91,6 +99,22 @@ def logout(request):
 
     return render(request, 'job_offers/logout.html')
 
+def delete_account(request):
+
+    try:
+        assert request.method == 'POST'
+
+        delete_account_password_confirmation = request.POST.get('password')
+
+        assert delete_account_password_confirmation is not None
+        assert request.user.check_password(delete_account_password_confirmation)
+    except AssertionError:
+        return redirect('index')
+
+    request.user.delete()
+
+    return redirect('account-deleted')
+
 def offers(request):
     return render(request, 'job_offers/offers.html')
 
@@ -109,5 +133,32 @@ def editOffer(request):
 def passwordChange(request):
     return render(request, 'job_offers/password-change.html')
 
-def profileDelete(request):
-    return render(request, 'job_offers/profile-after-delete.html')
+def account_deleted(request):
+    return render(request, 'job_offers/account-deleted.html')
+
+def api__offer_details(request):
+
+    try:
+        assert request.method == 'GET'
+
+        offerId = request.GET.get('id')
+        assert offerId
+
+        offer = Offer.objects.filter(id=uuid.UUID(offerId)).first()
+        assert offer
+    except AssertionError:
+        return JsonResponse(
+            data = {
+                "status": "error",
+            }
+        )
+
+    offer.visit_counter += 1
+    offer.save()
+
+    return JsonResponse(
+        data = {
+            "status": "success",
+            "data": offer.json()
+        }
+    )
