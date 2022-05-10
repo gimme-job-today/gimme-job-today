@@ -52,35 +52,22 @@
 
   </div>
 
-        <div class="appointmentContentButton">
-          <div class="positionJob">Junior Full Stack Developer</div>
-          <button class="buttonAppointment">Szczegóły</button>
-        </div>
-      </div>
-    </div>
-
-  </div> 
-
-  <div class="appointmentDetails">
-      <div class="detailsTags">
-          <p>Bankowość</p>
-          <p>Finanse</p>
-          <p>Podatki</p>
-      </div>
+  <div class="appointmentDetails" style="display: none">
+      <div class="detailsTags"></div>
 
       <div class="detailsLogoTitle">
         <div class="detailsLogo">
-          <img src="{% static '/images/logolidl.png'  %}"/>
+          <img src=""/>
         </div>
 
         <div class="detailsTitle">
 
-          <div class="detailsPositionJob">Junior Full Stack Developer</div>
+          <div class="detailsPositionJob"></div>
           <div class="iconsWalletBuilding">
-            <i class="fa-solid fa-building fa-xl"></i>Santander Bank Polska
-            <i class="fa-solid fa-wallet fa-xl"></i>5000 zł
+            <i class="fa-solid fa-building fa-xl"></i><span class="detailsCompanyName"></span>
+            <i class="fa-solid fa-wallet fa-xl"></i><span class="detailsSalary"></span>
           </div>
-          
+
         </div>
       </div>
 
@@ -89,54 +76,48 @@
           <div class="icons">
             <i class="fa-solid fa-file-contract fa-xl"></i>
           </div>
-          <p>Umowa zlecenie</p>
+          <p class="detailsContractType"></p>
         </div>
         <div class="iconsText">
           <div class="icons">
             <i class="fa-solid fa-clock fa-xl"></i>
           </div>
-          <p>Niepełny etat</p>
+          <p class="detailsWorkTime"></p>
         </div>
         <div class="iconsText">
           <div class="icons">
             <i class="fa-solid fa-gauge fa-xl"></i>
           </div>
-          <p>Praca zdalna</p>
+          <p class="detailsWorkMode"></p>
         </div>
         <div class="iconsText">
           <div class="icons">
             <i class="fa-solid fa-location-dot fa-xl"></i>
           </div>
-          <p>Warszawa</p>
-        </div>
-        <div class="iconsText">
-          <div class="icons">
-            <i class="fa-solid fa-hourglass fa-xl"></i>
-          </div>
-          <p>25 dni</p>
+          <p class="detailsCity"></p>
         </div>
 
       </div>
 
       <div class="profession">
         <p class="titleProfession">Opis stanowiska</p>
-        <p class="descriptionProfession">Lorem Ipsum is simply dummy te It was popularised in the 196ly dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of  cmore recg versions of Lorem Ipsum.</p>
+        <p class="detailsPositionDescription"></p>
       </div>
 
-      
+
       <div class="profession">
         <p class="titleProfession">Opis firmy</p>
-        <p class="descriptionProfession">Lorem Ipsum is simply dummy te It was popularised in ths of Lor the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of  cmore recg versions of Lorem Ipsum.</p>
+        <p class="detailsCompanyDescription"></p>
       </div>
 
       <div class="buttonDetailsContent">
-        <button class="detailsButton">Skontaktuj się</button>
+        <button class="detailsContactButton">Skontaktuj się</button>
       </div>
 
-    
-  
+
+
   </div>
 
-  
+
 </div>
 {% endblock %}
