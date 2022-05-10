@@ -44,5 +44,5 @@ document.addEventListener("click", async function(event) {
 
     detailsVisitCounter.innerText = responseData.data.visit_counter
 
-    offerDetailsDiv.style.display = "block";
+    offerDetailsDiv.style.visibility = "visible";
 }, true);
