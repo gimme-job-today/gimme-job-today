@@ -153,6 +153,9 @@ def api__offer_details(request):
             }
         )
 
+    offer.visit_counter += 1
+    offer.save()
+
     return JsonResponse(
         data = {
             "status": "success",

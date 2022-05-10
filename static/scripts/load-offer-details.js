@@ -15,6 +15,8 @@ const detailsCity = offerDetailsDiv.querySelector(".detailsCity")
 const detailsPositionDescription = offerDetailsDiv.querySelector(".detailsPositionDescription");
 const detailsCompanyDescription = offerDetailsDiv.querySelector(".detailsCompanyDescription");
 
+const detailsVisitCounter = offerDetailsDiv.querySelector(".detailsVisitCounter");
+
 
 document.addEventListener("click", async function(event) {
     if (!event.target.classList.contains("offer__show-details-button")) return;
@@ -39,6 +41,8 @@ document.addEventListener("click", async function(event) {
 
     detailsPositionDescription.innerText = responseData.data.description
     detailsCompanyDescription.innerText = responseData.data.company.description
+
+    detailsVisitCounter.innerText = responseData.data.visit_counter
 
     offerDetailsDiv.style.display = "block";
 }, true);
