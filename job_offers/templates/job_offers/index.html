@@ -2,6 +2,11 @@
 {% extends "base.html" %}
 {% load static %}
 {% block styles %}<link rel="stylesheet" href="{% static '/styles/index.css' %}" />{% endblock %}
+
+{% block scripts %}
+<script defer src="{% static '/scripts/load-offer-details.js' %}"></script>
+{% endblock %}
+
 {% block title %}<title>Gimme-job.today</title>{% endblock %}
 {% block content %}
 <div class="searching">
