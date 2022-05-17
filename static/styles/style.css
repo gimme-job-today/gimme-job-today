@@ -95,6 +95,24 @@ header > * {
   width: 35%;
 }
 
+@media (min-width: 1280px) {
+  .hide-medium-up {
+    display: none !important;
+  }
+}
+
+@media (max-width: 1280px) {
+  .hide-medium-down {
+    display: none !important;
+  }
+}
+
+@media (max-width: 950px) {
+  .app-title {
+    font-size: 1em;
+  }
+}
+
 .navigation button {
   font-family: "Urbanist", sans-serif;
   font-weight: 800;
@@ -113,8 +131,21 @@ header > * {
   width: 35%;
   text-align: center;
 }
+ 
+.navigation-unlogged .nav-item {
+  margin-right: 1em;
+}
 
-.navigation-logged .nav-item {
+.navigation-unlogged .meatballs-menu-content a {
+  font-weight: bold;
+  font-size: 1em;
+}
+
+.navigation-unlogged .meatballs-menu-content a:last-child {
+  margin: 0;
+}
+
+.nav-item {
   font-family: "Urbanist", sans-serif;
   font-weight: 800;
   border-radius: 20px;
