@@ -5,108 +5,130 @@
 {% block title %}<title>Dodaj ofertę</title>{% endblock %}
 {% block content %}
 
-<div class="addOfferContener">
+<div class="add-offer__contener">
 
-    <div class="addOfferFrame">
+    <div class="add-offer__frame">
 
         
-        <div class="addOfferTitle">Dodaj ofertę</div>
+        <div class="add-offer__title">Dodaj ofertę</div>
 
 
-        <div class="addOfferProfession">
+        <div class="add-offer__profession">
             <p>Nazwa stanowiska</p>
-            <input type="text" placeholder="Doradca finansowy klienta"/>
+            <input type="text" class="add-offer__profinput" placeholder="Doradca finansowy klienta"/>
         </div>
 
 
-        <div class="addOfferOptions">
-            <div class="addOfferOptionGroupOne">
+        <div class="add-offer-options">
+            <div class="add-offer-option_one">
                 <p>Forma zatrudnienia</p>
-                <div class="addOfferSelect">
-                    <select name="formEmployment" id="formEmployment">
+                <div class="add-offer-option__select">
+                    <select name="type-employment" id="type-employment">
                         <option value="Umowa zlecenie">Umowa zlecenie</option>
                         <option value="Umowa o pracę">Umowa o pracę</option>
                     </select>
-                    <i class="fa-solid fa-angle-down fa-xl"></i>
+                      <!-- <i class="fa-solid fa-angle-down fa-xl"></i>--> 
                 </div>
             </div>
-            <div class="addOfferOptionGroupTwo">
+            <div class="add-offer-option__two">
                 <p>Tryb pracy</p>
-                <div class="addOfferSelect">
-                    <select name="formEmployment" id="formEmployment">
+                <div class="add-offer-option__select">
+                    <select name="mode-employment" id="mode-employment">
                         <option value="Praca zdalna">Praca zdalna</option>
                         <option value="Praca z biura">Praca z biura</option>
                     </select>
-                    <i class="fa-solid fa-angle-down fa-xl"></i>
+                  <!-- <i class="fa-solid fa-angle-down fa-xl"></i>--> 
                 </div>
             </div>
-            <div class="addOfferOptionGroupThree">
+            <div class="add-offer-option__three">
                 <p>Wymiar pracy</p>
-                <div class="addOfferSelect">
-                    <select name="formEmployment" id="formEmployment">
-                        <option value="Niepełny etat">Niepełny etat</option>
-                        <option value="Pełny etat">Pełny etat</option>
+                <div class="add-offer-option__select">
+                    <select name="hour-employment" id="hour-employment">
+                        <option value="1/4">1/4 etatu</option>
+                        <option value="1/2">Pół etatu</option>
                     </select>
-                    <i class="fa-solid fa-angle-down fa-xl"></i>
+                      <!-- <i class="fa-solid fa-angle-down fa-xl"></i>--> 
                 </div>
             </div>
         </div>
 
 
-        <div class="addOfferSalary">
-            <div class="addOfferMinSalary">
+        <div class="add-offer-salary">
+            <div class="add-offer-salary__min">
                 <p>Minimalne wynagrodzenie brutto</p>
-                <div class="addOfferPositionZl">
-                    <div class="addOfferZl">zł</div>
-                    <input type="text"/>
+                <div class="add-offer-salary__position">
+                    <div class="add-offer-salary__zl">zł</div>
+                    <input class="add-offer-salary__input" type="text"/>
                 </div>
             </div>
-            <div class="addOfferMaxSalary">
+            <div class="add-offer-salary__max">
                 <p>Maksymalne wynagrodzenie brutto</p>
-                <div class="addOfferPositionZl">
-                    <div class="addOfferZl">zł</div>
-                    <input type="text"/>
+                <div class="add-offer-salary__position">
+                    <div class="add-offer-salary__zl">zł</div>
+                    <input class="add-offer-salary__input" type="text"/>
                 </div>
             </div>
         </div>
 
 
-        <div class="addOfferLocation">
+        <div class="add-offer__location">
             <p>Lokalizacja pracy</p>
-            <input type="text" placeholder="Warszawa"/>
+            <input class="add-offer__locationinput" type="text" placeholder="Warszawa"/>
         </div>
 
+        
+       
 
-        <div class="addOfferSalary">
-            <div class="addOfferMinSalary">
-                <div class="addOfferPositionZl">
+
+        <div class="add-offer-contact">
+            <div class="add-offer-contact__email">
+                <div class="add-offer-contact__position">
                     <p>Adres e-mail kontaktowy</p>
-                    <input type="text"/>
+                    <input class="add-offer-contact__input" type="mail"/>
                 </div>
             </div>
-            <div class="addOfferMaxSalary">
-                <div class="addOfferPositionZl">
+            <div class="add-offer-contact__phone">
+                <div class="add-offer-contact__position">
                     <p>Numer telefonu kontaktowy</p>
-                    <input type="text"/>
+                    <input class="add-offer-contact__input" type="tel"/>
                 </div>
             </div>
         </div>
 
 
-        <div class="addOfferDescriptionTags">
-            <div class="addOfferDescription">
+        <div class="add-offer-descripttags">
+            <div class="add-offer-descripttags__desc">
                 <p>Opis stanowiska</p>
-                <div class="addOfferTextarea">
+                <div class="add-offer-descripttags__textarea">
                     <i class="fa-solid fa-b fa-sm"></i>
                     <i class="fa-solid fa-list-ul fa-sm"></i>
                 </div>
-                <textarea>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                </textarea>
+                <textarea></textarea>
             </div>
+
+            
+                <div class="add-offer-tags">
+                    <p>Tagi oferty</p>
+                    <div class="add-offer-option__select">
+                        <select name="tags" id="tags">
+                            <option value="Bankowość">Bankowość</option>
+                            <option value="IT">IT</option>
+                        </select>
+                        <!-- <i class="fa-solid fa-angle-down fa-xl"></i>--> 
+                    </div>
+
+                    <div class="add-offer-tags__chosen">
+                        <p>Wybrane tagi oferty:</p>
+
+                    </div>
+                
+                </div>
+
+            
         </div>
 
 
-       <a href="/offers"><button>Dodaj</button></a>
+       <input type="submit" class="add-offer__submit" value="Dodaj">
     </div>
 </div>
 

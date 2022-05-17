@@ -136,6 +136,9 @@ def passwordChange(request):
 def account_deleted(request):
     return render(request, 'job_offers/account-deleted.html')
 
+def passwordChangeConfirm(request):
+    return render(request, 'job_offers/password-change-confirm.html')
+
 def api__offer_details(request):
 
     try:
