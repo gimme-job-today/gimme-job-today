@@ -199,6 +199,7 @@ a, a:visited {
   text-align: left;
   white-space: nowrap;
   cursor: initial;
+  z-index: 100;
 }
 
 .meatballs-menu-content a {

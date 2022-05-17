@@ -1,18 +1,24 @@
-
 {% extends "base.html" %}
 {% load static %}
-{% block styles %}<link rel="stylesheet" href="{% static '/styles/profile.css' %}" />{% endblock %}
+{% block styles %}
+<link rel="stylesheet" href="{% static '/styles/profile.css' %}" />{% endblock %}
 {% block title %}<title>Edytuj Profil</title>{% endblock %}
 {% block content %}
 
 <div class="container">
     <div class="square left">
-        <img src="/static/images/logolidl.png" class="Image">
-        <p>Nazwa firmy</p>
-        <input type="text" class="Tresc" name="CompanyName" placeholder="Nazwa Firmy">
-        <p>Dane kontaktowe</p>
-        <input type="email" class="Tresc" name="Email" placeholder="E-mail">
-        <input type="text" class="Tresc" name="PhoneNumber" placeholder="Numer telefonu">
+        <div class="image-container">
+            <img src="/static/images/logolidl.png" class="Image">
+        </div>
+        <div>
+            <p>Nazwa firmy</p>
+            <input type="text" class="Tresc" name="CompanyName" placeholder="Nazwa Firmy">
+        </div>
+        <div>
+            <p>Dane kontaktowe</p>
+            <input type="email" class="Tresc" name="Email" placeholder="E-mail">
+            <input type="text" class="Tresc" name="PhoneNumber" placeholder="Numer telefonu">
+        </div>
     </div>
     <div class="square right">
         <p>Adres firmy</p>
