@@ -3,6 +3,9 @@
 {% load static %}
 {% block styles %}<link rel="stylesheet" href="{% static '/styles/add_offer.css' %}" />{% endblock %}
 {% block title %}<title>Dodaj ofertę</title>{% endblock %}
+{% block scripts %}
+<script defer src="{% static '/scripts/autocomplete.js' %}"></script>
+{% endblock %}
 {% block content %}
 
 <div class="add-offer__contener">
@@ -108,18 +111,18 @@
 
             
                 <div class="add-offer-tags">
-                    <p>Tagi oferty</p>
-                    <div class="add-offer-option__select">
-                        <select name="tags" id="tags">
-                            <option value="Bankowość">Bankowość</option>
-                            <option value="IT">IT</option>
-                        </select>
-                        <!-- <i class="fa-solid fa-angle-down fa-xl"></i>--> 
-                    </div>
+                    <form autocomplete="off">
+                        <p>Tagi oferty</p>
+                        <div class="add-offer-tags-autocomplete">
+                            <input type="text" name="tagCaption" class="add-offer-tags-autocomplete__input" placeholder="Tag">
+                            <!--<input type="submit" class="add-offer__submit" value="Dodaj tag">-->
+                        </div>
+                        
+                    <!-- <i class="fa-solid fa-angle-down fa-xl"></i>--> 
+                    </form>
 
                     <div class="add-offer-tags__chosen">
                         <p>Wybrane tagi oferty:</p>
-
                     </div>
                 
                 </div>
