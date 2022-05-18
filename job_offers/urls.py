@@ -1,4 +1,4 @@
-from .views import index, login, register, logout, delete_account, offers, addOffer, editOffer, editProfile, profile, passwordChange, account_deleted, api__offer_details
+from .views import index, login, register, logout, delete_account, offers, addOffer, editOffer, editProfile, profile, passwordChange, account_deleted, setNewPassword, api__offer_details
 from django.urls import path
 
 urlpatterns = [
@@ -14,6 +14,7 @@ urlpatterns = [
     path('profile', profile),
     path('edit-profile', editProfile),
     path('password-change', passwordChange),
+    path('set-new-password', setNewPassword),
 
     path('api/offer-details', api__offer_details)
 ]
