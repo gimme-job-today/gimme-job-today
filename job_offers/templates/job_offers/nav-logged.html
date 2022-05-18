@@ -1,24 +1,27 @@
 <nav class="navigation-logged">
-  <a class="nav-item" href="/add-offer">
+  <a class="nav-item hide-medium-down" href="/add-offer">
     <i class="fa-solid fa-plus fa-lg"></i>
     Dodaj ofertę
   </a>
 
-  <a class="nav-item" href="/profile">
+  <a class="nav-item hide-medium-down" href="/profile">
     <i class="fa-solid fa-user fa-lg"></i>
     Profil
   </a>
 
   <div class="nav-item meatballs-menu">
     <i class="fa-solid fa-ellipsis fa-xl"></i>
-    <div class='meatballs-menu-content hidden'>
-        <div class='arrow-up'></div>
-        <a class='logged-as'>Zalogowany jako</a>
-        <a class='userName'>{{ user.get_username }}</a><div class='horizontalLine'></div>
-        <a href="/offers">Moje oferty</a>
-        <a href="/edit-profile">Edytuj profil</a>
-        <a onClick="showModalDeleteProfile(event)">Usuń konto</a>
-        <a href="logout" class='logout'>Wyloguj się</a>
+    <div class="meatballs-menu-content hidden">
+      <div class="arrow-up"></div>
+      <a class="logged-as">Zalogowany jako</a>
+      <a class="userName">{{ user.get_username }}</a>
+      <div class="horizontalLine"></div>
+      <a class="hide-medium-up" href="/add-offer"> Dodaj ofertę </a>
+      <a class="hide-medium-up" href="/profile"> Profil </a>
+      <a href="/offers">Moje oferty</a>
+      <a href="/edit-profile">Edytuj profil</a>
+      <a onClick="showModalDeleteProfile(event)">Usuń konto</a>
+      <a href="logout" class="logout">Wyloguj się</a>
     </div>
   </div>
 
@@ -32,18 +35,31 @@
 
   <div class="modalProfile">
     <div class="modal-content PopUp">
-      <form id="userDeleteAccountForm" method="POST" action="{% url 'delete-account' %}">
-          {% csrf_token %}
-          <a class="BackLinkProfile"><i class="fa-solid fa-angle-left"></i>Wróć</a>
-          <h4>Usuwanie konta</h4>
-          <p>Po naciśnięciu przycisku Twoje konto wraz ze wszystkimi danymi zostanie trwale i nieodwracalnie usunięte</p>
-          <div class="ConfirmLine">
-            <p class="Label">Aby potwierdzić usunięcie wprowadź hasło</p>
-            <input type="password" class="delete_user-password" name="password" placeholder="Hasło">
-          </div>
-          <input type="submit" class="ButtonDeleteProfile" value="Usuń">
+      <form
+        id="userDeleteAccountForm"
+        method="POST"
+        action="{% url 'delete-account' %}"
+      >
+        {% csrf_token %}
+        <a class="BackLinkProfile"
+          ><i class="fa-solid fa-angle-left"></i>Wróć</a
+        >
+        <h4>Usuwanie konta</h4>
+        <p>
+          Po naciśnięciu przycisku Twoje konto wraz ze wszystkimi danymi
+          zostanie trwale i nieodwracalnie usunięte
+        </p>
+        <div class="ConfirmLine">
+          <p class="Label">Aby potwierdzić usunięcie wprowadź hasło</p>
+          <input
+            type="password"
+            class="delete_user-password"
+            name="password"
+            placeholder="Hasło"
+          />
+        </div>
+        <input type="submit" class="ButtonDeleteProfile" value="Usuń" />
       </form>
     </div>
   </div>
-
 </nav>
