@@ -330,6 +330,13 @@ color: #ffffff;
     font-weight: 600;
 }
 
+/* Hide elements fetched from DB */
+
+.appointmentTags {
+    visibility: hidden;
+    height: 0;
+}
+
 
 @media only screen and (max-width: 1000px) {
     .add-offer-options{

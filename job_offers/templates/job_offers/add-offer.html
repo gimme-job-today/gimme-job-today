@@ -115,7 +115,7 @@
                         <p>Tagi oferty</p>
                         <div class="add-offer-tags-autocomplete">
                             <input type="text" name="tagCaption" class="add-offer-tags-autocomplete__input" placeholder="Tag">
-                            <!--<input type="submit" class="add-offer__submit" value="Dodaj tag">-->
+                            <input type="button" id="addTag" class="add-offer__submit" value="Dodaj tag">                         
                         </div>
                         
                     <!-- <i class="fa-solid fa-angle-down fa-xl"></i>--> 
@@ -123,6 +123,11 @@
 
                     <div class="add-offer-tags__chosen">
                         <p>Wybrane tagi oferty:</p>
+                        <div id="selectedTags">
+                            {% for tag in tags %}
+                            <div class="appointmentTags" style="background-color: {{tag.color}};">{{tag.text}}</div>
+                            {% endfor %}
+                        </div>                      
                     </div>
                 
                 </div>

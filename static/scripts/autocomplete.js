@@ -1,5 +1,17 @@
+//_________________FETCH DATA FROM DB_____________
 
-tags = ['JavaScript','Python','Java','PHP','Kotlin'];
+tagsLen = document.getElementsByClassName("appointmentTags").length;
+
+tags = [];
+tagsColors = [];
+
+for (i=0;i<tagsLen;i++) {
+  tagTemp = document.getElementsByClassName("appointmentTags")[i].innerHTML;
+  tagColor = document.getElementsByClassName("appointmentTags")[i].style.backgroundColor;
+  tags.push(tagTemp);
+  tagsColors.push(tagColor);
+}
+
 
 //_______________AUTOCOMPLETE______________________
 
@@ -82,3 +94,31 @@ function autocomplete(input, tagArray) {
   }
 
 autocomplete(document.getElementsByClassName('add-offer-tags-autocomplete__input')[0],tags);
+
+
+//______________SHOW TAGS ON SITE__________________
+
+function componentToHex(c) {
+  var hex = c.toString(16);
+  return hex.length == 1 ? "0" + hex : hex;
+}
+
+function rgbToHex(r, g, b) {
+  return "#" + componentToHex(r) + componentToHex(g) + componentToHex(b);
+}
+
+document.getElementById("addTag").addEventListener("click", function () {
+  
+  tagName = document.getElementsByName("tagCaption")[0].value;
+
+  
+
+  for (i=0;i<tagsLen;i++) {
+    tagTemp = tags[i];
+    if(tagTemp == tagName) {
+      codeHTML = '<div class="chosenTags" style="background-color: ' + tagsColors[i] + '"> ' + tagTemp + '</div>';
+      document.getElementById("selectedTags").innerHTML += codeHTML;
+      //document.getElementsByClassName("appointmentTags")[i].style.visibility = "visible";
+    }
+  }
+});

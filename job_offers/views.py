@@ -5,7 +5,7 @@ from django.shortcuts import render, redirect
 from django.contrib.auth import login as auth_login, logout as auth_logout, authenticate as auth_authenticate
 from django.contrib.auth.models import User
 
-from job_offers.models import Company, Offer
+from job_offers.models import Company, Offer, Tag
 
 # Create your views here.
 
@@ -125,7 +125,13 @@ def editProfile(request):
     return render(request, 'job_offers/edit-profile.html')
 
 def addOffer(request):
-    return render(request, 'job_offers/add-offer.html')
+
+    context = {}
+
+    tags = Tag.objects.all()
+    context["tags"] = tags
+
+    return render(request, 'job_offers/add-offer.html', context)
 
 def editOffer(request):
     return render(request, 'job_offers/edit-offer.html')
