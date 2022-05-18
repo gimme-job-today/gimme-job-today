@@ -47,6 +47,7 @@
 
 .my-offers > * {
   display: flex;
+  justify-content: space-between;
 }
 
 @media only screen and (max-width: 720px) {
@@ -69,7 +70,7 @@
     padding-bottom: 1em;
   }
 
-  .my-offers__transh__and__pen__icons{
+  .my-offers__trash__and__pen__icons{
     padding-top: 1em;
   }
 
@@ -84,7 +85,6 @@
   font-family: Montserrat;
   font-size: 0.8em;
   min-width: 30%;
-  margin-right: 3em;
 }
 
 .my-offers__date b {
@@ -100,7 +100,7 @@
   padding-right: 1em;
 }
 
-.my-offers__transh__and__pen__icons {
+.my-offers__trash__and__pen__icons {
   justify-content: flex-end;
   flex-direction: row;
   padding-bottom: 1em;
