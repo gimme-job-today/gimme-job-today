@@ -1,4 +1,7 @@
-from .views import index, login, register, logout, delete_account, offers, addOffer, editOffer, editProfile, profile, passwordChange, passwordChangeConfirm, account_deleted, setNewPassword, api__offer_details, api__tags
+from .views import index, login, register, logout, delete_account, offers, addOffer, editOffer, editProfile, profile, account_deleted, api__offer_details, api__tags
+
+from .classes import CustomPasswordResetView, CustomPasswordResetDoneView, CustomPasswordResetConfirmView, CustomPasswordResetCompleteView
+
 from django.urls import path
 
 urlpatterns = [
@@ -13,10 +16,12 @@ urlpatterns = [
     path('edit-offer', editOffer),
     path('profile', profile),
     path('edit-profile', editProfile),
-    path('password-change', passwordChange),
-    path('password-change-confirm', passwordChangeConfirm),
-    path('set-new-password', setNewPassword),
 
     path('api/offer-details', api__offer_details),
     path('api/tags', api__tags),
+
+    path('password-reset/', CustomPasswordResetView.as_view(), name='password_reset'),
+    path('password-reset/done/', CustomPasswordResetDoneView.as_view(), name='password_reset_done'),
+    path('password-reset/reset/<uidb64>/<token>/', CustomPasswordResetConfirmView.as_view(), name='password_reset_confirm'),
+    path('password-reset/complete/', CustomPasswordResetCompleteView.as_view(), name='password_reset_complete'),
 ]
