@@ -51,8 +51,13 @@
 }
 
 .login .form-inputs > div,
-.login input {
+.login input,
+.change-password input {
   width: 100%;
+}
+
+.change-password .form-input {
+  margin: 2em auto;
 }
 
 .form-inputs > div.no-margin {
@@ -98,6 +103,7 @@
   margin-bottom: 1em;
 }
 
+.form-input,
 .Company,
 .Password {
   background-color: #f7f7f7;
@@ -133,6 +139,7 @@
   margin-left: 0.25em;
 }
 
+.form-submit,
 .buttonRegister,
 .buttonLogin {
   border-radius: 1em;
