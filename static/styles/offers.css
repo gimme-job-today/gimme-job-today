@@ -1,9 +1,3 @@
-.offers > * {
-  display: flex;
-  align-items: center;
-  text-align: center;
-}
-
 .app-content {
     display: flex;
     flex-direction: column;
@@ -12,7 +6,7 @@
     padding: 0;
 }
 
-.offers {
+.job-offers {
   display: flex;
   width: 80%;
   box-sizing: border-box;
@@ -27,10 +21,8 @@
   height: 95%;
 }
 
-.titleOffersContent {
-  justify-content: center;
-  width: 100%;
-  flex-direction: column;
+.title-my-offers {
+  text-align: center;
   font-family: Montserrat;
   font-weight: 600;
   font-size: 1.5em;
@@ -39,107 +31,100 @@
   margin-bottom: 0.5em;
 }
 
-.myOffers {
-  min-width: 100%;
-  margin-top: 2em;
-  border-radius: 20px;
-  border: none;
-  background-color: #f7f7f7;
-}
 
-.myOffersContent {
-  display: flex;
+.my-offers {
+  display: inline-block;
   width: 75%;
   box-sizing: border-box;
   flex-wrap: wrap;
   flex-direction: column;
+  margin-top: 2em;
+  border-radius: 20px;
+  border: none;
+  background-color: #f7f7f7;
+  padding: 1.5em 1.5em 0 1.5em;
 }
 
-.myOffersContent > * {
+.my-offers > * {
   display: flex;
-}
-.offersTitle {
-  flex-direction: row;
-  display: flex;
-  margin-top: 1.5em;
-  padding-left: 2em;
+  justify-content: space-between;
 }
 
-.appointmentDate {
+@media only screen and (max-width: 720px) {
+  .job-offers{
+    width: 96%;
+  }
+  .my-offers{
+    width: 90%;
+  }
+  .my-offers__city__and__date {
+    display: inline-block;
+    text-align: left;
+  }
+  .my-offers__date  {
+    padding-top: 1em;
+    justify-content: flex-start;
+    display: inline-block;
+  }
+  .my-offers__city{
+    padding-bottom: 1em;
+  }
+
+  .my-offers__trash__and__pen__icons{
+    padding-top: 1em;
+  }
+
+}
+
+.my-offers__date {
   justify-content: flex-end;
   flex-direction: row;
-  padding: 0.3em 0.5em 0.3em 0.5em;
   border-radius: 10px;
   color: #9b9b9b;
   display: flex;
   font-family: Montserrat;
   font-size: 0.8em;
   min-width: 30%;
-  margin-right: 3em;
 }
 
-.appointmentDate b {
+.my-offers__date b {
   margin-left: 0.3em;
 }
 
-.offersMain {
-  min-width: 100%;
-  font-size: 0.8em;
-}
-
-.iconsCity {
-  justify-content: flex-start;
-  font-family: Montserrat;
-  color: #9b9b9b;
-  font-weight: 500;
-  flex-direction: row;
-  padding: 0.3em;
-  font-size: 0.8em;
-  text-align: left;
-  width: 70%;
-}
-
-.iconsTrash {
-  justify-content: flex-start;
-  font-family: Montserrat;
-  color: #9b9b9b;
-  font-weight: 500;
-  flex-direction: row;
-  padding: 0.3em;
-  text-align: right;
-  width: 70%;
-  margin-right: 2em;
-}
-
-.iconsCity .fa-location-dot {
+.my-offers__city .fa-location-dot {
   color: #ffc370;
   padding-right: 0.4em;
 }
+
 .fa-pen-to-square {
-  color: #cccccc;
   padding-right: 1em;
 }
-.fa-trash-can {
+
+.my-offers__trash__and__pen__icons {
+  justify-content: flex-end;
+  flex-direction: row;
+  padding-bottom: 1em;
+  text-align: right;
+  width: 100%;
+  cursor: pointer;
+  display: inline-block;
   color: #cccccc;
 }
 
-.offersContentIcons {
-  flex-direction: row;
-  display: flex;
-  margin-top: 1.5em;
-  margin-left: 2.5em;
-  margin-right: 1em;
-  margin-bottom: 1em;
+.my-offers__city{
+  font-family: Montserrat;
+  color: #9b9b9b;
+  font-weight: 500;
+  font-size: 1em;
 }
 
-.offersJob {
+.position-name {
   justify-content: flex-start;
   font-family: Montserrat;
   font-weight: 700;
   font-size: 1.1em;
   color: #202020;
   text-align: left;
-  flex-direction: row;
-  align-items: center;
   min-width: 80%;
+  padding-top: 1.5em 
 }
