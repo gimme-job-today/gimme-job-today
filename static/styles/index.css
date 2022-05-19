@@ -23,10 +23,11 @@
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
-  width: 50%;
+  width: 45%;
   height: 2em;
   align-content: space-between;
   margin-bottom: 2em;
+  margin-left: 3.1em;
 }
 
 .search-engine__input {
@@ -91,7 +92,7 @@
 
 
 .offer-content {
-  width: 50%;
+  width: 45%;
   display: block;
 }
 
@@ -371,7 +372,7 @@
 
 
 
-@media only screen and (max-width: 1050px) {
+@media only screen and (max-width: 800px) {
  
   .offer-details{
     display: block;
@@ -520,7 +521,22 @@
   }
 }
 
-@media only screen and (max-width: 1700px) {
+
+
+@media only screen and (max-width: 1600px) {
+  .search-engine{
+    margin-left: 1.6em;
+  }
+}
+
+@media only screen and (max-width: 1300px) {
+  .search-engine{
+    margin-left: 1.3em;
+  }
+}
+
+
+@media only screen and (max-width: 1200px) {
   
   .offer-content{
     width: 100%;
@@ -548,10 +564,11 @@
 @media only screen and (max-width: 1250px) {
   .search-engine{
     width: 100%;
-    
+    margin-left: 0;
   }
   .searching-content{
     display: block;
+    
   }
   .search-engine__input{
     width: 100%;
