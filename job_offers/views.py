@@ -130,14 +130,8 @@ def addOffer(request):
 def editOffer(request):
     return render(request, 'job_offers/edit-offer.html')
 
-def passwordChange(request):
-    return render(request, 'job_offers/password-change.html')
-
 def account_deleted(request):
     return render(request, 'job_offers/account-deleted.html')
-
-def setNewPassword(request):
-    return render(request, 'job_offers/set-new-password.html')
 
 def api__offer_details(request):
 
