@@ -21,7 +21,7 @@
             <span class="error-message">{{ error_message }}</span>
             {% endfor %}
             <input type="submit" class="buttonLogin" value="Zaloguj się">
-            <div class="forgotpassword"> <a href="/password-change">
+            <div class="forgotpassword"> <a href="{% url 'password_reset' %}">
                     <p>Nie pamiętam hasła</p>
                 </a></div>
         </div>
