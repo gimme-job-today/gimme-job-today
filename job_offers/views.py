@@ -171,3 +171,26 @@ def api__offer_details(request):
             "data": offer.json()
         }
     )
+
+def api__tags(request):
+
+    try:
+        assert request.method == 'GET'
+
+        tags = Tag.objects.all()
+    except AssertionError:
+        return JsonResponse(
+            data = {
+                "status": "error",
+                "data": []
+            }
+        )
+
+    return JsonResponse(
+        data = {
+            "status": "success",
+            "data": [
+                tag.json() for tag in tags
+            ]
+        }
+    )
