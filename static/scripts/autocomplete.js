@@ -1,7 +1,5 @@
 //_________________FETCH DATA FROM DB_____________
 
-tagsLen = document.getElementsByClassName("appointmentTags").length;
-
 tags = [];
 tags2 = [];
 tagsColors = [];
@@ -119,29 +117,27 @@ autocomplete(
 
 //______________SHOW TAGS ON SITE__________________
 
-function componentToHex(c) {
-  var hex = c.toString(16);
-  return hex.length == 1 ? "0" + hex : hex;
-}
-
-function rgbToHex(r, g, b) {
-  return "#" + componentToHex(r) + componentToHex(g) + componentToHex(b);
-}
-
 document.getElementById("addTag").addEventListener("click", function () {
   tagName = document.getElementsByName("tagCaption")[0].value;
 
-  for (i = 0; i < tagsLen; i++) {
+  for (i = 0; i < tags2.length; i++) {
     tagTemp = tags[i];
     if (tagTemp == tagName) {
       codeHTML =
-        '<div class="chosenTags" style="background-color: ' +
+        '<div class="add-offer-tags-autocomplete__chosen" style="background-color: ' +
         tagsColors[i] +
         '"> ' +
         tagTemp +
-        "</div>";
-      document.getElementById("selectedTags").innerHTML += codeHTML;
-      //document.getElementsByClassName("appointmentTags")[i].style.visibility = "visible";
+        '<span class="closeIcon">&times;</span></div>';
+        document.getElementById("selectedTags").innerHTML += codeHTML;
     }
   }
+
+  document.querySelectorAll('.closeIcon').forEach(item => {
+    item.addEventListener('click', function () {
+      this.parentNode.remove();
+    })
+  })
 });
+
+
