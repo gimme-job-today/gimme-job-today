@@ -6,10 +6,6 @@ const passwordRepeatField = formRegister.querySelector("input[name=passwordRepea
 
 
 formRegister.addEventListener("submit", function(event) {
-    if (passwordField.value !== passwordRepeatField.value) {
-        alert("Hasła nie są takie same");
-        event.preventDefault();
-    }
     if (chckBox.checked == false) {
         alert("Zaznacz pole Regulaminu!");
         event.preventDefault();
