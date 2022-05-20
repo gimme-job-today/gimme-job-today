@@ -18,7 +18,8 @@
   padding: 0.5em;
 }
 
-.square.login {
+.square.login,
+.square.password-reset {
   max-width: 420px;
   margin: 5em auto 0 auto;
 }
@@ -39,7 +40,9 @@
   padding: 0.5em;
 }
 
-.square.login > p {
+.square.login > p,
+.square.password-reset > p
+ {
   margin-bottom: 2em;
 }
 
@@ -52,7 +55,7 @@
 
 .login .form-inputs > div,
 .login input,
-.change-password input {
+.change-password input  { 
   width: 100%;
 }
 
@@ -84,14 +87,14 @@
   padding: 0.4em 0 0 0.4em;
 }
 
-.square .forgotpassword p {
+.square .login-forgot__password p {
   font-size: 0.75em;
   font-weight: 600;
   text-align: right;
   letter-spacing: 0px;
 }
 
-.square .forgotpassword a {
+.square .login-forgot__password a {
   text-decoration: none;
   color: #202020;
 }
@@ -104,8 +107,11 @@
 }
 
 .form-input,
-.Company,
-.Password {
+.form-inputs__company__name,
+.form-inputs__e-mail,
+.form-inputs__password,
+.Password
+ {
   background-color: #f7f7f7;
   border-radius: 1em;
   font-size: 1em;
@@ -120,28 +126,28 @@
   background-color: #f7f7f7;
 }
 
-.Company {
+.form-inputs__company__name,
+.form-inputs__e-mail,
+.Password {
   width: 100%;
 }
 
-.Password {
+.form-inputs__password {
   width: 44%;
 }
 
-.policy-container {
+.register-policy-container {
   display: flex;
   align-items: center;
   padding: 0 2em;
 }
 
-.policy-container label {
+.register-policy-container label {
   font-size: 0.6em;
   margin-left: 0.25em;
 }
 
-.form-submit,
-.buttonRegister,
-.buttonLogin {
+.button {
   border-radius: 1em;
   background-color: #202020;
   width: 50%;

@@ -22,19 +22,19 @@
   padding: 2em;
 }
 
-.square h3 {
+.square p {
   font-size: 1.4em;
   font-weight: 600;
   letter-spacing: 2px;
   margin-bottom: 1em;
 }
 
-h3.confirm-title {
+p.square__confirm__title {
   margin-top: 2em;
   margin-bottom: 4em;
 }
 
-.confirm-link {
+.square__confirm__link{
   font-size: 1em;
   font-weight: bold;
   letter-spacing: 1px;
@@ -42,7 +42,7 @@ h3.confirm-title {
   color: #202020;
 }
 
-.confirm-link i {
+.square__confirm__link i {
   font-size: 1.5em;
   padding-right: 2em;
   position: relative;
@@ -54,10 +54,10 @@ h3.confirm-title {
     width: 100%;
     box-sizing: border-box;
   }
-  .confirm-link {
+  .square__confirm__link{
     margin: 0;
   }
-  .confirm-link i {
+  .square__confirm__link i {
     padding-right: 1em;
   }
 }

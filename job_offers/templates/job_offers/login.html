@@ -11,17 +11,17 @@
         <p>Zaloguj się</p>
         <div class="form-inputs">
             <div>
-                <input type="email" name="email" class="Company" placeholder="E-mail" />
+                <input type="email" name="email" class="form-inputs__company__name" placeholder="E-mail" />
             </div>
             <div class="no-margin">
-                <input type="password" name="password" class="Password" placeholder="Hasło" />
+                <input type="password" name="password" class="form-inputs__password" placeholder="Hasło" />
             </div>
 
             {% for error_message in error_messages %}
             <span class="error-message">{{ error_message }}</span>
             {% endfor %}
-            <input type="submit" class="buttonLogin" value="Zaloguj się">
-            <div class="forgotpassword"> <a href="{% url 'password_reset' %}">
+            <input type="submit" class="button" value="Zaloguj się">
+            <div class="login-forgot__password"> <a href="{% url 'password_reset' %}">
                     <p>Nie pamiętam hasła</p>
                 </a></div>
         </div>

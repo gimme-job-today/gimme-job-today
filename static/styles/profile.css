@@ -81,17 +81,17 @@ html {
     font-size: 0.9em;
   }
 
-  .square.left .Tresc:disabled {
+  .square.left .square__profile__info:disabled {
     border-radius: 0;
     padding-left: 0;
     padding-right: 0;
   }
 
-  .square .Tresc {
+  .square .square__profile__info {
     margin-bottom: 0.5em;
   }
 
-  .square.left .Image {
+  .square.left .image-container__company__logo {
     width: 100%;
     max-width: 200px;
     height: auto;
@@ -105,7 +105,7 @@ html {
   }
 }
 
-.Image {
+.image-container__company__logo {
   width: 150px;
   height: 150px;
   border-radius: 20px;
@@ -113,7 +113,7 @@ html {
   box-shadow: 0px 5px 10px #e9e7e7;
 }
 
-.Tresc {
+.square__profile__info {
   background-color: #f7f7f7;
   color: #878787;
   padding: 1em;
@@ -125,7 +125,7 @@ html {
   border-radius: 1em;
 }
 
-.profile .Tresc {
+.profile .square__profile__info {
   background-color: transparent;
 }
 
@@ -139,7 +139,7 @@ textarea {
   height: 200px;
 }
 
-textarea.Tresc {
+textarea.square__profile__info {
   border-radius: 0 0 1em 1em;
 }
 
@@ -172,7 +172,7 @@ button {
   text-align: left;
 }
 
-.editProfileTextarea {
+.square-right__edit__profile__textarea {
   border-radius: 20px 20px 0px 0px;
   width: 100%;
   background-color: #e1e1e1;
@@ -183,6 +183,6 @@ button {
   box-sizing: border-box;
 }
 
-.editProfileTextarea i {
+.square-right__edit__profile__textarea i {
   visibility: hidden;
 }
