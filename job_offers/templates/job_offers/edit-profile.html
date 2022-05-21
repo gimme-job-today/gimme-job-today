@@ -5,33 +5,36 @@
 {% block title %}<title>Edytuj Profil</title>{% endblock %}
 {% block content %}
 
-<div class="container">
-    <div class="square left">
-        <div class="image-container">
-            <img src="/static/images/logolidl.png" class="image-container__company__logo">
+<form method="post" name="add-offer">
+    {% csrf_token %}
+    <div class="container">
+        <div class="square left">
+            <div class="image-container">
+                <img src="/static/images/logolidl.png" class="image-container__company__logo">
+            </div>
+            <div>
+                <p>Nazwa firmy</p>
+                <input type="text" class="square__profile__info" name="CompanyName" placeholder="Nazwa Firmy">
+            </div>
+            <div>
+                <p>Dane kontaktowe</p>
+                <input type="email" class="square__profile__info" name="Email" placeholder="E-mail">
+                <input type="text" class="square__profile__info" name="PhoneNumber" placeholder="Numer telefonu">
+            </div>
         </div>
-        <div>
-            <p>Nazwa firmy</p>
-            <input type="text" class="square__profile__info" name="CompanyName" placeholder="Nazwa Firmy">
-        </div>
-        <div>
-            <p>Dane kontaktowe</p>
-            <input type="email" class="square__profile__info" name="Email" placeholder="E-mail">
-            <input type="text" class="square__profile__info" name="PhoneNumber" placeholder="Numer telefonu">
+        <div class="square right">
+            <p>Adres firmy</p>
+            <input type="text" class="square__profile__info" name="address" placeholder="al. Jana Pawła II 21/37, 12-345 Warszawa">
+            <p>Opis firmy</p>
+            <div class="square-right__edit__profile__textarea">
+                <i class="fa-solid fa-b fa-sm"></i>
+                <i class="fa-solid fa-list-ul fa-sm"></i>
+            </div>
+            <textarea class="square__profile__info" name="Description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam sit amet nisl dignissim, auctor quam a, mollis nulla. Integer leo lorem, elementum ac fringilla sit amet, vulputate ac elit. Quisque aliquam eu massa porttitor dapibus. Maecenas nibh orci, porttitor sed aliquet nec, bibendum vel dolor. Sed in dui auctor erat lacinia posuere eget vel mi. Nullam volutpat felis metus, non venenatis lacus congue non. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Mauris nec tellus a ante maximus efficitur. Pellentesque vel tempor nulla. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam sit amet nisl dignissim, auctor quam a, mollis nulla. Integer leo lorem, elementum ac fringilla sit amet, vulputate ac elit. Quisque aliquam eu massa porttitor dapibus. Maecenas nibh orci, porttitor sed aliquet nec, bibendum vel dolor. Sed in dui auctor erat lacinia posuere eget vel mi. Nullam volutpat felis metus, non venenatis lacus congue non. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Mauris nec tellus a ante maximus efficitur. Pellentesque vel tempor nulla.
+            </textarea>
+            <a href="/profile"><button>Zapisz</button></a>
         </div>
     </div>
-    <div class="square right">
-        <p>Adres firmy</p>
-        <input type="text" class="square__profile__info" name="address" placeholder="al. Jana Pawła II 21/37, 12-345 Warszawa">
-        <p>Opis firmy</p>
-        <div class="square-right__edit__profile__textarea">
-            <i class="fa-solid fa-b fa-sm"></i>
-            <i class="fa-solid fa-list-ul fa-sm"></i>
-        </div>
-        <textarea class="square__profile__info" name="Description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam sit amet nisl dignissim, auctor quam a, mollis nulla. Integer leo lorem, elementum ac fringilla sit amet, vulputate ac elit. Quisque aliquam eu massa porttitor dapibus. Maecenas nibh orci, porttitor sed aliquet nec, bibendum vel dolor. Sed in dui auctor erat lacinia posuere eget vel mi. Nullam volutpat felis metus, non venenatis lacus congue non. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Mauris nec tellus a ante maximus efficitur. Pellentesque vel tempor nulla. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam sit amet nisl dignissim, auctor quam a, mollis nulla. Integer leo lorem, elementum ac fringilla sit amet, vulputate ac elit. Quisque aliquam eu massa porttitor dapibus. Maecenas nibh orci, porttitor sed aliquet nec, bibendum vel dolor. Sed in dui auctor erat lacinia posuere eget vel mi. Nullam volutpat felis metus, non venenatis lacus congue non. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Mauris nec tellus a ante maximus efficitur. Pellentesque vel tempor nulla.
-        </textarea>
-        <a href="/profile"><button>Zapisz</button></a>
-    </div>
-</div>
+</form>
 
 {% endblock %}

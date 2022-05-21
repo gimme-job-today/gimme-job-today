@@ -1,8 +1,9 @@
 //_________________FETCH DATA FROM DB_____________
 
 tags = [];
-tags2 = [];
+tagsTemp = [];
 tagsColors = [];
+tagsId = [];
 
 window.addEventListener("load", async function (event) {
   response = await fetch("/api/tags");
@@ -10,13 +11,14 @@ window.addEventListener("load", async function (event) {
 
   if (responseData.status !== "success") return;
 
-  tags2 = responseData.data.map((tag) => tag.text);
+  tagsTemp = responseData.data.map((tag) => tag.text);
 
-  for (i = 0; i < tags2.length; i++) {
-    tags.push(tags2[i]);
+  for (i = 0; i < tagsTemp.length; i++) {
+    tags.push(tagsTemp[i]);
   }
 
   tagsColors = responseData.data.map((tag) => tag.color);
+  tagsId = responseData.data.map((tag) => tag.id);
 });
 
 //_______________AUTOCOMPLETE______________________
@@ -117,27 +119,36 @@ autocomplete(
 
 //______________SHOW TAGS ON SITE__________________
 
+const tab_tags = [];
 document.getElementById("addTag").addEventListener("click", function () {
   tagName = document.getElementsByName("tagCaption")[0].value;
 
-  for (i = 0; i < tags2.length; i++) {
+  for (i = 0; i < tagsTemp.length; i++) {
     tagTemp = tags[i];
     if (tagTemp == tagName) {
       codeHTML =
-        '<div class="add-offer-tags-autocomplete__chosen" style="background-color: ' +
+        '<div class="add-offer-tags-autocomplete__chosen" id="' +
+        tagsId[i] +
+        '" style="background-color: ' +
         tagsColors[i] +
         '"> ' +
         tagTemp +
         '<span class="closeIcon">&times;</span></div>';
-        document.getElementById("selectedTags").innerHTML += codeHTML;
+
+      document.getElementById("selectedTags").innerHTML += codeHTML;
+
+      tab_tags.push(tagsId[i]);
     }
   }
 
-  document.querySelectorAll('.closeIcon').forEach(item => {
-    item.addEventListener('click', function () {
+  document.querySelectorAll(".closeIcon").forEach((item) => {
+    item.addEventListener("click", function () {
       this.parentNode.remove();
-    })
-  })
+    });
+  });
+
+  input_tags = document.getElementById("hiddenInput");
+  input_tags.dataset.offerTags = tab_tags;
+  input_tags.value = document.getElementById("hiddenInput").defaultValue =
+    tab_tags;
 });
-
-

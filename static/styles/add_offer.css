@@ -5,7 +5,7 @@
     text-align: center;
     flex-wrap: wrap;
     font-family: Montserrat;
-    font-size: 16px;
+    font-size: 15px;
     font-weight: 600;
     color: #202020;
     margin-left: auto;
@@ -42,6 +42,10 @@
     color: #878787;
 
 }
+
+
+
+
 
 .add-offer-options{
     width: 100%;
@@ -88,6 +92,31 @@
     position: relative;
     width: 100%;
 }
+
+.selectedTags{
+    flex-direction: row;
+    width: 50%;
+    align-items: start;
+    display: block;
+
+}
+
+
+.add-offer-tags-autocomplete__chosen {
+    flex-direction: row;
+    padding: 0.3em 1.7em 0.3em 0.7em;
+    border-radius: 10px;
+    margin-left: 1em;
+    font-size: 1em;
+    align-items: start;
+    display: inline-block;
+    margin-top: 1em;
+}
+
+.add-offer-tags-autocomplete__chosen:first-child{
+    margin-left: 0;
+}
+
 
 .add-offer-option__select{
     position: relative;
@@ -162,10 +191,10 @@ color: #CCCCCC;
 .add-offer-salary__zl{
     position: absolute;
     right:0;
-    padding-top: 0.8em;
+    padding-top: 1.2em;
     font-family: Montserrat;
     font-weight: 600;
-    font-size: 20px;
+    font-size: 16px;
     color: #878787;
  
    
@@ -251,6 +280,9 @@ textarea {
 
 
 }
+.hiddenInput{
+    visibility: hidden;
+}
 
 .add-offer-tags__chosen{
     width: 100%;
@@ -281,21 +313,24 @@ textarea {
     margin-top: 2em;
     border: none;
     letter-spacing: 0.1em;
+    
 }
 
 .add-offer-tags-autocomplete {
 /*the container must be positioned relative:*/
     position: relative;
-    display: inline-block;
+    width: 70%;
+    display: block;
 }
 
 .add-offer-tags-autocomplete__input {
     border-radius: 20px;
     background-color: #F7F7F7;
-    padding: 1.7em;
+    padding: 1.5em;
     border: none;
     width: 100%;
     box-sizing: border-box;
+    font-size: 1em;
 }
 
 .add-offer-tags-autocomplete__items {
@@ -339,7 +374,7 @@ color: #ffffff;
 
 .closeIcon {
     position: relative;
-    left: 30%;
+    left: 1em;
 }
 
 .closeIcon:hover {
@@ -429,6 +464,9 @@ color: #ffffff;
         width: 100%;
         box-sizing: border-box;
 
+    }
+    .add-offer-tags-autocomplete{
+        width: 100%;
     }
     
   }
