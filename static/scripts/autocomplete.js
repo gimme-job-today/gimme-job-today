@@ -144,11 +144,18 @@ document.getElementById("addTag").addEventListener("click", function () {
   document.querySelectorAll(".closeIcon").forEach((item) => {
     item.addEventListener("click", function () {
       this.parentNode.remove();
+      for (i = 0; i < tab_tags.length; i++) {
+        if (tab_tags[i] == this.parentNode.id) {
+          tab_tags.splice(i, 1);
+          input_tags.value = document.getElementById(
+            "hiddenInput"
+          ).defaultValue = tab_tags;
+        }
+      }
     });
   });
 
   input_tags = document.getElementById("hiddenInput");
-  input_tags.dataset.offerTags = tab_tags;
   input_tags.value = document.getElementById("hiddenInput").defaultValue =
     tab_tags;
 });
