@@ -10,28 +10,27 @@
     <div class="container">
         <div class="square left">
             <div class="image-container">
-                <img src="/static/images/logolidl.png" class="image-container__company__logo">
+                <img src="/static/images/logolidl.png" class="image-container__company__logo" name="CompanyLogoEdit">
             </div>
             <div>
                 <p>Nazwa firmy</p>
-                <input type="text" class="square__profile__info" name="CompanyName" placeholder="Nazwa Firmy">
+                <input type="text" class="square__profile__info" name="CompanyNameEdit" placeholder="Nazwa Firmy" required minlength="3" maxlength="100">
             </div>
             <div>
                 <p>Dane kontaktowe</p>
-                <input type="email" class="square__profile__info" name="Email" placeholder="E-mail">
-                <input type="text" class="square__profile__info" name="PhoneNumber" placeholder="Numer telefonu">
+                <input type="email" class="square__profile__info" name="CompanyContactEmailEdit" placeholder="E-mail" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" required title="Format mail@nazwapoczty.com">
+                <input type="text" class="square__profile__info" name="CompanyContactPhoneNumberEdit" placeholder="Numer telefonu" pattern="[0-9]{3}-[0-9]{3}-[0-9]{3}" required title="Format 123-456-789.">
             </div>
         </div>
         <div class="square right">
             <p>Adres firmy</p>
-            <input type="text" class="square__profile__info" name="address" placeholder="al. Jana Pawła II 21/37, 12-345 Warszawa">
+            <input type="text" class="square__profile__info" name="CompanyAddressEdit" placeholder="Adres firmy" required minlength="10" maxlength="100">
             <p>Opis firmy</p>
             <div class="square-right__edit__profile__textarea">
                 <i class="fa-solid fa-b fa-sm"></i>
                 <i class="fa-solid fa-list-ul fa-sm"></i>
             </div>
-            <textarea class="square__profile__info" name="Description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam sit amet nisl dignissim, auctor quam a, mollis nulla. Integer leo lorem, elementum ac fringilla sit amet, vulputate ac elit. Quisque aliquam eu massa porttitor dapibus. Maecenas nibh orci, porttitor sed aliquet nec, bibendum vel dolor. Sed in dui auctor erat lacinia posuere eget vel mi. Nullam volutpat felis metus, non venenatis lacus congue non. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Mauris nec tellus a ante maximus efficitur. Pellentesque vel tempor nulla. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam sit amet nisl dignissim, auctor quam a, mollis nulla. Integer leo lorem, elementum ac fringilla sit amet, vulputate ac elit. Quisque aliquam eu massa porttitor dapibus. Maecenas nibh orci, porttitor sed aliquet nec, bibendum vel dolor. Sed in dui auctor erat lacinia posuere eget vel mi. Nullam volutpat felis metus, non venenatis lacus congue non. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Mauris nec tellus a ante maximus efficitur. Pellentesque vel tempor nulla.
-            </textarea>
+            <textarea class="square__profile__info" name="CompanyDescriptionEdit" required minlength="80" maxlength="1000"></textarea>
             <a href="/profile"><button>Zapisz</button></a>
         </div>
     </div>
