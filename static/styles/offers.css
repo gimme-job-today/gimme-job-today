@@ -96,7 +96,8 @@
   padding-right: 0.4em;
 }
 
-.fa-pen-to-square {
+.my-offers__trash__and__pen__icons a{
+  color: #cccccc;
   padding-right: 1em;
 }
 

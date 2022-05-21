@@ -144,7 +144,21 @@ def addOffer(request):
     return render(request, 'job_offers/add-offer.html', context)
 
 def editOffer(request):
-    return render(request, 'job_offers/edit-offer.html')
+    context = {}
+
+    tags = Tag.objects.all()
+    context["tags"] = tags
+
+    workmodes_objects = Offer.WorkModes.choices
+    context["work_modes"] = workmodes_objects
+
+    worktimes_objects = Offer.WorkTimes.choices
+    context["work_times"] = worktimes_objects
+
+    contracttypes_objects = Offer.ContractTypes.choices
+    context["contract_types"] = contracttypes_objects
+
+    return render(request, 'job_offers/edit-offer.html', context)
 
 def account_deleted(request):
     return render(request, 'job_offers/account-deleted.html')
