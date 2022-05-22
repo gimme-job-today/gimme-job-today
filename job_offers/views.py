@@ -181,6 +181,17 @@ def addOffer(request):
             except ValueError: pass
 
             new_offer.save()
+
+            offet_tags_ids = request.POST.get('add-offer__tags').split(',')
+
+            for tag_id in offet_tags_ids:
+                try:
+                    tag = Tag.objects.filter(id=tag_id).first()
+                    assert tag is not None
+
+                    new_offer.tags.add(tag)
+                except AssertionError: continue
+
         except: pass
         finally: return redirect('offers')
 
