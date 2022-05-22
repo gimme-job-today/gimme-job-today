@@ -43,6 +43,13 @@ class Company(models.Model):
 
     logo = models.ImageField(upload_to=company_logo_directory, blank=True)
 
+    @property
+    def logo_url_or_default(self):
+        if self.logo:
+            return self.logo.url
+        else:
+            return "https://www.w3schools.com/howto/img_avatar.png"
+
     address = models.CharField(
         max_length=100,
         default="",
