@@ -13,7 +13,7 @@
 <div class="add-offer__contener">
 
         <div class="add-offer__frame">
-       
+
             <div class="add-offer__title">Dodaj ofertę</div>
 
 
@@ -27,34 +27,34 @@
                 <div class="add-offer-option_one">
                     <p>Forma zatrudnienia</p>
                     <div class="add-offer-option__select">
-                        <select name="type-employment" id="type-employment">
+                        <select name="contract-type" id="contract-type">
                             {% for contract in contract_types %}
                                 <option value="{{contract.0}}">{{contract.1}}</option>
                             {% endfor %}
                         </select>
-                        <!-- <i class="fa-solid fa-angle-down fa-xl"></i>--> 
+                        <!-- <i class="fa-solid fa-angle-down fa-xl"></i>-->
                     </div>
                 </div>
                 <div class="add-offer-option__two">
                     <p>Tryb pracy</p>
                     <div class="add-offer-option__select">
-                        <select name="mode-employment" id="mode-employment">
+                        <select name="work-mode" id="work-mode">
                             {% for mode in work_modes %}
                                 <option value="{{mode.0}}">{{mode.1}}</option>
-                            {% endfor %} 
+                            {% endfor %}
                         </select>
-                    <!-- <i class="fa-solid fa-angle-down fa-xl"></i>--> 
+                    <!-- <i class="fa-solid fa-angle-down fa-xl"></i>-->
                     </div>
                 </div>
                 <div class="add-offer-option__three">
                     <p>Wymiar pracy</p>
                     <div class="add-offer-option__select">
-                        <select name="hour-employment" id="hour-employment">
+                        <select name="work-time" id="work-time">
                             {% for time in work_times %}
                                 <option value="{{time.0}}">{{time.1}}</option>
                             {% endfor %}
                         </select>
-                        <!-- <i class="fa-solid fa-angle-down fa-xl"></i>--> 
+                        <!-- <i class="fa-solid fa-angle-down fa-xl"></i>-->
                     </div>
                 </div>
             </div>
@@ -66,7 +66,7 @@
                     <div class="add-offer-salary__position">
                         <div class="add-offer-salary__zl">zł</div>
                         <input class="add-offer-salary__input" name="add-offer-salary__min" placeholder="2000" pattern="[0-9]{3,5}" title="Wartości liczbowe od 3 do 5 cyfr." type="text" required/>
-                    
+
                     </div>
                 </div>
                 <div class="add-offer-salary__max">
@@ -109,31 +109,31 @@
                     <textarea name="add-offer__description" required placeholder="Oferta pracy na stanowisko..." minlength="80" maxlength="1000"></textarea>
                 </div>
 
-                
+
                     <div class="add-offer-tags">
                         <form autocomplete="off">
                             <p>Tagi oferty</p>
                             <div class="add-offer-tags-autocomplete">
                                 <input type="text" name="tagCaption" class="add-offer-tags-autocomplete__input" placeholder="Tag">
-                                                     
+
                             </div>
-                            <input type="button" id="addTag" class="add-offer__submit" value="Dodaj tag">    
-                            
-                        <!-- <i class="fa-solid fa-angle-down fa-xl"></i>--> 
+                            <input type="button" id="addTag" class="add-offer__submit" value="Dodaj tag">
+
+                        <!-- <i class="fa-solid fa-angle-down fa-xl"></i>-->
                         </form>
-                        
+
                         <div class="add-offer-tags__chosen">
                             <p>Wybrane tagi oferty:</p>
                             <div id="selectedTags">
-                            </div>                      
+                            </div>
                         </div>
                     </div>
             </div>
             <input type="submit" class="add-offer__submit" value="Dodaj">
             <input class="hiddenInput" id="hiddenInput" name="add-offer__tags">
-        
+
         </div>
-   
+
 </div>
 </form>
 

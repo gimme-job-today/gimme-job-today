@@ -151,6 +151,39 @@ def editProfile(request):
 
 def addOffer(request):
 
+    if request.method == 'POST':
+        try:
+            new_offer = Offer(
+                company=request.user.company,
+                position=request.POST.get('add-offer__profession'),
+
+                salary_min=int(request.POST.get('add-offer-salary__min')),
+                salary_max=int(request.POST.get('add-offer-salary__max')),
+
+                city=request.POST.get('add-offer__location'),
+
+                email=request.POST.get('add-offer-contact__mail'),
+                phone_number=request.POST.get('add-offer-contact__phone'),
+
+                description=request.POST.get('add-offer__description'),
+            )
+
+            try:
+                new_offer.work_mode = Offer.WorkModes(request.POST.get('work-mode'))
+            except ValueError: pass
+
+            try:
+                new_offer.contract_type = Offer.ContractTypes(request.POST.get('contract-type'))
+            except ValueError: pass
+
+            try:
+                new_offer.work_time = Offer.WorkTimes(request.POST.get('work-time'))
+            except ValueError: pass
+
+            new_offer.save()
+        except: pass
+        finally: return redirect('offers')
+
     context = {}
 
     tags = Tag.objects.all()
