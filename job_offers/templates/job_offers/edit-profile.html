@@ -5,32 +5,36 @@
 {% block title %}<title>Edytuj Profil</title>{% endblock %}
 {% block content %}
 
-<form method="post" name="add-offer">
+<form method="post" name="edit-profile" enctype="multipart/form-data">
     {% csrf_token %}
     <div class="container">
         <div class="square left">
             <div class="image-container">
-                <img src="/static/images/logolidl.png" class="image-container__company__logo" name="CompanyLogoEdit">
+                <label for="company-logo-id">
+                    <img src="{{ request.user.company.logo_url_or_default }}" class="image-container__company__logo" name="CompanyLogoEdit">
+                </label>
+                <br>
+                <input type="file" name="CompanyLogoEdit" id="company-logo-id" accept="image/png, image/jpeg" hidden>
             </div>
             <div>
                 <p>Nazwa firmy</p>
-                <input type="text" class="square__profile__info" name="CompanyNameEdit" placeholder="Nazwa Firmy" required minlength="3" maxlength="100">
+                <input type="text" class="square__profile__info" name="CompanyNameEdit" placeholder="Nazwa Firmy" value="{{ request.user.company.name }}" required minlength="3" maxlength="100">
             </div>
             <div>
                 <p>Dane kontaktowe</p>
-                <input type="email" class="square__profile__info" name="CompanyContactEmailEdit" placeholder="E-mail" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" required title="Format mail@nazwapoczty.com">
-                <input type="text" class="square__profile__info" name="CompanyContactPhoneNumberEdit" placeholder="Numer telefonu" pattern="[0-9]{3}-[0-9]{3}-[0-9]{3}" required title="Format 123-456-789.">
+                <input type="email" class="square__profile__info" name="CompanyContactEmailEdit" placeholder="E-mail" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" value="{{ request.user.company.email }}" required title="Format mail@nazwapoczty.com">
+                <input type="text" class="square__profile__info" name="CompanyContactPhoneNumberEdit" placeholder="Numer telefonu" pattern="[0-9]{3}-[0-9]{3}-[0-9]{3}" value="{{ request.user.company.phone_number }}" required title="Format 123-456-789.">
             </div>
         </div>
         <div class="square right">
             <p>Adres firmy</p>
-            <input type="text" class="square__profile__info" name="CompanyAddressEdit" placeholder="Adres firmy" required minlength="10" maxlength="100">
+            <input type="text" class="square__profile__info" name="CompanyAddressEdit" placeholder="Adres firmy" value="{{ request.user.company.address }}" required minlength="10" maxlength="100">
             <p>Opis firmy</p>
             <div class="square-right__edit__profile__textarea">
                 <i class="fa-solid fa-b fa-sm"></i>
                 <i class="fa-solid fa-list-ul fa-sm"></i>
             </div>
-            <textarea class="square__profile__info" name="CompanyDescriptionEdit" required minlength="80" maxlength="1000"></textarea>
+            <textarea class="square__profile__info" name="CompanyDescriptionEdit" required minlength="80" maxlength="1000">{{ request.user.company.description }}</textarea>
             <a href="/profile"><button>Zapisz</button></a>
         </div>
     </div>
