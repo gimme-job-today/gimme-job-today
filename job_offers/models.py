@@ -74,7 +74,7 @@ class Company(models.Model):
             "description": self.description,
             "address": self.address,
             "logo": {
-                "url": self.logo.url,
+                "url": self.logo_url_or_default,
             }
         }
 
