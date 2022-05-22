@@ -119,8 +119,16 @@ def delete_account(request):
 def offers(request):
     return render(request, 'job_offers/offers.html')
 
-def profile(request):
-    return render(request, 'job_offers/profile.html')
+def profile(request, company_id):
+
+    try:
+        company = Company.objects.filter(id=company_id).first()
+        assert company is not None
+
+        return render(request, 'job_offers/profile.html', {"company": company})
+    except AssertionError:
+        return redirect('index')
+
 
 def editProfile(request):
     return render(request, 'job_offers/edit-profile.html')

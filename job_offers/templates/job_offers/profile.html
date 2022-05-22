@@ -8,23 +8,23 @@
 <div class="container profile">
     <div class="square left">
         <div class="image-container">
-            <img src="/static/images/logolidl.png" class="image-container__company__logo" name="CompanyLogo">
+            <img src="{{ company.logo_url_or_default }}" class="image-container__company__logo" name="CompanyLogo">
         </div>
         <div>
             <p>Nazwa firmy</p>
-            <input type="text" class="square__profile__info" name="CompanyName" placeholder="Nazwa Firmy" disabled="disabled" >
+            <input type="text" class="square__profile__info" name="CompanyName" placeholder="Nazwa Firmy" disabled="disabled" value="{{ company.name }}">
         </div>
         <div>
             <p>Dane kontaktowe</p>
-            <input type="email" class="square__profile__info" name="CompanyContactEmail" placeholder="E-mail" disabled="disabled">
-            <input type="text" class="square__profile__info" name="CompanyContactPhoneNumber" placeholder="Numer telefonu" disabled="disabled">
+            <input type="email" class="square__profile__info" name="CompanyContactEmail" placeholder="E-mail" disabled="disabled" value="{{ company.email }}">
+            <input type="text" class="square__profile__info" name="CompanyContactPhoneNumber" placeholder="Numer telefonu" disabled="disabled" value="{{ company.phone_number }}">
         </div>
     </div>
     <div class="square right">
         <p>Adres firmy</p>
-        <input type="text" class="square__profile__info" name="CompanyAddress" placeholder="Adres firmy" disabled="disabled">
+        <input type="text" class="square__profile__info" name="CompanyAddress" placeholder="Adres firmy" disabled="disabled" value="{{ company.phone_number }}">
         <p>Opis firmy</p>
-        <textarea class="square__profile__info" name="CompanyDescription" disabled="disabled" placeholder="Opis firmy"></textarea>
+        <textarea class="square__profile__info" name="CompanyDescription" disabled="disabled" placeholder="Opis firmy">{{ company.description }}</textarea>
     </div>
 </div>
 
