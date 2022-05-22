@@ -131,6 +131,22 @@ def profile(request, company_id):
 
 
 def editProfile(request):
+
+    if request.method == 'POST':
+        user_company = request.user.company
+
+        user_company.name = request.POST.get('CompanyNameEdit')
+        user_company.email = request.POST.get('CompanyContactEmailEdit')
+        user_company.phone_number = request.POST.get('CompanyContactPhoneNumberEdit')
+        user_company.address = request.POST.get('CompanyAddressEdit')
+        user_company.description = request.POST.get('CompanyDescriptionEdit')
+
+        if request.FILES.get("CompanyLogoEdit") is not None:
+            user_company.logo.save("", request.FILES['CompanyLogoEdit'].file, False)
+
+        user_company.save()
+
+
     return render(request, 'job_offers/edit-profile.html')
 
 def addOffer(request):
