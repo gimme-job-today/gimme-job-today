@@ -36,7 +36,7 @@
       {% for offer in offers %}
       <div class="offer">
           <div class="offer__logo">
-            <img height="64px" src="{{offer.company.logo.url}}"/>
+            <img height="64px" src="{{offer.company.logo_url_or_default}}"/>
           </div>
           <div class="offer__content">
               <div class="offer__title">
@@ -44,13 +44,13 @@
                     <div class="offer__icons-fa"><i class="fa-solid fa-location-dot fa-xl"></i>{{offer.city}}</div>
                     <div class="offer__icons-fa"><i class="fa-solid fa-wallet fa-xl"></i>{{offer.salary_min}}-{{offer.salary_max}} zł</div>
                 </div>
-                
+
                 <div class="offer__tags-content">
                 {% for tag in offer.tags.all %}
                     <div class="offer__tag" style="background-color: {{tag.color}};">{{tag.text}}</div>
                 {% endfor %}
                 </div>
-            
+
               </div>
 
               <div class="offer__content-job-button">
