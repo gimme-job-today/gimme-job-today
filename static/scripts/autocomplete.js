@@ -159,3 +159,14 @@ document.getElementById("addTag").addEventListener("click", function () {
   input_tags.value = document.getElementById("hiddenInput").defaultValue =
     tab_tags;
 });
+
+document.getElementsByName("add-offer")[0].addEventListener("submit", function (e) {
+  if(tab_tags.length < 1) {
+    alert("Należy dodać przynajmniej 1 tag.");
+    e.preventDefault();
+  }
+  else if(tab_tags.length > 4) {
+    alert("Należy wprowadzić maksymalnie 4 tagi.");
+    e.preventDefault();
+  }
+})
