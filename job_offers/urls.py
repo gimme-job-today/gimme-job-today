@@ -14,6 +14,7 @@ urlpatterns = [
     path('offers', offers),
     path('add-offer', addOffer),
     path('edit-offer', editOffer),
+    path('delete-offer/<offer_id>', delete_offer, name="delete_offer"),
     path('profile/<company_id>', profile),
     path('edit-profile', editProfile, name='edit_profile'),
 
