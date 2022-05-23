@@ -209,7 +209,7 @@ def addOffer(request):
     contracttypes_objects = Offer.ContractTypes.choices
     context["contract_types"] = contracttypes_objects
 
-    profile = Company.objects.filter(name=request.user.company).first();
+    profile = request.user.company
     context["profile"] = profile
 
     return render(request, 'job_offers/add-offer.html', context)
