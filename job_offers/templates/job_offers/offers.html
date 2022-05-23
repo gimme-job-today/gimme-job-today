@@ -13,20 +13,24 @@
 
     <div class="title-my-offers">Moje oferty</div>
 
-    <div class="my-offers">
-        <div class="my-offers__city__and__date">         
-            <div class="my-offers__city"><i class="fa-solid fa-location-dot fa-xl"></i>Warszawa</div>          
-            <div class="my-offers__date">Data opublikowania: <b>13.04.2022</b></div>
+    {% for offer in user.company.offers.all %}
+
+        <div class="my-offers">
+            <div class="my-offers__city__and__date">
+                <div class="my-offers__city"><i class="fa-solid fa-location-dot fa-xl"></i>{{ offer.city }}</div>
+                <div class="my-offers__date">Data opublikowania: <b>13.04.2022</b></div>
+            </div>
+
+            <div class="position-name">{{ offer.position }}</div>
+
+            <div class="my-offers__trash__and__pen__icons">
+                <a href='/edit-offer/{{ offer.id }}' class="fa-regular fa-pen-to-square fa-xl"></a>
+                <i onClick="showModalDeleteOffer(event)" data-offer-id="{{ offer.id }}" class="fa-regular fa-trash-can fa-xl" delete-offer-trash-icon></i>
+            </div>
+
         </div>
-    
-        <div class="position-name">Junior Full Stack Developer</div>
-            
-        <div class="my-offers__trash__and__pen__icons">
-            <a href='/edit-offer' class="fa-regular fa-pen-to-square fa-xl"></a>
-            <i onClick="showModalDeleteOffer(event)" class="fa-regular fa-trash-can fa-xl"></i>          
-        </div>
-        
-    </div>
+
+    {% endfor %}
 
 </div>
 
