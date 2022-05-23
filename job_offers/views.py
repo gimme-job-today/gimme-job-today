@@ -231,6 +231,20 @@ def editOffer(request):
 
     return render(request, 'job_offers/edit-offer.html', context)
 
+def delete_offer(request, offer_id):
+
+    try:
+        assert offer_id
+
+        offer = Offer.objects.filter(id=offer_id).first()
+        assert offer is not None
+        assert offer.company == request.user.company
+
+        offer.delete()
+    except AssertionError: pass
+    finally:
+        return redirect('offers')
+
 def account_deleted(request):
     return render(request, 'job_offers/account-deleted.html')
 
