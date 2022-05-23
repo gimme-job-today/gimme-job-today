@@ -556,10 +556,18 @@
     width: 100%;
     margin:0;
   }
+  #offer-details-max{
+    display: none;
+    visibility: hidden;
+  }
 
 }
-
-
+@media only screen and (max-width: 1700px)  {
+  .offer-below{
+    display: none;
+    visibility: hidden;
+  }
+}
 
 @media only screen and (max-width: 1250px) {
   .search-engine{

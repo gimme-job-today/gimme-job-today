@@ -59,10 +59,82 @@
               </div>
           </div>
       </div>
+
+
+      <div class="offer-details offer-below" id="{{offer.id}}" name="offer-below" style="visibility: hidden; display: none;">
+        <div class="offer-details__tags"></div>
+
+        <div class="offer-details__logo-and-title">
+          <div class="offer-details__logo">
+            <img src=""/>
+          </div>
+
+          <div class="offer-details__title">
+
+            <div class="offer-details__job"></div>
+            <div class="offer-details__icons">
+                <div class="offer__icons-fa"><i class="fa-solid fa-building fa-xl"></i><span class="offer-details__company-name"></span></div>
+                <div class="offer__icons-fa"><i class="fa-solid fa-wallet fa-xl"></i><span class="offer-details__salary"></span></div>
+            </div>
+
+          </div>
+        </div>
+
+        <div class="offer-details__icons-content">
+          <div class="offer-details__icons-content-text">
+            <div class="icons">
+              <i class="fa-solid fa-file-contract fa-xl"></i>
+            </div>
+            <p class="offer-details__contract-type"></p>
+          </div>
+          <div class="offer-details__icons-content-text">
+            <div class="icons">
+              <i class="fa-solid fa-clock fa-xl"></i>
+            </div>
+            <p class="offer-details__work-time"></p>
+          </div>
+          <div class="offer-details__icons-content-text">
+            <div class="icons">
+              <i class="fa-solid fa-gauge fa-xl"></i>
+            </div>
+            <p class="offer-details__work-mode"></p>
+          </div>
+          <div class="offer-details__icons-content-text">
+            <div class="icons">
+              <i class="fa-solid fa-location-dot fa-xl"></i>
+            </div>
+            <p class="offer-details__city"></p>
+          </div>
+
+        </div>
+
+        <div class="profession">
+          <p class="profession__title">Opis stanowiska</p>
+          <p class="offer-details__position-description"></p>
+        </div>
+
+
+        <div class="profession">
+          <p class="profession__title">Opis firmy</p>
+          <p class="offer-details__company-description"></p>
+        </div>
+
+        <div class="profession">
+          <small><span class="offer-details__visit-counter"></span> wyświetleń</small>
+        </div>
+
+        <div class="offer-details__button-content">
+          <button class="offer-details__button">Skontaktuj się</button>
+        </div>
+
+
+
+      </div>
+
       {% endfor %}
     </div>
 
-    <div class="offer-details" style="visibility: hidden;">
+    <div class="offer-details" id="offer-details-max" style="visibility: hidden;">
         <div class="offer-details__tags"></div>
 
         <div class="offer-details__logo-and-title">

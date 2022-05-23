@@ -1,140 +1,150 @@
 
 {% extends "base.html" %}
 {% load static %}
-{% block styles %}<link rel="stylesheet" href="{% static '/styles/add_offer.css' %}" />{% endblock %}
+{% block styles %}<link rel="stylesheet" href="{% static '/styles/add_offer.css' %}" />
+<link rel="stylesheet" href="{% static '/styles/confirm.css' %}" />
+{% endblock %}
+
 {% block title %}<title>Dodaj ofertę</title>{% endblock %}
 {% block scripts %}
 <script defer src="{% static '/scripts/autocomplete.js' %}"></script>
 {% endblock %}
 {% block content %}
 
-<form method="post" name="add-offer">
-    {% csrf_token %}
-<div class="add-offer__contener">
+{% if profile.description != '' %}
+    <form method="post" name="add-offer">
+        {% csrf_token %}
+    <div class="add-offer__contener">
 
-        <div class="add-offer__frame">
+            <div class="add-offer__frame">
 
-            <div class="add-offer__title">Dodaj ofertę</div>
-
-
-            <div class="add-offer__profession">
-                <p>Nazwa stanowiska</p>
-                <input type="text" class="add-offer__profinput" name="add-offer__profession" placeholder="Doradca finansowy klienta" required minlength="5" maxlength="40"/>
-            </div>
+                <div class="add-offer__title">Dodaj ofertę</div>
 
 
-            <div class="add-offer-options">
-                <div class="add-offer-option_one">
-                    <p>Forma zatrudnienia</p>
-                    <div class="add-offer-option__select">
-                        <select name="contract-type" id="contract-type">
-                            {% for contract in contract_types %}
-                                <option value="{{contract.0}}">{{contract.1}}</option>
-                            {% endfor %}
-                        </select>
-                        <!-- <i class="fa-solid fa-angle-down fa-xl"></i>-->
-                    </div>
-                </div>
-                <div class="add-offer-option__two">
-                    <p>Tryb pracy</p>
-                    <div class="add-offer-option__select">
-                        <select name="work-mode" id="work-mode">
-                            {% for mode in work_modes %}
-                                <option value="{{mode.0}}">{{mode.1}}</option>
-                            {% endfor %}
-                        </select>
-                    <!-- <i class="fa-solid fa-angle-down fa-xl"></i>-->
-                    </div>
-                </div>
-                <div class="add-offer-option__three">
-                    <p>Wymiar pracy</p>
-                    <div class="add-offer-option__select">
-                        <select name="work-time" id="work-time">
-                            {% for time in work_times %}
-                                <option value="{{time.0}}">{{time.1}}</option>
-                            {% endfor %}
-                        </select>
-                        <!-- <i class="fa-solid fa-angle-down fa-xl"></i>-->
-                    </div>
-                </div>
-            </div>
-
-
-            <div class="add-offer-salary">
-                <div class="add-offer-salary__min">
-                    <p>Minimalne wynagrodzenie brutto</p>
-                    <div class="add-offer-salary__position">
-                        <div class="add-offer-salary__zl">zł</div>
-                        <input class="add-offer-salary__input" name="add-offer-salary__min" placeholder="2000" pattern="[0-9]{3,5}" title="Wartości liczbowe od 3 do 5 cyfr." type="text" required/>
-
-                    </div>
-                </div>
-                <div class="add-offer-salary__max">
-                    <p>Maksymalne wynagrodzenie brutto</p>
-                    <div class="add-offer-salary__position">
-                        <div class="add-offer-salary__zl">zł</div>
-                        <input class="add-offer-salary__input" name="add-offer-salary__max" placeholder="5000" type="text" pattern="[0-9]{1,6}" title="Wartości liczbowe od 3 do 5 cyfr."/>
-                    </div>
-                </div>
-            </div>
-
-            <div class="add-offer__location">
-                <p>Lokalizacja pracy</p>
-                <input class="add-offer__locationinput" type="text" name="add-offer__location" placeholder="Warszawa" required pattern="[\w\p{L}]+" title="Tylko litery." minlength="2" maxlength="40"/>
-            </div>
-
-            <div class="add-offer-contact">
-                <div class="add-offer-contact__email">
-                    <div class="add-offer-contact__position">
-                        <p>Adres e-mail kontaktowy</p>
-                        <input class="add-offer-contact__input" name="add-offer-contact__mail" type="text" placeholder="email@gmail.com" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" required title="Format mail@nazwapoczty.pl."/>
-                    </div>
-                </div>
-                <div class="add-offer-contact__phone">
-                    <div class="add-offer-contact__position">
-                        <p>Numer telefonu kontaktowy</p>
-                        <input class="add-offer-contact__input" name="add-offer-contact__phone" type="text" placeholder="123-456-789" pattern="[0-9]{3}-[0-9]{3}-[0-9]{3}" title="Format 123-456-789."/>
-                    </div>
-                </div>
-            </div>
-
-
-            <div class="add-offer-descripttags">
-                <div class="add-offer-descripttags__desc">
-                    <p>Opis stanowiska</p>
-                    <div class="add-offer-descripttags__textarea">
-                        <i class="fa-solid fa-b fa-sm"></i>
-                        <i class="fa-solid fa-list-ul fa-sm"></i>
-                    </div>
-                    <textarea name="add-offer__description" required placeholder="Oferta pracy na stanowisko..." minlength="80" maxlength="1000"></textarea>
+                <div class="add-offer__profession">
+                    <p>Nazwa stanowiska</p>
+                    <input type="text" class="add-offer__profinput" name="add-offer__profession" placeholder="Doradca finansowy klienta" required minlength="5" maxlength="40"/>
                 </div>
 
 
-                    <div class="add-offer-tags">
-                        <form autocomplete="off">
-                            <p>Tagi oferty</p>
-                            <div class="add-offer-tags-autocomplete">
-                                <input type="text" name="tagCaption" class="add-offer-tags-autocomplete__input" placeholder="Tag">
-
-                            </div>
-                            <input type="button" id="addTag" class="add-offer__submit" value="Dodaj tag">
-
-                        <!-- <i class="fa-solid fa-angle-down fa-xl"></i>-->
-                        </form>
-
-                        <div class="add-offer-tags__chosen">
-                            <p>Wybrane tagi oferty:</p>
-                            <div id="selectedTags">
-                            </div>
+                <div class="add-offer-options">
+                    <div class="add-offer-option_one">
+                        <p>Forma zatrudnienia</p>
+                        <div class="add-offer-option__select">
+                            <select name="contract-type" id="contract-type">
+                                {% for contract in contract_types %}
+                                    <option value="{{contract.0}}">{{contract.1}}</option>
+                                {% endfor %}
+                            </select>
+                            <!-- <i class="fa-solid fa-angle-down fa-xl"></i>-->
                         </div>
                     </div>
+                    <div class="add-offer-option__two">
+                        <p>Tryb pracy</p>
+                        <div class="add-offer-option__select">
+                            <select name="work-mode" id="work-mode">
+                                {% for mode in work_modes %}
+                                    <option value="{{mode.0}}">{{mode.1}}</option>
+                                {% endfor %}
+                            </select>
+                        <!-- <i class="fa-solid fa-angle-down fa-xl"></i>-->
+                        </div>
+                    </div>
+                    <div class="add-offer-option__three">
+                        <p>Wymiar pracy</p>
+                        <div class="add-offer-option__select">
+                            <select name="work-time" id="work-time">
+                                {% for time in work_times %}
+                                    <option value="{{time.0}}">{{time.1}}</option>
+                                {% endfor %}
+                            </select>
+                            <!-- <i class="fa-solid fa-angle-down fa-xl"></i>-->
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="add-offer-salary">
+                    <div class="add-offer-salary__min">
+                        <p>Minimalne wynagrodzenie brutto</p>
+                        <div class="add-offer-salary__position">
+                            <div class="add-offer-salary__zl">zł</div>
+                            <input class="add-offer-salary__input" name="add-offer-salary__min" placeholder="2000" pattern="[0-9]{3,5}" title="Wartości liczbowe od 3 do 5 cyfr." type="text" required/>
+
+                        </div>
+                    </div>
+                    <div class="add-offer-salary__max">
+                        <p>Maksymalne wynagrodzenie brutto</p>
+                        <div class="add-offer-salary__position">
+                            <div class="add-offer-salary__zl">zł</div>
+                            <input class="add-offer-salary__input" name="add-offer-salary__max" placeholder="5000" type="text" pattern="[0-9]{1,6}" title="Wartości liczbowe od 3 do 5 cyfr."/>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="add-offer__location">
+                    <p>Lokalizacja pracy</p>
+                    <input class="add-offer__locationinput" type="text" name="add-offer__location" placeholder="Warszawa" required pattern="[\w\p{L}]+" title="Tylko litery." minlength="2" maxlength="40"/>
+                </div>
+
+                <div class="add-offer-contact">
+                    <div class="add-offer-contact__email">
+                        <div class="add-offer-contact__position">
+                            <p>Adres e-mail kontaktowy</p>
+                            <input class="add-offer-contact__input" name="add-offer-contact__mail" type="text" placeholder="email@gmail.com" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" required title="Format mail@nazwapoczty.pl."/>
+                        </div>
+                    </div>
+                    <div class="add-offer-contact__phone">
+                        <div class="add-offer-contact__position">
+                            <p>Numer telefonu kontaktowy</p>
+                            <input class="add-offer-contact__input" name="add-offer-contact__phone" type="text" placeholder="123-456-789" pattern="[0-9]{3}-[0-9]{3}-[0-9]{3}" title="Format 123-456-789."/>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="add-offer-descripttags">
+                    <div class="add-offer-descripttags__desc">
+                        <p>Opis stanowiska</p>
+                        <div class="add-offer-descripttags__textarea">
+                            <i class="fa-solid fa-b fa-sm"></i>
+                            <i class="fa-solid fa-list-ul fa-sm"></i>
+                        </div>
+                        <textarea name="add-offer__description" required placeholder="Oferta pracy na stanowisko..." minlength="80" maxlength="1000"></textarea>
+                    </div>
+
+
+                        <div class="add-offer-tags">
+                            <form autocomplete="off">
+                                <p>Tagi oferty</p>
+                                <div class="add-offer-tags-autocomplete">
+                                    <input type="text" name="tagCaption" class="add-offer-tags-autocomplete__input" placeholder="Tag">
+
+                                </div>
+                                <input type="button" id="addTag" class="add-offer__submit" value="Dodaj tag">
+
+                            <!-- <i class="fa-solid fa-angle-down fa-xl"></i>-->
+                            </form>
+
+                            <div class="add-offer-tags__chosen">
+                                <p>Wybrane tagi oferty:</p>
+                                <div id="selectedTags">
+                                </div>
+                            </div>
+                        </div>
+                </div>
+                <input type="submit" class="add-offer__submit" value="Dodaj">
+                <input class="hiddenInput" id="hiddenInput" name="add-offer__tags">
+
             </div>
-            <input type="submit" class="add-offer__submit" value="Dodaj">
-            <input class="hiddenInput" id="hiddenInput" name="add-offer__tags">
 
-        </div>
-
-</div>
-</form>
+    </div>
+    </form>
+{% else %}
+    <div class="square">
+        <p class="square__confirm__title">Uzupełnij dane na swoim profilu, aby móc dodać ofertę!</p>
+        <a href="{% url 'edit_profile' %}" class="square__confirm__link" ><i class="fa-solid fa-angle-left"></i>Przejdź na stronę edycji profilu</a>
+    </div>
+{% endif %}
 
 {% endblock %}
