@@ -214,8 +214,62 @@ def addOffer(request):
 
     return render(request, 'job_offers/add-offer.html', context)
 
-def editOffer(request):
+def edit_offer(request, offer_id):
+
+    try:
+        assert offer_id
+
+        edited_offer = Offer.objects.filter(id=offer_id).first()
+        assert edited_offer is not None
+        assert edited_offer.company == request.user.company
+    except AssertionError:
+        return redirect('offers')
+
+    if request.method == 'POST':
+        try:
+            edited_offer.position = request.POST.get('add-offer__profession')
+
+            edited_offer.salary_min = int(request.POST.get('add-offer-salary__min'))
+            edited_offer.salary_max = int(request.POST.get('add-offer-salary__max'))
+
+            edited_offer.city = request.POST.get('add-offer__location')
+
+            edited_offer.email = request.POST.get('add-offer-contact__mail')
+            edited_offer.phone_number = request.POST.get('add-offer-contact__phone')
+
+            edited_offer.description = request.POST.get('add-offer__description')
+
+            try:
+                edited_offer.work_mode = Offer.WorkModes(request.POST.get('work-mode'))
+            except ValueError: pass
+
+            try:
+                edited_offer.contract_type = Offer.ContractTypes(request.POST.get('contract-type'))
+            except ValueError: pass
+
+            try:
+                edited_offer.work_time = Offer.WorkTimes(request.POST.get('work-time'))
+            except ValueError: pass
+
+            edited_offer.save()
+
+            offet_tags_ids = request.POST.get('add-offer__tags').split(',')
+            edited_offer.tags.clear()
+
+            for tag_id in offet_tags_ids:
+                try:
+                    tag = Tag.objects.filter(id=tag_id).first()
+                    assert tag is not None
+
+                    edited_offer.tags.add(tag)
+                except AssertionError: continue
+
+        except: pass
+        finally: return redirect('offers')
+
     context = {}
+
+    context["edited_offer"] = edited_offer
 
     tags = Tag.objects.all()
     context["tags"] = tags
@@ -229,7 +283,7 @@ def editOffer(request):
     contracttypes_objects = Offer.ContractTypes.choices
     context["contract_types"] = contracttypes_objects
 
-    return render(request, 'job_offers/edit-offer.html', context)
+    return render(request, 'job_offers/add-offer.html', context)
 
 def delete_offer(request, offer_id):
 
