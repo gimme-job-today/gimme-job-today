@@ -212,7 +212,7 @@ def addOffer(request):
     profile = request.user.company
     context["profile"] = profile
 
-    return render(request, 'job_offers/add-offer.html', context)
+    return render(request, 'job_offers/add-or-edit-offer.html', context)
 
 def edit_offer(request, offer_id):
 
@@ -283,7 +283,7 @@ def edit_offer(request, offer_id):
     contracttypes_objects = Offer.ContractTypes.choices
     context["contract_types"] = contracttypes_objects
 
-    return render(request, 'job_offers/add-offer.html', context)
+    return render(request, 'job_offers/add-or-edit-offer.html', context)
 
 def delete_offer(request, offer_id):
 

@@ -18,12 +18,17 @@
 
             <div class="add-offer__frame">
 
-                <div class="add-offer__title">Dodaj ofertę</div>
-
+                <div class="add-offer__title">
+                    {% if "/edit-offer/" in request.path %}
+                    Edytuj ofertę
+                    {% else %}
+                    Dodaj ofertę
+                    {% endif %}
+                </div>
 
                 <div class="add-offer__profession">
                     <p>Nazwa stanowiska</p>
-                    <input type="text" class="add-offer__profinput" name="add-offer__profession" placeholder="Doradca finansowy klienta" required minlength="5" maxlength="40"/>
+                    <input type="text" class="add-offer__profinput" name="add-offer__profession" placeholder="Doradca finansowy klienta" required minlength="5" maxlength="40" value="{{ edited_offer.position|default:'' }}"/>
                 </div>
 
 
@@ -32,8 +37,8 @@
                         <p>Forma zatrudnienia</p>
                         <div class="add-offer-option__select">
                             <select name="contract-type" id="contract-type">
-                                {% for contract in contract_types %}
-                                    <option value="{{contract.0}}">{{contract.1}}</option>
+                                {% for contract_value, contract_label in contract_types %}
+                                    <option value="{{contract_value}}" {% if edited_offer.contract_type == contract_value %}selected{% endif %}>{{contract_label}}</option>
                                 {% endfor %}
                             </select>
                             <!-- <i class="fa-solid fa-angle-down fa-xl"></i>-->
@@ -43,8 +48,8 @@
                         <p>Tryb pracy</p>
                         <div class="add-offer-option__select">
                             <select name="work-mode" id="work-mode">
-                                {% for mode in work_modes %}
-                                    <option value="{{mode.0}}">{{mode.1}}</option>
+                                {% for work_mode_value, work_mode_label in work_modes %}
+                                    <option value="{{work_mode_value}}" {% if edited_offer.work_mode == work_mode_value %}selected{% endif %}>{{work_mode_label}}</option>
                                 {% endfor %}
                             </select>
                         <!-- <i class="fa-solid fa-angle-down fa-xl"></i>-->
@@ -54,8 +59,8 @@
                         <p>Wymiar pracy</p>
                         <div class="add-offer-option__select">
                             <select name="work-time" id="work-time">
-                                {% for time in work_times %}
-                                    <option value="{{time.0}}">{{time.1}}</option>
+                                {% for work_time_value, work_time_label in work_times %}
+                                    <option value="{{work_time_value}}" {% if edited_offer.work_time == work_time_value %}selected{% endif %}>{{work_time_label}}</option>
                                 {% endfor %}
                             </select>
                             <!-- <i class="fa-solid fa-angle-down fa-xl"></i>-->
@@ -69,7 +74,7 @@
                         <p>Minimalne wynagrodzenie brutto</p>
                         <div class="add-offer-salary__position">
                             <div class="add-offer-salary__zl">zł</div>
-                            <input class="add-offer-salary__input" name="add-offer-salary__min" placeholder="2000" pattern="[0-9]{3,5}" title="Wartości liczbowe od 3 do 5 cyfr." type="text" required/>
+                            <input class="add-offer-salary__input" name="add-offer-salary__min" placeholder="2000" pattern="[0-9]{3,5}" title="Wartości liczbowe od 3 do 5 cyfr." type="text" required value="{{ edited_offer.salary_min|default:'' }}"/>
 
                         </div>
                     </div>
@@ -77,27 +82,27 @@
                         <p>Maksymalne wynagrodzenie brutto</p>
                         <div class="add-offer-salary__position">
                             <div class="add-offer-salary__zl">zł</div>
-                            <input class="add-offer-salary__input" name="add-offer-salary__max" placeholder="5000" type="text" pattern="[0-9]{1,6}" title="Wartości liczbowe od 3 do 5 cyfr."/>
+                            <input class="add-offer-salary__input" name="add-offer-salary__max" placeholder="5000" type="text" pattern="[0-9]{1,6}" title="Wartości liczbowe od 3 do 5 cyfr." value="{{ edited_offer.salary_max|default:'' }}"/>
                         </div>
                     </div>
                 </div>
 
                 <div class="add-offer__location">
                     <p>Lokalizacja pracy</p>
-                    <input class="add-offer__locationinput" type="text" name="add-offer__location" placeholder="Warszawa" required pattern="[\w\p{L}]+" title="Tylko litery." minlength="2" maxlength="40"/>
+                    <input class="add-offer__locationinput" type="text" name="add-offer__location" placeholder="Warszawa" required pattern="[\w\p{L}]+" title="Tylko litery." minlength="2" maxlength="40" value="{{ edited_offer.city|default:'' }}"/>
                 </div>
 
                 <div class="add-offer-contact">
                     <div class="add-offer-contact__email">
                         <div class="add-offer-contact__position">
                             <p>Adres e-mail kontaktowy</p>
-                            <input class="add-offer-contact__input" name="add-offer-contact__mail" type="text" placeholder="email@gmail.com" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" required title="Format mail@nazwapoczty.pl."/>
+                            <input class="add-offer-contact__input" name="add-offer-contact__mail" type="text" placeholder="email@gmail.com" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" required title="Format mail@nazwapoczty.pl." value="{{ edited_offer.email|default:'' }}"/>
                         </div>
                     </div>
                     <div class="add-offer-contact__phone">
                         <div class="add-offer-contact__position">
                             <p>Numer telefonu kontaktowy</p>
-                            <input class="add-offer-contact__input" name="add-offer-contact__phone" type="text" placeholder="123-456-789" pattern="[0-9]{3}-[0-9]{3}-[0-9]{3}" title="Format 123-456-789."/>
+                            <input class="add-offer-contact__input" name="add-offer-contact__phone" type="text" placeholder="123-456-789" pattern="[0-9]{3}-[0-9]{3}-[0-9]{3}" title="Format 123-456-789." value="{{ edited_offer.phone_number|default:'' }}"/>
                         </div>
                     </div>
                 </div>
@@ -110,7 +115,7 @@
                             <i class="fa-solid fa-b fa-sm"></i>
                             <i class="fa-solid fa-list-ul fa-sm"></i>
                         </div>
-                        <textarea name="add-offer__description" required placeholder="Oferta pracy na stanowisko..." minlength="80" maxlength="1000"></textarea>
+                        <textarea name="add-offer__description" required placeholder="Oferta pracy na stanowisko..." minlength="80" maxlength="1000">{{ edited_offer.description|default:'' }}</textarea>
                     </div>
 
 
@@ -133,7 +138,7 @@
                             </div>
                         </div>
                 </div>
-                <input type="submit" class="add-offer__submit" value="Dodaj">
+                <input type="submit" class="add-offer__submit" value="Zapisz">
                 <input class="hiddenInput" id="hiddenInput" name="add-offer__tags">
 
             </div>
