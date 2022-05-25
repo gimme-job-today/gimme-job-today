@@ -3,6 +3,7 @@ import uuid
 from django.contrib.auth.models import User
 from django.core.validators import RegexValidator, MinValueValidator, MaxValueValidator
 from django.db import models
+from django.utils import timezone
 
 # Create your models here.
 
@@ -91,6 +92,10 @@ class Offer(models.Model):
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
 
     company = models.ForeignKey("Company", on_delete=models.CASCADE, related_name="offers")
+
+    @property
+    def formatted_time_created(self):
+        return self.time_created.astimezone(timezone.get_current_timezone()).strftime("%Y.%m.%d %H:%M")
 
     time_created = models.DateTimeField(auto_now_add=True)
 
