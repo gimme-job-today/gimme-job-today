@@ -3,45 +3,43 @@
   font-family: "Montserrat", sans-serif;
 }
 
-.searching {
+.all-main-site{
+  padding-left: 3em;
+  padding-right: 3em;
+  box-sizing: border-box;
+}
+.searching-content {
   justify-content: left;
-  column-gap: 6em;
+  column-gap: 5em;
   margin-top: 4.5em;
   display: flex;
   width: 100%;
   box-sizing: border-box;
   text-align: center;
   flex-wrap: wrap;
-  margin-left: 2em;
-  width: auto;
 }
 
-.searching > * {
-  display: flex;
-  align-items: center;
-}
-
-.searchContent {
+.search-engine {
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
-  width: 50%;
+  width: 45%;
   height: 2em;
   align-content: space-between;
   margin-bottom: 2em;
+  margin-left: 3.1em;
 }
 
-.search {
+.search-engine__input {
   padding: 1em;
   border: none;
-  min-width: 100%;
+  width: 100%;
   background-color: #ffffff;
-  margin-right: 1em;
   border-radius: 25px;
   box-shadow: 0px 5px 10px #e9e7e7;
 }
 
-.searchContent i {
+.search-engine i {
   color: #cccccc;
   margin-top: 0.9em;
   margin-left: -3.5em;
@@ -53,7 +51,7 @@
   padding-left: 1em;
 }
 
-.buttonFilter {
+.filter-content__button {
   padding: 0.59em;
   border: none;
   min-width: 100%;
@@ -65,21 +63,21 @@
   box-shadow: 0px 5px 10px #e9e7e7;
 }
 
-.filterContent {
+.filter-content {
   position: relative;
   justify-content: center;
   width: 15%;
   flex-direction: column;
   margin-bottom: 2em;
 }
-.filterContent i {
+.filter-content i {
   position: absolute;
   right: 0;
   color: #cccccc;
   padding-right: 0.5em;
 }
 
-.buttonSearch {
+.searching-content__button {
   font-family: Urbanist;
   border-radius: 15px;
   font-size: 1em;
@@ -91,34 +89,40 @@
   border: none;
 }
 
-.appointmentsContent {
-  min-width: 50%;
+
+
+.offer-content {
+  width: 45%;
+  display: block;
 }
 
-.appointment {
-  justify-content: flex-start;
+.offer {
+  display: flex;
   margin-top: 2em;
   padding: 1em;
   border-radius: 25px;
   border: none;
-  min-width: 100%;
+  width: 100%;
   box-shadow: 0 0 0.5em #e9e7e7;
   background-color: #ffffff;
+ 
 }
 
-.appointmentDetails {
-  width: 40%;
+.offer-details {
+  box-sizing: border-box;
+  width: 45%;
   flex-direction: column;
   justify-content: flex-end;
   margin-top: 2em;
   margin-left: 5em;
+  margin-right: 0;
   padding: 1em;
   border-radius: 30px;
   border: none;
   box-shadow: 0 0 0.5em #c7c7c7;
   background-color: #ffdf96;
 }
-.detailsTags {
+.offer-details__tags {
   display: flex;
   justify-content: flex-end;
   min-width: 100%;
@@ -127,23 +131,21 @@
   margin-bottom: 0.5em;
 }
 
-.detailsTags p {
+.offer-details__tags p {
   padding: 0em 2em 0em 0em;
 }
 
-.appointmentAll {
+.all-offers {
   display: flex;
   width: 100%;
   box-sizing: border-box;
   justify-content: center;
+  align-items: start;
   flex-wrap: wrap;
 }
 
-.appointmentsContent > * {
-  display: flex;
-  align-items: center;
-}
-.detailsIcons {
+
+.offer-details__icons-content {
   margin-top: 2em;
   justify-content: space-around;
   box-sizing: border-box;
@@ -163,25 +165,25 @@
   align-items: center;
 }
 
-.appointmentDetails > * {
+.offer-details > * {
   display: flex;
   align-items: center;
 }
 
-.logo {
+.offer__logo {
   justify-content: flex-start;
-  min-width: 10%;
+  width: 10%;
   text-align: center;
 }
 
-.detailsLogoTitle {
+.offer-details__logo-and-title {
   width: 100%;
 }
-.detailsLogo {
+.offer-details__logo {
   justify-content: flex-start;
   padding-left: 2em;
 }
-.detailsLogo img {
+.offer-details__logo img {
   min-width: 20%;
   height: 100px;
   padding: 1em;
@@ -191,7 +193,7 @@
   box-shadow: 0 0 0.5em #c7c7c7;
 }
 
-.detailsTitle {
+.offer-details__title {
   justify-content: center;
   flex-direction: column;
   width: 80%;
@@ -199,28 +201,37 @@
   text-align: left;
 }
 
-.appointmentTitle {
+.offer__title {
   flex-direction: row;
   display: flex;
-  padding-left: 2em;
+  margin-left: 2em;
+  margin-top: 0.9em;
+
+  
+}
+.offer__content{
+  display: block;
+  width: 90%;
 }
 
-.appointmentTags {
-  justify-content: flex-end;
+.offer__tags-content {
+  flex-direction: row;
+
+  align-items: start;
+  display: inline-block;
+}
+
+.offer__tag {
   flex-direction: row;
   padding: 0.3em 0.5em 0.3em 0.5em;
-  align-items: center;
-  background-color: rgb(230, 185, 101);
-  text-align: center;
   border-radius: 10px;
-  margin-left: 1.2em;
-  align-items: center;
+  margin-left: 1.8em;
   font-size: 0.8em;
+  align-items: start;
+  display: inline-block;
 }
-.appointmentMain {
-  min-width: 100%;
-}
-.iconsWalletCity {
+
+.offer__icons {
   justify-content: flex-start;
   font-family: Montserrat;
   color: #9b9b9b;
@@ -229,28 +240,31 @@
   padding: 0.3em;
   align-items: center;
   font-size: 0.8em;
+  display: flex;
 }
 
-.positionJob {
+
+
+.offer__job {
   justify-content: flex-start;
   font-family: Montserrat;
   font-weight: 700;
   font-size: 1.1em;
   flex-direction: row;
   align-items: center;
-  min-width: 77%;
+  width: 85%;
 }
 .buttonApp {
   text-align: right;
   align-items: right;
   width: 100%;
 }
-.appointmentContentButton {
+.offer__content-job-button {
   flex-direction: row;
   display: flex;
   margin-top: 1.5em;
   margin-left: 2.5em;
-  margin-right: 1em;
+ 
 }
 
 .offer__show-details-button {
@@ -277,7 +291,7 @@
   text-align: left !important;
 }
 
-.profession .titleProfession {
+.profession .profession__title {
   display: flex;
   min-width: 100%;
   font-weight: 600;
@@ -287,7 +301,7 @@
   text-align: left !important;
   align-content: left;
 }
-.detailsPositionDescription, .detailsCompanyDescription {
+.offer-details__position-description, .offer-details__company-description {
   margin-right: 4em;
   font-size: 15px;
   font-family: Montserrat;
@@ -295,23 +309,24 @@
   text-align: justify !important;
 }
 
-.detailsPositionJob {
+.offer-details__job {
   min-width: 100%;
   font-family: Montserrat;
   font-weight: 700;
   font-size: 25px;
 }
 
-.iconsWalletBuilding {
-  min-width: 100%;
+.offer-details__icons {
+  width: 100%;
   font-family: Montserrat;
   color: #202020;
   font-weight: 500;
   margin-top: 2em;
   font-size: 0.8em;
+  display: flex;
 }
 
-.iconsWalletCity .fa-location-dot {
+.offer__icons .fa-location-dot {
   color: #ffc370;
   padding-right: 0.4em;
 }
@@ -320,24 +335,24 @@
   padding-left: 1.5em;
   padding-right: 0.4em;
 }
-.iconsWalletBuilding .fa-building {
+.offer-details__icons .fa-building {
   padding-right: 0.4em;
 }
 
-.iconsText p {
+.offer-details__icons-content-text p {
   font-size: 0.6em;
   font-family: Montserrat;
   color: #202020;
   font-weight: 600;
 }
-.iconsText {
+.offer-details__icons-content-text {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
 }
 
-.detailsContactButton {
+.offer-details__button {
   font-family: Urbanist;
   border-radius: 15px;
   font-size: 1em;
@@ -348,9 +363,226 @@
   margin: 1em;
   border: none;
 }
-.buttonDetailsContent {
+.offer-details__button-content {
   margin-top: 1em;
   display: flex;
   justify-content: center;
   flex-direction: column;
+}
+
+
+
+@media only screen and (max-width: 800px) {
+ 
+  .offer-details{
+    display: block;
+    width: 100%;
+    margin-left: 0;
+    box-sizing: border-box;
+    align-items: center;
+    text-align: center;
+  }
+  .all-offers{
+    width: 100%;
+    display: block;
+  }
+  .all-main-site{
+    display: block;
+   
+  }
+  
+  .offer-content{
+    width: 100%;
+    box-sizing: border-box;
+  }
+  .offer__content{
+    display: block;
+    margin: 0;
+    align-items: center;
+    text-align: center;
+    box-sizing: border-box;
+    width: 100%;
+  
+  }
+  .offer__logo{
+    display: block;
+    width: 100%;
+  }
+  .offer{
+    display: block;
+    
+    box-sizing: border-box;
+    align-items: center;
+    text-align: center;
+ 
+    padding: 1em;
+   
+  }
+  .offer__icons{
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  .fa-location-dot {
+    display: block;
+  }
+  .offer__title{
+    display: block;
+    margin: 0;
+   
+  }
+  .offer__tags-content{
+    display: block;
+    margin-left: 0;
+    align-items: start;
+    
+  }
+  .offer__tag{
+    margin-top: 0.5em;
+    margin-left: 0;
+  }
+  .fa-wallet{
+    padding-left: 0;
+    display: block;
+    margin-top: 1em;
+    margin-bottom: 1em;
+  
+  }
+  .fa-location-dot{
+    display: block;
+  }
+  .offer__icons-fa{
+    display: block;
+  }
+  .soliddd{
+    display: block;
+  }
+  .offer__content-job-button{
+    display: block;
+    align-items: center;
+    width: 100%;
+    text-align: center;
+    margin-left: 0;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  .tagss{
+    width: 50%;
+  }
+  .offer__show-details-button{
+    margin-top: 1em;
+    align-items: center;
+  
+  }
+  .offer__job{
+    width: 100%;
+    margin: 0;
+  }
+
+  .offer-details__tags{
+    width: 100%;
+    display: block;
+  }
+  .offer-details__logo{
+    display: block;
+    padding: 0;
+  }
+  .offer-details__title{
+    margin-top: 1.2em;
+    display: block;
+    padding: 0;
+    margin-right: 0;
+    width: 100%;
+    text-align: center;
+    
+  }
+  
+  .offer-details__job{
+    
+    display: block;
+  }
+  .offer-details__icons{
+    width: 100%;
+    display: block;
+  }
+  .offer-details__logo-and-title{
+    display: block;
+    padding: 0;
+  }
+
+}
+
+
+@media only screen and (max-width: 500px) {
+  .offer-details__icons-content{
+    display: block;
+  }
+}
+
+
+
+@media only screen and (max-width: 1600px) {
+  .search-engine{
+    margin-left: 1.6em;
+  }
+}
+
+@media only screen and (max-width: 1300px) {
+  .search-engine{
+    margin-left: 1.3em;
+  }
+}
+
+
+@media only screen and (max-width: 1200px) {
+  
+  .offer-content{
+    width: 100%;
+    box-sizing: border-box;
+  }
+  .offer-details{
+    width: 100%;
+    box-sizing: border-box;
+    margin-left: 0;
+   
+  }
+  .offer{
+    width: 100%;
+    box-sizing: border-box;
+  }
+  .offer__job{
+    width: 100%;
+    margin:0;
+  }
+  #offer-details-max{
+    display: none;
+    visibility: hidden;
+  }
+
+}
+@media only screen and (max-width: 1700px)  {
+  .offer-below{
+    display: none;
+    visibility: hidden;
+  }
+}
+
+@media only screen and (max-width: 1250px) {
+  .search-engine{
+    width: 100%;
+    margin-left: 0;
+  }
+  .searching-content{
+    display: block;
+    
+  }
+  .search-engine__input{
+    width: 100%;
+    box-sizing: border-box;
+  }
+  .filter-content{
+    width: 100%;
+  }
 }

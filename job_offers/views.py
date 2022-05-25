@@ -5,7 +5,7 @@ from django.shortcuts import render, redirect
 from django.contrib.auth import login as auth_login, logout as auth_logout, authenticate as auth_authenticate
 from django.contrib.auth.models import User
 
-from job_offers.models import Company, Offer
+from job_offers.models import Company, Offer, Tag
 
 # Create your views here.
 
@@ -16,6 +16,7 @@ def index(request):
     context["offers"] = offer_objects
 
     return render(request, 'job_offers/index.html', context)
+
 
 def login(request):
 
@@ -118,20 +119,185 @@ def delete_account(request):
 def offers(request):
     return render(request, 'job_offers/offers.html')
 
-def profile(request):
-    return render(request, 'job_offers/profile.html')
+def profile(request, company_id):
+
+    try:
+        company = Company.objects.filter(id=company_id).first()
+        assert company is not None
+
+        return render(request, 'job_offers/profile.html', {"company": company})
+    except AssertionError:
+        return redirect('index')
+
 
 def editProfile(request):
+
+    if request.method == 'POST':
+        user_company = request.user.company
+
+        user_company.name = request.POST.get('CompanyNameEdit')
+        user_company.email = request.POST.get('CompanyContactEmailEdit')
+        user_company.phone_number = request.POST.get('CompanyContactPhoneNumberEdit')
+        user_company.address = request.POST.get('CompanyAddressEdit')
+        user_company.description = request.POST.get('CompanyDescriptionEdit')
+
+        if request.FILES.get("CompanyLogoEdit") is not None:
+            user_company.logo.save("", request.FILES['CompanyLogoEdit'].file, False)
+
+        user_company.save()
+
+
     return render(request, 'job_offers/edit-profile.html')
 
 def addOffer(request):
-    return render(request, 'job_offers/add-offer.html')
 
-def editOffer(request):
-    return render(request, 'job_offers/edit-offer.html')
+    if request.method == 'POST':
+        try:
+            new_offer = Offer(
+                company=request.user.company,
+                position=request.POST.get('add-offer__profession'),
 
-def passwordChange(request):
-    return render(request, 'job_offers/password-change.html')
+                salary_min=int(request.POST.get('add-offer-salary__min')),
+                salary_max=int(request.POST.get('add-offer-salary__max')),
+
+                city=request.POST.get('add-offer__location'),
+
+                email=request.POST.get('add-offer-contact__mail'),
+                phone_number=request.POST.get('add-offer-contact__phone'),
+
+                description=request.POST.get('add-offer__description'),
+            )
+
+            try:
+                new_offer.work_mode = Offer.WorkModes(request.POST.get('work-mode'))
+            except ValueError: pass
+
+            try:
+                new_offer.contract_type = Offer.ContractTypes(request.POST.get('contract-type'))
+            except ValueError: pass
+
+            try:
+                new_offer.work_time = Offer.WorkTimes(request.POST.get('work-time'))
+            except ValueError: pass
+
+            new_offer.save()
+
+            offet_tags_ids = request.POST.get('add-offer__tags').split(',')
+
+            for tag_id in offet_tags_ids:
+                try:
+                    tag = Tag.objects.filter(id=tag_id).first()
+                    assert tag is not None
+
+                    new_offer.tags.add(tag)
+                except AssertionError: continue
+
+        except: pass
+        finally: return redirect('offers')
+
+    context = {}
+
+    tags = Tag.objects.all()
+    context["tags"] = tags
+
+    workmodes_objects = Offer.WorkModes.choices
+    context["work_modes"] = workmodes_objects
+
+    worktimes_objects = Offer.WorkTimes.choices
+    context["work_times"] = worktimes_objects
+
+    contracttypes_objects = Offer.ContractTypes.choices
+    context["contract_types"] = contracttypes_objects
+
+    profile = request.user.company
+    context["profile"] = profile
+
+    return render(request, 'job_offers/add-or-edit-offer.html', context)
+
+def edit_offer(request, offer_id):
+
+    try:
+        assert offer_id
+
+        edited_offer = Offer.objects.filter(id=offer_id).first()
+        assert edited_offer is not None
+        assert edited_offer.company == request.user.company
+    except AssertionError:
+        return redirect('offers')
+
+    if request.method == 'POST':
+        try:
+            edited_offer.position = request.POST.get('add-offer__profession')
+
+            edited_offer.salary_min = int(request.POST.get('add-offer-salary__min'))
+            edited_offer.salary_max = int(request.POST.get('add-offer-salary__max'))
+
+            edited_offer.city = request.POST.get('add-offer__location')
+
+            edited_offer.email = request.POST.get('add-offer-contact__mail')
+            edited_offer.phone_number = request.POST.get('add-offer-contact__phone')
+
+            edited_offer.description = request.POST.get('add-offer__description')
+
+            try:
+                edited_offer.work_mode = Offer.WorkModes(request.POST.get('work-mode'))
+            except ValueError: pass
+
+            try:
+                edited_offer.contract_type = Offer.ContractTypes(request.POST.get('contract-type'))
+            except ValueError: pass
+
+            try:
+                edited_offer.work_time = Offer.WorkTimes(request.POST.get('work-time'))
+            except ValueError: pass
+
+            edited_offer.save()
+
+            offet_tags_ids = request.POST.get('add-offer__tags').split(',')
+            edited_offer.tags.clear()
+
+            for tag_id in offet_tags_ids:
+                try:
+                    tag = Tag.objects.filter(id=tag_id).first()
+                    assert tag is not None
+
+                    edited_offer.tags.add(tag)
+                except AssertionError: continue
+
+        except: pass
+        finally: return redirect('offers')
+
+    context = {}
+
+    context["edited_offer"] = edited_offer
+
+    tags = Tag.objects.all()
+    context["tags"] = tags
+
+    workmodes_objects = Offer.WorkModes.choices
+    context["work_modes"] = workmodes_objects
+
+    worktimes_objects = Offer.WorkTimes.choices
+    context["work_times"] = worktimes_objects
+
+    contracttypes_objects = Offer.ContractTypes.choices
+    context["contract_types"] = contracttypes_objects
+
+    return render(request, 'job_offers/add-or-edit-offer.html', context)
+
+def delete_offer(request, offer_id):
+
+    try:
+        assert offer_id
+
+        offer = Offer.objects.filter(id=offer_id).first()
+        assert offer is not None
+        assert offer.company == request.user.company
+
+        offer.delete()
+    except AssertionError: pass
+    finally:
+        return redirect('offers')
 
 def account_deleted(request):
     return render(request, 'job_offers/account-deleted.html')
@@ -160,5 +326,28 @@ def api__offer_details(request):
         data = {
             "status": "success",
             "data": offer.json()
+        }
+    )
+
+def api__tags(request):
+
+    try:
+        assert request.method == 'GET'
+
+        tags = Tag.objects.all()
+    except AssertionError:
+        return JsonResponse(
+            data = {
+                "status": "error",
+                "data": []
+            }
+        )
+
+    return JsonResponse(
+        data = {
+            "status": "success",
+            "data": [
+                tag.json() for tag in tags
+            ]
         }
     )

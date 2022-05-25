@@ -95,6 +95,24 @@ header > * {
   width: 35%;
 }
 
+@media (min-width: 1280px) {
+  .hide-medium-up {
+    display: none !important;
+  }
+}
+
+@media (max-width: 1280px) {
+  .hide-medium-down {
+    display: none !important;
+  }
+}
+
+@media (max-width: 950px) {
+  .app-title {
+    font-size: 1em;
+  }
+}
+
 .navigation button {
   font-family: "Urbanist", sans-serif;
   font-weight: 800;
@@ -113,8 +131,21 @@ header > * {
   width: 35%;
   text-align: center;
 }
+ 
+.navigation-unlogged .nav-item {
+  margin-right: 1em;
+}
 
-.navigation-logged .nav-item {
+.navigation-unlogged .meatballs-menu-content a {
+  font-weight: bold;
+  font-size: 1em;
+}
+
+.navigation-unlogged .meatballs-menu-content a:last-child {
+  margin: 0;
+}
+
+.nav-item {
   font-family: "Urbanist", sans-serif;
   font-weight: 800;
   border-radius: 20px;
@@ -168,6 +199,7 @@ a, a:visited {
   text-align: left;
   white-space: nowrap;
   cursor: initial;
+  z-index: 100;
 }
 
 .meatballs-menu-content a {
@@ -259,8 +291,9 @@ a, a:visited {
 .PopUp {
   background-color: white;
   border: none;
-  width: max-content;
-  max-width: 550px;
+  /*width: max-content;
+  max-width: 550px;*/
+  width: 30%;
   height: auto;
   border-radius: 2.5em;
   text-align: center;
@@ -275,23 +308,24 @@ a, a:visited {
 
 .BackLinkOffer, .BackLinkProfile {
   margin: 0.5em;
-  text-align:left;
+  text-align: left;
   font-size: 1em;
   font-weight:bold;
   letter-spacing: 1px;
   text-decoration: none;
   color:#202020;
   position: relative;
-  right: 2em;
 }
 
-.BackLinkOffer, .BackLinkProfile i {
+.BackLinkOffer i, .BackLinkProfile i {
   font-size: 1em;
   margin-right: 0.5em;
   position: relative;
   top: 0.15em;
 }
-
+.BackLinkProfile i{
+  margin-bottom: 2em;
+}
 .BackLinkOffer:hover, .BackLinkProfile:hover {
   cursor: pointer;
 }
@@ -350,4 +384,19 @@ button:hover {
   align-items: center;
   display: inline-block;
   margin-bottom: 2.25em;
+}
+
+
+
+@media only screen and (max-width: 1000px) {
+  .PopUp{
+    width: 100%;
+    box-sizing: border-box;
+  }
+  .ConfirmLine{
+    display: block;
+  }
+ 
+ 
+
 }

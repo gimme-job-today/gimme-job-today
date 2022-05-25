@@ -1,25 +1,32 @@
-.addOfferContener{
+.add-offer__contener{
     justify-content: center;
     display: flex;
     width: 100%;
-    box-sizing: border-box;
     text-align: center;
     flex-wrap: wrap;
+    font-family: Montserrat;
+    font-size: 15px;
+    font-weight: 600;
+    color: #202020;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 
-.addOfferFrame{
-    width: 80%;
+.add-offer__frame{
+    box-sizing: border-box;
+    width: 70%;
+    padding: 3em 6em 3em 6em;
     border-radius: 50px 50px 0 0;
     background-color: #FFFFFF;
     margin-top: 4em;
     box-shadow: 0 0 0.5em #dddddd;
+    margin-left: auto;
+    margin-right: auto;
 }
-.addOfferTitle{
+.add-offer__title{
     display: flex;
-    min-width: 100%;
     font-family: Montserrat;
-    margin-top: 2em;
     font-weight: 600;
     letter-spacing: 0.1em;
     font-size: 25px;
@@ -27,28 +34,7 @@
     flex-direction: column;
 }
 
-.addOfferProfession{
-    min-width: 100%;
-    text-align: left;
-    margin-left: 4em;
-    margin-top: 5em;
-}
 
-.addOfferProfession input{
-    border-radius: 20px;
-    background-color: #F7F7F7;
-    padding: 1.7em;
-    border: none;
-    width: 40%;
-}
-
-.addOfferContener p{
-    font-family: Montserrat;
-    font-size: 16px;
-    font-weight: 600;
-    color: #202020;
-
-}
 
 ::placeholder{
     font-family: Montserrat;
@@ -58,23 +44,25 @@
 }
 
 
-.addOfferOptions{
+
+
+
+.add-offer-options{
     width: 100%;
     display: flex;
     justify-content: center;
     margin-top: 4em;
 }
 
-.addOfferOptionGroupOne{
+.add-offer-option_one{
     min-width: 33.3%;
     display: flex;
     justify-content: flex-start;
     flex-direction: column;
     text-align:left;
-    margin-left: 8em;
 }
 
-.addOfferOptionGroupTwo{
+.add-offer-option__two{
     min-width: 33.3%;
     display: flex;
     justify-content: center;
@@ -82,7 +70,7 @@
     text-align:left;
 }
 
-.addOfferOptionGroupThree{
+.add-offer-option__three{
     min-width: 33.3%;
     display: flex;
     justify-content: flex-end;
@@ -91,32 +79,60 @@
     position: relative;
 }
 
-.addOfferSelect select{
+.add-offer-option__select select{
     border-radius: 20px;
     background-color: #F7F7F7;
     border: none;
     font-family: Montserrat;
     font-size: 16px;
     color: #878787;
-    appearance: none;
+    /*appearance: none;*/
+    border-right: 16px solid transparent;
     padding: 1.2em;
     position: relative;
-    min-width: 100%;
+    width: 100%;
 }
 
-.addOfferSelect{
+.selectedTags{
+    flex-direction: row;
+    width: 50%;
+    align-items: start;
+    display: block;
+
+}
+
+
+.add-offer-tags-autocomplete__chosen {
+    flex-direction: row;
+    padding: 0.3em 1.7em 0.3em 0.7em;
+    border-radius: 10px;
+    margin-left: 1em;
+    font-size: 1em;
+    align-items: start;
+    display: inline-block;
+    margin-top: 1em;
+}
+
+.add-offer-tags-autocomplete__chosen:first-child{
+    margin-left: 0;
+}
+
+
+.add-offer-option__select{
     position: relative;
     flex-direction: row;
     width: 70%;
 }
 
-.addOfferSelect i{
+.add-offer-option__select i{
     position: absolute;
     right:0;
     margin-top: 1.2em;
-    padding-right: 0.6em;
+  
    
 }
+
+
 
 .options{
     border-radius: 20px;
@@ -127,67 +143,65 @@ color: #CCCCCC;
 }
 
 
-.addOfferSalary{
-    min-width: 100%;
+.add-offer-salary, .add-offer-contact{
+    width: 100%;
     display: flex;
     margin-top: 4em;
-    margin-left: 4em;
 }
 
-.addOfferMinSalary{
-    min-width: 33.3%;
+.add-offer-salary__min, .add-offer-contact__email{
+    width: 33.3%;
     display: flex;
     justify-content: flex-start;
     flex-direction: column;
     text-align:left;
 }
 
-.addOfferMaxSalary{
-    min-width: 33.3%;
+.add-offer-salary__max, .add-offer-contact__phone{
+    width: 33.3%;
     display: flex;
     justify-content: center;
     flex-direction: column;
     text-align:left;
 }
 
-.addOfferPositionZl input{
+.add-offer-salary__input, .add-offer-contact__input{
     border-radius: 20px;
     background-color: #F7F7F7;
     border: none;
-    min-width: 100%;
+    width: 100%;
     font-family: Montserrat;
     font-size: 16px;
     color: #878787;
     padding: 1.2em 0em 1.2em 1.2em;
-
 }
 
-.addOfferPositionZl{
+.add-offer-salary__position, .add-offer-contact__position{
     position: relative;
-    flex-direction: row;
+    
     width: 67%;
 }
 
-.addOfferZl{
+/*.add-offer-contact__position{
+    position: relative;
+    
+    width: 67%;
+}*/
+
+.add-offer-salary__zl{
     position: absolute;
     right:0;
-    padding-top: 0.8em;
+    padding-top: 1.2em;
     font-family: Montserrat;
     font-weight: 600;
-    font-size: 20px;
+    font-size: 16px;
     color: #878787;
  
    
 }
 
-.addOfferLocation{
-    min-width: 100%;
-    text-align: left;
-    margin-left: 4em;
-    margin-top: 5em;
-}
 
-.addOfferLocation input{
+.add-offer__locationinput{
     border-radius: 20px;
     background-color: #F7F7F7;
     padding: 1.7em;
@@ -195,17 +209,36 @@ color: #CCCCCC;
     width: 20%;
 }
 
-.addOfferDescriptionTags{
-    min-width: 100%;
+.add-offer__profession{
     text-align: left;
-    margin-left: 4em;
     margin-top: 5em;
 }
-.addOfferTextarea{
+
+
+.add-offer__location{
+    text-align: left;
+    margin-top: 5em;
+}
+
+.add-offer__profinput{
+    border-radius: 20px;
+    background-color: #F7F7F7;
+    padding: 1.7em;
+    border: none;
+    width: 50%;
+}
+
+
+.add-offer-descripttags{
+    text-align: left;
+    margin-top: 5em;
+    display: flex;
+}
+.add-offer-descripttags__textarea{
     border-radius: 20px 20px 0px 0px;
     width: 100%;
     background-color: #E1E1E1;
-    padding: 1.2em;
+    padding: 1.2em 0.2em 0 0;
     align-content: center;
     text-align: center;
     color: #202020;
@@ -217,7 +250,7 @@ textarea {
     border-radius: 0px 0px 20px 20px;
     height: 22em;
     border: none;
-    padding: 1.3em;
+    
     background-color: #F7F7F7;
     font-family: Montserrat;
     font-size: 15px;
@@ -226,15 +259,50 @@ textarea {
 
 }
 
-.addOfferDescription{
+.add-offer-descripttags__desc{
+    justify-content: flex-start;
+    width: 50%;
+
+}
+
+.aleale{
+    width: 20%;
+    display: flex;
     justify-content: center;
-    width: 45%;
+}
+.add-offer-tags{
+   
+    width: 40%;
+    flex-direction: column;
+    text-align:left;
+    margin-left: 8em;
+    top: 0;
+
+
+}
+.hiddenInput{
+    visibility: hidden;
+}
+
+.add-offer-tags__chosen{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    text-align:left;
+    display: inline-block;
+    margin-top: 2em;
 }
 
 .fa-b{
     padding-right: 1em;
+    visibility: hidden;
 }
-.addOfferFrame button{
+.fa-list-ul{
+    visibility: hidden;
+}
+
+.add-offer__submit{
     font-family: Urbanist;
     border-radius: 15px;
     font-size: 1.2em;
@@ -242,8 +310,163 @@ textarea {
     padding: 0.4em 1em;
     color: #FFFFFF;
     background-color: #202020;
-    margin: 1em;
+    margin-top: 2em;
     border: none;
     letter-spacing: 0.1em;
+    
 }
 
+.add-offer-tags-autocomplete {
+/*the container must be positioned relative:*/
+    position: relative;
+    width: 70%;
+    display: block;
+}
+
+.add-offer-tags-autocomplete__input {
+    border-radius: 20px;
+    background-color: #F7F7F7;
+    padding: 1.5em;
+    border: none;
+    width: 100%;
+    box-sizing: border-box;
+    font-size: 1em;
+}
+
+.add-offer-tags-autocomplete__items {
+position: absolute;
+z-index: 99;
+font-weight: 100;
+/*position the autocomplete items to be the same width as the container:*/
+top: 100%;
+left: 0;
+right: 0;
+}
+.add-offer-tags-autocomplete__items div {
+padding: 10px;
+cursor: pointer;
+box-sizing: border-box;
+background-color: #fff;
+border-bottom: 1px solid #d4d4d4;
+border-radius: 20px;
+width: 100%;
+}
+.add-offer-tags-autocomplete__items div:hover {
+/*when hovering an item:*/
+background-color: #e9e9e9;
+}
+.add-offer-tags-autocomplete__active {
+/*when navigating through the items using the arrow keys:*/
+background-color: DodgerBlue !important;
+color: #ffffff;
+}
+
+.add-offer-tags-autocomplete__items strong {
+    font-weight: 600;
+}
+
+/* Hide elements fetched from DB */
+
+.appointmentTags {
+    visibility: hidden;
+    height: 0;
+}
+
+.closeIcon {
+    position: relative;
+    left: 1em;
+}
+
+.closeIcon:hover {
+    cursor: pointer;
+}
+
+@media only screen and (max-width: 1000px) {
+    .add-offer-options{
+        width: 100%;
+        display: block;
+        justify-content: center;
+        margin-top: 4em;
+    }
+    .add-offer-option__two, .add-offer-option__three{
+        margin-top: 1em;
+    }
+  
+   
+    .add-offer__profinput{
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .add-offer-salary, .add-offer-contact{
+        display: block;
+        
+    }
+    .add-offer-salary__zl{
+        visibility: hidden;
+    }
+    .add-offer-salary__max, .add-offer-contact__phone{
+        margin-top: 1em;
+        
+    }
+    .add-offer-salary__min, .add-offer-contact__email, .add-offer-contact__phone, .add-offer-salary__max {
+       width: 100%;
+        box-sizing: border-box;
+    }
+    .add-offer-salary input{
+        width: 100%;
+    }
+    
+    .add-offer__locationinput{
+        width: 100%;
+        box-sizing: border-box;
+    }
+    .add-offer-descripttags{
+        display: block;
+       
+    }
+    .add-offer-descripttags__desc{
+        display: block;
+        min-width: 100%;
+        justify-content: center;
+       
+    }
+    .add-offer-tags{
+        display: block;
+        margin-left: 0;
+        margin-top: 5em;
+        width: 100%;
+    }
+    .add-offer-tags__chosen{
+        margin-bottom: 3em;
+    }
+    .fa-angle-down{
+        visibility: hidden;
+    }
+    .add-offer-option__select select{
+        display: signature;
+    }
+    .add-offer__frame{
+        width: 100%;
+        padding: 2em;
+    }
+    .add-offer-option__select{
+
+        width: 100%;
+    }
+    .add-offer-contact__position,.add-offer-salary__position{
+        width: 100%;
+        padding-right: 0;
+        margin: 0;
+        padding-left: 0;
+    }
+    .add-offer-salary__input, .add-offer-contact__input{
+        width: 100%;
+        box-sizing: border-box;
+
+    }
+    .add-offer-tags-autocomplete{
+        width: 100%;
+    }
+    
+  }

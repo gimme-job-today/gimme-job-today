@@ -21,28 +21,28 @@
         {% csrf_token %}
         <div class="form-inputs">
             <div>
-                <input type="text" name="nameCompany" class="Company" placeholder="Nazwa firmy" />
+                <input type="text" name="nameCompany" class="form-inputs__company__name" placeholder="Nazwa firmy" />
                 <span class="error-message">{{ error_messages.company }}</span>
             </div>
             <div>
-                <input type="email" name="email" class="Company" placeholder="E-mail" />
+                <input type="email" name="email" class="form-inputs__e-mail" placeholder="E-mail" />
                 <span class="error-message">{{ error_messages.username }}</span>
             </div>
             <div>
-                <input type="password" name="password" class="Password" placeholder="Hasło" />
-                <input type="password" name="passwordRepeat" class="Password" placeholder="Powtórz hasło" />
+                <input type="password" name="password" class="form-inputs__password" placeholder="Hasło" />
+                <input type="password" name="passwordRepeat" class="form-inputs__password" placeholder="Powtórz hasło" />
                 <span class="error-message">{{ error_messages.password }}</span>
             </div>
         </div>
 
-        <div class="policy-container">
+        <div class="register-policy-container">
             <input type="checkbox" name="acceptPolicyCheckbox" id="checkbox" required/>
             <label for="checkbox">
                 Zapoznałem/am się i zgadzam się z treścią regulaminu serwisu oraz
                 polityki prywatności.
             </label>
         </div>
-        <input type="submit" class="buttonRegister" value="Zarejestruj się">
+        <input type="submit" class="button" value="Zarejestruj się">
     </form>
 </div>
 

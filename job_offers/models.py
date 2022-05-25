@@ -43,6 +43,13 @@ class Company(models.Model):
 
     logo = models.ImageField(upload_to=company_logo_directory, blank=True)
 
+    @property
+    def logo_url_or_default(self):
+        if self.logo:
+            return self.logo.url
+        else:
+            return "https://www.w3schools.com/howto/img_avatar.png"
+
     address = models.CharField(
         max_length=100,
         default="",
@@ -67,7 +74,7 @@ class Company(models.Model):
             "description": self.description,
             "address": self.address,
             "logo": {
-                "url": self.logo.url,
+                "url": self.logo_url_or_default,
             }
         }
 
@@ -83,7 +90,7 @@ class Offer(models.Model):
 
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
 
-    company = models.ForeignKey("Company", on_delete=models.CASCADE)
+    company = models.ForeignKey("Company", on_delete=models.CASCADE, related_name="offers")
 
     position = models.CharField(
         max_length=100
@@ -94,9 +101,9 @@ class Offer(models.Model):
     )
 
     class WorkModes(models.TextChoices):
-        STATIONARY = 'stationary', 'Stationary'
-        REMOTE = 'remote', 'Remote'
-        HYBRID = 'hybrid', 'Hybrid'
+        STATIONARY = 'stationary', 'Stacjonarny'
+        REMOTE = 'remote', 'Zdalny'
+        HYBRID = 'hybrid', 'Hybrydowy'
 
     work_mode = models.CharField(
         max_length=100,
@@ -105,11 +112,11 @@ class Offer(models.Model):
     )
 
     class WorkTimes(models.TextChoices):
-        FULL = 'full', 'Full'
-        THREE_FOURTH = 'three_fourth', '3/4'
-        ONE_SECOND = 'one_second', '1/2'
-        ONE_FOURTH = 'one_fourth', '1/4'
-        OTHER = 'other', 'Other'
+        FULL = 'full', 'Pełny etat'
+        ONE_SECOND = 'one_second', 'Pół etatu'
+        THREE_FOURTH = 'three_fourth', '3/4 etatu'
+        ONE_FOURTH = 'one_fourth', '1/4 etatu'
+        OTHER = 'other', 'Inne'
 
     work_time = models.CharField(
         max_length=100,
@@ -118,11 +125,11 @@ class Offer(models.Model):
     )
 
     class ContractTypes(models.TextChoices):
-        CONTRACT_OF_EMPLOYMENT = 'contract_of_employment', 'Contract of employment'
-        CONTRACT_OF_MANDATE = 'contract_of_mandate', 'Contract of mandate'
-        CONTRACT_OF_COMMISSION = 'contract_of_commission', 'Contract of commission'
+        CONTRACT_OF_EMPLOYMENT = 'contract_of_employment', 'Umowa o pracę'
+        CONTRACT_OF_MANDATE = 'contract_of_mandate', 'Umowa zlecenie'
+        CONTRACT_OF_COMMISSION = 'contract_of_commission', 'Umowa o dzieło'
         BUSINESS_TO_BUSINESS = 'business_to_business', 'B2B'
-        OTHER = 'other', 'Other'
+        OTHER = 'other', 'Inne'
 
     contract_type = models.CharField(
         max_length=100,

@@ -1,32 +1,36 @@
 {% extends "base.html" %}
 {% load static %}
 {% block styles %}<link rel="stylesheet" href="{% static '/styles/offers.css' %}" />{% endblock %}
+
+{% block scripts %}
+<script defer src="{% static '/scripts/delete-offer.js' %}"></script>
+{% endblock %}
+
 {% block title %}<title>Gimme-job.today</title>{% endblock %}
 {% block content %}
 
-<div class="offers">
+<div class="job-offers">
 
-    <div class="titleOffersContent">Moje oferty</div>
+    <div class="title-my-offers">Moje oferty</div>
 
-    <div class="myOffersContent">
-        <div class="myOffers">
-            <div class="offersMain">
-                <div class="offersTitle">
-                <div class="iconsCity">
-                    <i class="fa-solid fa-location-dot fa-xl"></i>Warszawa
-                </div>
-                <div class="appointmentDate">Data opublikowania: <b>13.04.2022</b></div>
+    {% for offer in user.company.offers.all %}
+
+        <div class="my-offers">
+            <div class="my-offers__city__and__date">
+                <div class="my-offers__city"><i class="fa-solid fa-location-dot fa-xl"></i>{{ offer.city }}</div>
+                <div class="my-offers__date">Data opublikowania: <b>13.04.2022</b></div>
             </div>
-    
-            <div class="offersContentIcons">
-                <div class="offersJob">Junior Full Stack Developer</div>
-                <div class="iconsTrash">
-                    <a href='/edit-offer'><i class="fa-regular fa-pen-to-square fa-xl"></i></a>
-                    <i onClick="showModalDeleteOffer(event)" class="fa-regular fa-trash-can fa-xl"></i>
-                </div>
+
+            <div class="position-name">{{ offer.position }}</div>
+
+            <div class="my-offers__trash__and__pen__icons">
+                <a href='/edit-offer/{{ offer.id }}' class="fa-regular fa-pen-to-square fa-xl"></a>
+                <i onClick="showModalDeleteOffer(event)" data-offer-id="{{ offer.id }}" class="fa-regular fa-trash-can fa-xl" delete-offer-trash-icon></i>
             </div>
+
         </div>
-    </div>
+
+    {% endfor %}
 
 </div>
 
