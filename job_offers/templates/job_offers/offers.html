@@ -18,7 +18,7 @@
         <div class="my-offers">
             <div class="my-offers__city__and__date">
                 <div class="my-offers__city"><i class="fa-solid fa-location-dot fa-xl"></i>{{ offer.city }}</div>
-                <div class="my-offers__date">Data opublikowania: <b>13.04.2022</b></div>
+                <div class="my-offers__date">Data opublikowania: <b>{{ offer.formatted_time_created }}</b></div>
             </div>
 
             <div class="position-name">{{ offer.position }}</div>
