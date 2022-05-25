@@ -159,6 +159,10 @@ class Offer(models.Model):
 
     visit_counter = models.PositiveIntegerField(default=0)
 
+    @property
+    def tags_ids_comma_separated(self):
+        return ",".join([str(tag.id) for tag in self.tags.all()])
+
     tags = models.ManyToManyField("Tag")
 
     def json(self):
