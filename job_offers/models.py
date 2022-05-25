@@ -92,6 +92,8 @@ class Offer(models.Model):
 
     company = models.ForeignKey("Company", on_delete=models.CASCADE, related_name="offers")
 
+    time_created = models.DateTimeField(auto_now_add=True)
+
     position = models.CharField(
         max_length=100
     )
