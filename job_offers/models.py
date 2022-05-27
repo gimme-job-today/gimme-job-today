@@ -182,6 +182,7 @@ class Offer(models.Model):
             "work_time": dict(self.WorkTimes.choices)[self.work_time],
             "contract_type": dict(self.ContractTypes.choices)[self.contract_type],
             "description": self.description,
+            "email": self.email,
             "phone_number": self.phone_number,
             "salary_min": self.salary_min,
             "salary_max": self.salary_max,
