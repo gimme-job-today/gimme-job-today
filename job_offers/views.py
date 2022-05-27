@@ -35,7 +35,7 @@ def login(request):
             auth_login(request, user)
             return redirect('index')
         else:
-            error_messages.append('Wrong email or password')
+            error_messages.append('Błędny email bądź hasło')
         return render(request, 'job_offers/login.html', {'error_messages': error_messages})
 
     return render(request, 'job_offers/login.html')
@@ -58,20 +58,20 @@ def register(request):
             user = User.objects.filter(username=email).first()
             assert user is None
         except AssertionError:
-            error_messages["username"] = "User already exists"
+            error_messages["username"] = "Taki użytkownik już istnieje"
 
         # Checking password are the same
         try:
             assert password
             assert password == passwordRepeat
         except AssertionError:
-            error_messages["password"] = "Passwords are not the same"
+            error_messages["password"] = "Podane hasła nie są takie same"
 
         # Checking if there is a company name
         try:
             assert company_name
         except AssertionError:
-            error_messages["company"] = "No company name provided"
+            error_messages["company"] = "Nie podano nazwy firmy"
 
         if len(error_messages):
             return render(request, 'job_offers/register.html', {'error_messages': error_messages})
