@@ -1,3 +1,41 @@
+//FILTERS IN INDEX.HTML
+
+search = document.getElementById("search-engine__button");
+search.onclick = function () {
+  document.getElementById("filter").style.visibility = "visible";
+  document.getElementById("filter").style.display = "block";
+  document.getElementById("fa-angle-down").style.visibility = "hidden";
+  document.getElementById("fa-xmark").style.visibility = "visible";
+  search.style.borderRadius = "25px 25px 0px 0px";
+};
+
+closeFilter = document.getElementById("fa-xmark");
+closeFilter.onclick = function () {
+  document.getElementById("filter").style.visibility = "hidden";
+  document.getElementById("filter").style.display = "none";
+  document.getElementById("fa-angle-down").style.visibility = "visible";
+  document.getElementById("fa-xmark").style.visibility = "hidden";
+  search.style.borderRadius = "25px";
+};
+
+const slider_min = document.getElementById("slider-min");
+const slider_salary_min = document.getElementById("slider-salary-min");
+const showSalaryMin = () => {
+  slider_salary_min.textContent = slider_min.value;
+};
+
+slider_min.addEventListener("mousemove", showSalaryMin);
+
+const slider_max = document.getElementById("slider-max");
+const slider_salary_max = document.getElementById("slider-salary-max");
+const showSalaryMax = () => {
+  slider_salary_max.textContent = slider_max.value;
+};
+
+slider_max.addEventListener("mousemove", showSalaryMax);
+
+//TAGS
+
 tab = [];
 document.addEventListener(
   "click",

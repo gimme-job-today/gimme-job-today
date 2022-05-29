@@ -15,6 +15,15 @@ def index(request):
     offer_objects = Offer.objects.all()
     context["offers"] = offer_objects
 
+    workmodes_objects = Offer.WorkModes.choices
+    context["work_modes"] = workmodes_objects
+
+    worktimes_objects = Offer.WorkTimes.choices
+    context["work_times"] = worktimes_objects
+
+    contracttypes_objects = Offer.ContractTypes.choices
+    context["contract_types"] = contracttypes_objects
+
     return render(request, 'job_offers/index.html', context)
 
 
