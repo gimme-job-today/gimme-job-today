@@ -37,17 +37,21 @@ slider_max.addEventListener("mousemove", showSalaryMax);
 //TAGS
 
 tab = [];
+
+let loadedOffer;
+
 document.addEventListener(
   "click",
   async function (event) {
     if (!event.target.classList.contains("offer__show-details-button")) return;
-
     const offerToLoadId = event.target.dataset.offerId;
     console.log(offerToLoadId);
     tab.push(offerToLoadId);
 
     response = await fetch(`/api/offer-details?id=${offerToLoadId}`);
     responseData = await response.json();
+
+    loadedOffer = responseData;
 
     if (responseData.status !== "success") return;
 
@@ -130,6 +134,22 @@ document.addEventListener(
     if (window.innerWidth <= 1200) {
       offerDetailsDiv.style.display = "block";
     }
+    
   },
   true
 );
+
+const openContactMail = () => {
+  const contactEmail = loadedOffer.data.email;
+  const positionJob = loadedOffer.data.position;
+
+  const mailSubject = `Aplikacja na stanowisko: ${positionJob}`;
+  const mailBody = `Szanowni Państwo,
+  %0D%0AW nawiązaniu do oferty pracy na stanowisko: ${positionJob} umieszczonej na portalu gimme-job.today przesyłam swoją aplikację. Uprzejmie proszę o rozpatrzenie i informację zwrotną.
+  %0D%0A%0D%0AMoje dane kontaktowe:
+  %0D%0AImię i nazwisko:
+  %0D%0AAdres email:
+  %0D%0ANumer telefonu: `;
+  
+  window.open(`mailto:${contactEmail}?subject=${mailSubject}&body=${mailBody}`);
+}
