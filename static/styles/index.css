@@ -362,6 +362,7 @@
   background-color: #202020;
   margin: 1em;
   border: none;
+  cursor: pointer;
 }
 .offer-details__button-content {
   margin-top: 1em;
@@ -556,10 +557,10 @@
     width: 100%;
     margin:0;
   }
-  #offer-details-max{
+  /* #offer-details-max{
     display: none;
     visibility: hidden;
-  }
+  } */
 
 }
 @media only screen and (max-width: 1700px)  {
