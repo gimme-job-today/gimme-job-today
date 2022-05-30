@@ -36,6 +36,8 @@ slider_max.addEventListener("mousemove", showSalaryMax);
 
 //TAGS
 
+let offerDetailsDiv;
+
 tab = [];
 document.addEventListener(
   "click",
@@ -133,3 +135,17 @@ document.addEventListener(
   },
   true
 );
+
+window.addEventListener("resize", function () {
+  if (offerDetailsDiv != undefined) {
+    if (window.innerWidth > 1200) {
+      if(offerDetailsDiv.id != "offer-details-max") {
+        offerDetailsDiv.style.display = "none";
+        offerDetailsDiv.style.visibility = "hidden";
+      }
+    }
+    else {
+      offerDetailsDiv.style.visibility = "visible";
+    }
+  }
+});
