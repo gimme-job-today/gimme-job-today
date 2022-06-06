@@ -17,11 +17,10 @@
 <div class="all-main-site">
 
   <div class="filter-tags__chosen">
-    <input class="hiddenInput" id="hiddenInput" name="add-offer__tags">
-    <div id="selectedTags">  
+    <div id="selectedTags">
     </div>
   </div>
-  
+
   <div class="searching-content">
 
     <div class="searching-content_filter">
@@ -39,7 +38,8 @@
       <form method="post" name="filter_offer">
         {% csrf_token %}
         <div class="filter" id="filter" style="visibility: hidden;">
-            
+            <input class="hiddenInput" id="hiddenInput" name="add-offer__tags">
+
           <div class="filter-content">
             <form autocomplete="off">
             <div class="filter-tags" id="add-offer-tags">
@@ -70,10 +70,10 @@
           <div class="filter-options">
             <div class="filter-option_one">
               <p>Forma zatrudnienia</p>
-              <div class="add-offer-option__select">  
+              <div class="add-offer-option__select">
                 {% for contract_value, contract_label in contract_types %}
-                  <input type="checkbox" name="filterContract" value="{{contract_value}}">{{contract_label}}<br>   
-                {% endfor %}    
+                  <input type="checkbox" name="filterContract" value="{{contract_value}}">{{contract_label}}<br>
+                {% endfor %}
               </div>
             </div>
 
@@ -81,8 +81,8 @@
               <p>Wymiar pracy</p>
               <div class="add-offer-option__select">
                 {% for work_time_value, work_time_label in work_times %}
-                  <input type="checkbox" name="filterTime" value="{{work_time_value}}">{{work_time_label}}<br>   
-                {% endfor %}    
+                  <input type="checkbox" name="filterTime" value="{{work_time_value}}">{{work_time_label}}<br>
+                {% endfor %}
               </div>
             </div>
 
@@ -90,8 +90,8 @@
               <p>Tryb pracy</p>
               <div class="add-offer-option__select">
                 {% for work_mode_value, work_mode_label in work_modes %}
-                  <input type="checkbox" name="filterMode" value="{{work_mode_value}}">{{work_mode_label}}<br>   
-                {% endfor %}    
+                  <input type="checkbox" name="filterMode" value="{{work_mode_value}}">{{work_mode_label}}<br>
+                {% endfor %}
               </div>
             </div>
           </div>
@@ -122,12 +122,12 @@
         </div>
       </form>
 
-     
-     
+
+
     </div>
 
-   
-  
+
+
   </div>
 
   <div class="all-offers">
