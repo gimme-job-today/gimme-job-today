@@ -190,6 +190,48 @@ class Offer(models.Model):
             "tags": [tag.json() for tag in self.tags.all()],
         }
 
+    @classmethod
+    def view_filter(_class,
+        position:str = None,
+        city:str = None,
+        contract_type: list = None,
+        work_mode: list = None,
+        work_time: list = None,
+        salary_min: int = None,
+        salary_max: int = None,
+        tags: list = None,
+    ):
+
+        objects = Offer.objects.all()
+
+        if position is not None:
+            objects = objects.filter(position__icontains=position)
+
+        if city is not None:
+            objects = objects.filter(city__icontains=city)
+
+
+        if contract_type is not None:
+            objects = objects.filter(contract_type__in=contract_type)
+
+        if work_mode is not None:
+            objects = objects.filter(work_mode__in=work_mode)
+
+        if work_time is not None:
+            objects = objects.filter(work_time__in=work_time)
+
+
+        if salary_min is not None:
+            objects = objects.filter(salary_min__gte=salary_min)
+        if salary_max is not None:
+            objects = objects.filter(salary_max__lte=salary_max)
+
+        if tags is not None:
+            for tag in tags:
+                objects = objects.filter(tags__in=[tag,])
+
+        return objects
+
     def __str__(self):
         all_tags = ", ".join([tag.text for tag in self.tags.all()])
 
