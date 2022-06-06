@@ -12,7 +12,23 @@ from job_offers.models import Company, Offer, Tag
 def index(request):
     context = {}
 
-    offer_objects = Offer.objects.all()
+    if request.method == "POST":
+        offer_objects = Offer.view_filter(
+            position=request.POST.get('filterProfession') if request.POST.get('filterProfession') else None,
+            city=request.POST.get('filterLocation') if request.POST.get('filterLocation') else None,
+            contract_type=request.POST.getlist('filterContract') if request.POST.get('filterContract') else None,
+            work_mode=request.POST.getlist('filterMode') if request.POST.get('filterMode') else None,
+            work_time=request.POST.getlist('filterTime') if request.POST.get('filterTime') else None,
+            salary_min=request.POST.get('filterMinSalary'),
+            salary_max=request.POST.get('filterMaxSalary'),
+            tags=[
+                tag for tag in
+                Tag.objects.filter(id__in=[uuid.UUID(tag_id) for tag_id in request.POST.get('filterTagIds').split(",")])
+            ] if request.POST.get('filterTagIds') else list(),
+        )
+    else:
+        offer_objects = Offer.objects.all()
+
     context["offers"] = offer_objects
 
     workmodes_objects = Offer.WorkModes.choices
