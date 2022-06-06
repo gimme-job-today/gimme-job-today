@@ -36,6 +36,8 @@ slider_max.addEventListener("mousemove", showSalaryMax);
 
 //TAGS
 
+let offerDetailsDiv;
+
 tab = [];
 
 let loadedOffer;
@@ -134,7 +136,7 @@ document.addEventListener(
     if (window.innerWidth <= 1200) {
       offerDetailsDiv.style.display = "block";
     }
-    
+
   },
   true
 );
@@ -150,6 +152,21 @@ const openContactMail = () => {
   %0D%0AImię i nazwisko:
   %0D%0AAdres email:
   %0D%0ANumer telefonu: `;
-  
+
   window.open(`mailto:${contactEmail}?subject=${mailSubject}&body=${mailBody}`);
 }
+
+
+window.addEventListener("resize", function () {
+  if (offerDetailsDiv != undefined) {
+    if (window.innerWidth > 1200) {
+      if(offerDetailsDiv.id != "offer-details-max") {
+        offerDetailsDiv.style.display = "none";
+        offerDetailsDiv.style.visibility = "hidden";
+      }
+    }
+    else {
+      offerDetailsDiv.style.visibility = "visible";
+    }
+  }
+});
