@@ -38,7 +38,7 @@
       <form method="post" name="filter_offer">
         {% csrf_token %}
         <div class="filter" id="filter" style="visibility: hidden;">
-            <input class="hiddenInput" id="hiddenInput" name="add-offer__tags">
+            <input class="hiddenInput" id="hiddenInput" name="filterTagIds">
 
           <div class="filter-content">
             <form autocomplete="off">
@@ -101,7 +101,7 @@
             <div class="filter__profession">
               <div class="filter__position">
                 <p>Minimalne wynagrodzenie brutto</p>
-                <input type="range" id="slider-min" class="slider" min="100" max="10000" value="100" step="100">
+                <input type="range" id="slider-min" class="slider" min="100" max="10000" value="100" step="100" name="filterMinSalary">
                 <span id="slider-salary-min" class="slider-salary">100</span> zł
               </div>
             </div>
@@ -109,8 +109,8 @@
             <div class="filter__location">
               <div class="filter__position">
                 <p>Maksymalne wynagrodzenie brutto</p>
-                <input type="range" id="slider-max" class="slider" min="100" max="10000" value="100" step="100">
-                <span id="slider-salary-max" class="slider-salary">100</span> zł
+                <input type="range" id="slider-max" class="slider" min="100" max="10000" value="10000" step="100" name="filterMaxSalary">
+                <span id="slider-salary-max" class="slider-salary">10000</span> zł
               </div>
             </div>
           </div>
