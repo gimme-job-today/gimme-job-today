@@ -15,7 +15,7 @@
   width: 95%;
   box-sizing: border-box;
   text-align: center;
-  z-index: 99;
+  z-index: 1;
   position: absolute;
 }
 
@@ -411,14 +411,18 @@
 .profession {
   display: flex;
   flex-direction: column;
-  min-width: 100%;
+  width: 100%;
   text-align: left !important;
   align-items: flex-start;
   margin-left: 2em;
+  overflow-wrap: break-word;
+  word-break: break-all;
 }
 
 .profession p {
   text-align: left !important;
+  word-break: break-all;
+  overflow-wrap: break-word;
 }
 
 .profession .profession__title {
@@ -437,6 +441,9 @@
   font-family: Montserrat;
   line-height: 1.5em;
   text-align: justify !important;
+  word-wrap: initial;
+  overflow-wrap: break-word;
+  word-break: break-all;
 }
 
 .offer-details__job {
