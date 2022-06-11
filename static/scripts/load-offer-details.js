@@ -180,7 +180,6 @@ document.querySelector('.searching-content__button').addEventListener("click", f
     slider_min.value = temp;
     slider_salary_min.textContent = slider_min.value;
     slider_salary_max.textContent = slider_max.value;
-    console.log(slider_min.value,slider_max.value)
     this.click();
   }
 })
