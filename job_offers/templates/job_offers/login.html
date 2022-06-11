@@ -11,10 +11,10 @@
         <p>Zaloguj się</p>
         <div class="form-inputs">
             <div>
-                <input type="email" name="email" class="form-inputs__company__name" placeholder="E-mail" />
+                <input type="email" name="email" class="form-inputs__company__name" placeholder="E-mail" required placeholder="email@gmail.com" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" title="Format mail@nazwapoczty.pl."/>
             </div>
             <div class="no-margin">
-                <input type="password" name="password" class="form-inputs__password" placeholder="Hasło" />
+                <input type="password" name="password" class="form-inputs__password" placeholder="Hasło" required/>
             </div>
 
             {% for error_message in error_messages %}
