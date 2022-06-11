@@ -249,6 +249,8 @@
   border: none;
   box-shadow: 0 0 0.5em #c7c7c7;
   background-color: #ffdf96;
+  top: 0.5em;
+  position: sticky;
 }
 .offer-details__tags {
   display: flex;
