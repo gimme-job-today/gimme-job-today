@@ -170,3 +170,17 @@ window.addEventListener("resize", function () {
     }
   }
 });
+
+
+document.querySelector('.searching-content__button').addEventListener("click", function (e) {
+  if(slider_min.value > slider_max.value) {
+    e.preventDefault();
+    let temp = slider_max.value;
+    slider_max.value = slider_min.value;
+    slider_min.value = temp;
+    slider_salary_min.textContent = slider_min.value;
+    slider_salary_max.textContent = slider_max.value;
+    console.log(slider_min.value,slider_max.value)
+    this.click();
+  }
+})
