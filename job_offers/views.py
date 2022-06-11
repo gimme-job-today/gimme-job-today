@@ -157,6 +157,8 @@ def profile(request, company_id):
 
 def editProfile(request):
 
+    success_message = ''
+
     if request.method == 'POST':
         user_company = request.user.company
 
@@ -170,9 +172,9 @@ def editProfile(request):
             user_company.logo.save("", request.FILES['CompanyLogoEdit'].file, False)
 
         user_company.save()
+        success_message = 'Poprawnie zedytowano profil'
 
-
-    return render(request, 'job_offers/edit-profile.html')
+    return render(request, 'job_offers/edit-profile.html', {'success_message': success_message})
 
 def addOffer(request):
 
@@ -240,7 +242,7 @@ def addOffer(request):
     return render(request, 'job_offers/add-or-edit-offer.html', context)
 
 def edit_offer(request, offer_id):
-
+    context = {}
     try:
         assert offer_id
 
@@ -290,9 +292,7 @@ def edit_offer(request, offer_id):
                 except AssertionError: continue
 
         except: pass
-        finally: return redirect('offers')
-
-    context = {}
+        finally: context['success_message'] = 'Poprawnie zedytowano ofertę'
 
     context["edited_offer"] = edited_offer
 

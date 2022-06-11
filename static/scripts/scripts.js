@@ -74,3 +74,12 @@ function showModalDeleteProfile (evt) {
 function showModalDeleteOffer () {
   modalOffer.style.display = 'block';
 }
+
+window.addEventListener('load', () => {
+  const successMessageContent = document.getElementsByClassName('success-message-content')[0];
+  if(successMessageContent.innerText.length > 0) {
+    successMessageContent.classList.add('appear');
+
+    setInterval(() => successMessageContent.classList.remove('appear'), 5000);
+  }
+})

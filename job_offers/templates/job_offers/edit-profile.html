@@ -4,7 +4,6 @@
 <link rel="stylesheet" href="{% static '/styles/profile.css' %}" />{% endblock %}
 {% block title %}<title>Edytuj Profil</title>{% endblock %}
 {% block content %}
-
 <form method="post" name="edit-profile" enctype="multipart/form-data">
     {% csrf_token %}
     <div class="container">

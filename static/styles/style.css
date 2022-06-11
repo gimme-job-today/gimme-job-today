@@ -131,7 +131,7 @@ header > * {
   width: 35%;
   text-align: center;
 }
- 
+
 .navigation-unlogged .nav-item {
   margin-right: 1em;
 }
@@ -176,7 +176,8 @@ header > * {
   color: #ffc370;
 }
 
-a, a:visited {
+a,
+a:visited {
   color: #202020;
   text-decoration: none;
 }
@@ -222,14 +223,14 @@ a, a:visited {
   font-size: 0.8em;
   font-weight: 800;
   margin-bottom: 1.5em;
-  cursor:default;
+  cursor: default;
 }
 
 .meatballs-menu-content .logged-as {
   cursor: default;
 }
 
-.meatballs-menu-content .horizontalLine{
+.meatballs-menu-content .horizontalLine {
   border-top: 1px solid #d5d5d5;
   flex-grow: 1;
   margin-bottom: 1.5em;
@@ -254,7 +255,7 @@ a, a:visited {
 /* _______________Pop-up________________
 
  /* The Modal (background) */
- .modalOffer {
+.modalOffer {
   display: none; /* Hidden by default */
   position: fixed; /* Stay in place */
   z-index: 1; /* Sit on top */
@@ -263,8 +264,8 @@ a, a:visited {
   width: 100%; /* Full width */
   height: 100%; /* Full height */
   overflow: auto; /* Enable scroll if needed */
-  background-color: rgb(0,0,0); /* Fallback color */
-  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  background-color: rgb(0, 0, 0); /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
 }
 
 .modalProfile {
@@ -276,8 +277,8 @@ a, a:visited {
   width: 100%; /* Full width */
   height: 100%; /* Full height */
   overflow: auto; /* Enable scroll if needed */
-  background-color: rgb(0,0,0); /* Fallback color */
-  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  background-color: rgb(0, 0, 0); /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
 }
 
 /* Modal Content/Box */
@@ -306,27 +307,30 @@ a, a:visited {
   margin-top: 10%;
 }
 
-.BackLinkOffer, .BackLinkProfile {
+.BackLinkOffer,
+.BackLinkProfile {
   margin: 0.5em;
   text-align: left;
   font-size: 1em;
-  font-weight:bold;
+  font-weight: bold;
   letter-spacing: 1px;
   text-decoration: none;
-  color:#202020;
+  color: #202020;
   position: relative;
 }
 
-.BackLinkOffer i, .BackLinkProfile i {
+.BackLinkOffer i,
+.BackLinkProfile i {
   font-size: 1em;
   margin-right: 0.5em;
   position: relative;
   top: 0.15em;
 }
-.BackLinkProfile i{
+.BackLinkProfile i {
   margin-bottom: 2em;
 }
-.BackLinkOffer:hover, .BackLinkProfile:hover {
+.BackLinkOffer:hover,
+.BackLinkProfile:hover {
   cursor: pointer;
 }
 
@@ -346,7 +350,8 @@ a, a:visited {
   line-height: 1.6;
 }
 
-.ButtonDelete, .ButtonDeleteProfile {
+.ButtonDelete,
+.ButtonDeleteProfile {
   border-radius: 1em;
   background-color: #202020;
   width: 50%;
@@ -386,17 +391,37 @@ button:hover {
   margin-bottom: 2.25em;
 }
 
-
-
 @media only screen and (max-width: 1000px) {
-  .PopUp{
+  .PopUp {
     width: 100%;
     box-sizing: border-box;
   }
-  .ConfirmLine{
+  .ConfirmLine {
     display: block;
   }
- 
- 
+}
 
+.success-message-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.success-message-content {
+  width: 50%;
+  text-align: center;
+  background-color: #7ce87c;
+  padding: 0.5em;
+  border-radius: 0 0 1em 1em;
+  color: #0c0b0b;
+  box-shadow: 0px 2px 4px -2px #303030;
+  margin-top: -100px;
+  transition: all 1s;
+}
+
+.success-message-content.appear {
+  margin-top: 0;
 }
