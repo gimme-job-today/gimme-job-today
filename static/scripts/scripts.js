@@ -6,14 +6,15 @@ const handleDarkModeTogglerClick = (evt) => {
 const darkModeSwitcher =
   document.getElementsByClassName("dark-mode-switcher")[0];
 
-const darkModeTogglerIcon = document.querySelector('.dark-mode-toggler i');
+const darkModeTogglerIcon = document.querySelector(".dark-mode-toggler i");
 
-darkModeSwitcher.onclick = () => {
-  darkModeSwitcher.classList.toggle("active");
-  darkModeTogglerIcon.classList.toggle('fa-sun');
-  darkModeTogglerIcon.classList.toggle('fa-moon');
-};
-
+if (darkModeSwitcher) {
+  darkModeSwitcher.onclick = () => {
+    darkModeSwitcher.classList.toggle("active");
+    darkModeTogglerIcon.classList.toggle("fa-sun");
+    darkModeTogglerIcon.classList.toggle("fa-moon");
+  };
+}
 
 const meatballsMenuButton = document.getElementsByClassName(
   "nav-item meatballs-menu"
@@ -24,13 +25,13 @@ const meatballsMenuContent = document.getElementsByClassName(
 )[0];
 
 meatballsMenuButton.onclick = (evt) => {
-  meatballsMenuContent.classList.toggle('hidden');
-}
+  meatballsMenuContent.classList.toggle("hidden");
+};
 
 meatballsMenuContent.onclick = (evt) => {
   //prevent closing menu when clicking on content
   evt.stopPropagation();
-}
+};
 
 //_____________________Pop-up window_________________________
 
@@ -40,46 +41,49 @@ const CloseBtnOffer = document.getElementsByClassName("BackLinkOffer")[0];
 const CloseBtnProfile = document.getElementsByClassName("BackLinkProfile")[0];
 
 //Delete profile button in pop-up
-const BtnDeleteProfile = document.getElementsByClassName("ButtonDeleteProfile")[0];
+const BtnDeleteProfile = document.getElementsByClassName(
+  "ButtonDeleteProfile"
+)[0];
 
-BtnDeleteProfile.onclick = function() {
-
+BtnDeleteProfile.onclick = function () {
   //Place for password check code
 
-  window.location.replace('account-deleted');
-}
+  window.location.replace("account-deleted");
+};
 
-CloseBtnOffer.onclick = function() {
+CloseBtnOffer.onclick = function () {
   modalOffer.style.display = "none";
-}
+};
 
-CloseBtnProfile.onclick = function() {
+CloseBtnProfile.onclick = function () {
   modalProfile.style.display = "none";
-}
+};
 
 // When the user clicks anywhere outside of the modal, close it
-window.onclick = function(event) {
+window.onclick = function (event) {
   if (event.target == modalOffer || event.target == modalProfile) {
     modalOffer.style.display = "none";
     modalProfile.style.display = "none";
   }
-}
+};
 
-function showModalDeleteProfile (evt) {
+function showModalDeleteProfile(evt) {
   evt.preventDefault();
-  console.log(modalProfile)
-  modalProfile.style.display = 'block';
+  console.log(modalProfile);
+  modalProfile.style.display = "block";
 }
 
-function showModalDeleteOffer () {
-  modalOffer.style.display = 'block';
+function showModalDeleteOffer() {
+  modalOffer.style.display = "block";
 }
 
-window.addEventListener('load', () => {
-  const successMessageContent = document.getElementsByClassName('success-message-content')[0];
-  if(successMessageContent.innerText.length > 0) {
-    successMessageContent.classList.add('appear');
+window.addEventListener("load", () => {
+  const successMessageContent = document.getElementsByClassName(
+    "success-message-content"
+  )[0];
+  if (successMessageContent.innerText.length > 0) {
+    successMessageContent.classList.add("appear");
 
-    setInterval(() => successMessageContent.classList.remove('appear'), 5000);
+    setInterval(() => successMessageContent.classList.remove("appear"), 5000);
   }
-})
+});
