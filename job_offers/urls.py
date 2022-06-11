@@ -8,7 +8,7 @@ urlpatterns = [
     path('', index, name="index"),
     path('login', login),
     path('register', register),
-    path('logout', logout),
+    path('logout', logout, name='logout'),
     path('delete-account', delete_account, name="delete-account"),
     path('account-deleted', account_deleted, name="account-deleted"),
     path('offers', offers, name="offers"),
