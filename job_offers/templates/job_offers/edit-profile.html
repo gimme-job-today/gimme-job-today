@@ -4,7 +4,6 @@
 <link rel="stylesheet" href="{% static '/styles/profile.css' %}" />{% endblock %}
 {% block title %}<title>Edytuj Profil</title>{% endblock %}
 {% block content %}
-
 <form method="post" name="edit-profile" enctype="multipart/form-data">
     {% csrf_token %}
     <div class="container">
@@ -22,13 +21,13 @@
             </div>
             <div>
                 <p>Dane kontaktowe</p>
-                <input type="email" class="square__profile__info" name="CompanyContactEmailEdit" placeholder="E-mail" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" value="{{ request.user.company.email }}" required title="Format mail@nazwapoczty.com">
-                <input type="text" class="square__profile__info" name="CompanyContactPhoneNumberEdit" placeholder="Numer telefonu" pattern="[0-9]{3}-[0-9]{3}-[0-9]{3}" value="{{ request.user.company.phone_number }}" required title="Format 123-456-789.">
+                <input type="email" class="square__profile__info" name="CompanyContactEmailEdit" placeholder="nazwa@email.com" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" value="{{ request.user.company.email }}" required title="Format mail@nazwapoczty.com">
+                <input type="text" class="square__profile__info" name="CompanyContactPhoneNumberEdit" placeholder="123-456-789" pattern="[0-9]{3}-[0-9]{3}-[0-9]{3}" value="{{ request.user.company.phone_number }}" required title="Format 123-456-789.">
             </div>
         </div>
         <div class="square right">
             <p>Adres firmy</p>
-            <input type="text" class="square__profile__info" name="CompanyAddressEdit" placeholder="Adres firmy" value="{{ request.user.company.address }}" required minlength="10" maxlength="100">
+            <input type="text" class="square__profile__info" name="CompanyAddressEdit" placeholder="Opolska 23,45-771 Opole " value="{{ request.user.company.address }}" required minlength="10" maxlength="100">
             <p>Opis firmy</p>
             <div class="square-right__edit__profile__textarea">
                 <i class="fa-solid fa-b fa-sm"></i>

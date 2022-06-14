@@ -12,8 +12,33 @@ from job_offers.models import Company, Offer, Tag
 def index(request):
     context = {}
 
-    offer_objects = Offer.objects.all()
+    if request.method == "POST":
+        offer_objects = Offer.view_filter(
+            position=request.POST.get('filterProfession') if request.POST.get('filterProfession') else None,
+            city=request.POST.get('filterLocation') if request.POST.get('filterLocation') else None,
+            contract_type=request.POST.getlist('filterContract') if request.POST.get('filterContract') else None,
+            work_mode=request.POST.getlist('filterMode') if request.POST.get('filterMode') else None,
+            work_time=request.POST.getlist('filterTime') if request.POST.get('filterTime') else None,
+            salary_min=request.POST.get('filterMinSalary'),
+            salary_max=request.POST.get('filterMaxSalary'),
+            tags=[
+                tag for tag in
+                Tag.objects.filter(id__in=[uuid.UUID(tag_id) for tag_id in request.POST.get('filterTagIds').split(",")])
+            ] if request.POST.get('filterTagIds') else list(),
+        )
+    else:
+        offer_objects = Offer.objects.all()
+
     context["offers"] = offer_objects
+
+    workmodes_objects = Offer.WorkModes.choices
+    context["work_modes"] = workmodes_objects
+
+    worktimes_objects = Offer.WorkTimes.choices
+    context["work_times"] = worktimes_objects
+
+    contracttypes_objects = Offer.ContractTypes.choices
+    context["contract_types"] = contracttypes_objects
 
     return render(request, 'job_offers/index.html', context)
 
@@ -35,7 +60,7 @@ def login(request):
             auth_login(request, user)
             return redirect('index')
         else:
-            error_messages.append('Wrong email or password')
+            error_messages.append('Błędny email bądź hasło')
         return render(request, 'job_offers/login.html', {'error_messages': error_messages})
 
     return render(request, 'job_offers/login.html')
@@ -58,20 +83,20 @@ def register(request):
             user = User.objects.filter(username=email).first()
             assert user is None
         except AssertionError:
-            error_messages["username"] = "User already exists"
+            error_messages["username"] = "Taki użytkownik już istnieje"
 
         # Checking password are the same
         try:
             assert password
             assert password == passwordRepeat
         except AssertionError:
-            error_messages["password"] = "Passwords are not the same"
+            error_messages["password"] = "Podane hasła nie są takie same"
 
         # Checking if there is a company name
         try:
             assert company_name
         except AssertionError:
-            error_messages["company"] = "No company name provided"
+            error_messages["company"] = "Nie podano nazwy firmy"
 
         if len(error_messages):
             return render(request, 'job_offers/register.html', {'error_messages': error_messages})
@@ -132,6 +157,8 @@ def profile(request, company_id):
 
 def editProfile(request):
 
+    success_message = ''
+
     if request.method == 'POST':
         user_company = request.user.company
 
@@ -145,9 +172,9 @@ def editProfile(request):
             user_company.logo.save("", request.FILES['CompanyLogoEdit'].file, False)
 
         user_company.save()
+        success_message = 'Poprawnie zedytowano profil'
 
-
-    return render(request, 'job_offers/edit-profile.html')
+    return render(request, 'job_offers/edit-profile.html', {'success_message': success_message})
 
 def addOffer(request):
 
@@ -215,7 +242,7 @@ def addOffer(request):
     return render(request, 'job_offers/add-or-edit-offer.html', context)
 
 def edit_offer(request, offer_id):
-
+    context = {}
     try:
         assert offer_id
 
@@ -265,9 +292,7 @@ def edit_offer(request, offer_id):
                 except AssertionError: continue
 
         except: pass
-        finally: return redirect('offers')
-
-    context = {}
+        finally: context['success_message'] = 'Poprawnie zedytowano ofertę'
 
     context["edited_offer"] = edited_offer
 

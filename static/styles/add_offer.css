@@ -65,7 +65,7 @@
 .add-offer-option__two{
     min-width: 33.3%;
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     flex-direction: column;
     text-align:left;
 }
@@ -73,7 +73,7 @@
 .add-offer-option__three{
     min-width: 33.3%;
     display: flex;
-    justify-content: flex-end;
+    justify-content: flex-start;
     flex-direction: column;
     text-align:left;
     position: relative;
@@ -104,13 +104,13 @@
 
 .add-offer-tags-autocomplete__chosen {
     flex-direction: row;
-    padding: 0.3em 1.7em 0.3em 0.7em;
-    border-radius: 10px;
+    border-radius: 15px;
     margin-left: 1em;
     font-size: 1em;
     align-items: start;
     display: inline-block;
     margin-top: 1em;
+    padding: 0.3em 1.7em 0.3em 0.7em;
 }
 
 .add-offer-tags-autocomplete__chosen:first-child{

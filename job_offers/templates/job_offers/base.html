@@ -27,11 +27,16 @@
   </head>
 
   <body>
+    <div class='success-message-container'>
+      <div class='success-message-content'>
+        {{ success_message }}
+      </div>
+    </div>
     <header>
       <div class="dark-mode-container">
-        <div class="dark-mode-switcher">
+        {% comment %} <div class="dark-mode-switcher">
           <div class="dark-mode-toggler"><i class="fa-solid fa-sun"></i></div>
-        </div>
+        </div> {% endcomment %}
       </div>
       <div class="logo-container">
         <a href="/">

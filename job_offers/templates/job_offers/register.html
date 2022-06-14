@@ -21,16 +21,16 @@
         {% csrf_token %}
         <div class="form-inputs">
             <div>
-                <input type="text" name="nameCompany" class="form-inputs__company__name" placeholder="Nazwa firmy" />
+                <input type="text" name="nameCompany" class="form-inputs__company__name" placeholder="Nazwa firmy" required />
                 <span class="error-message">{{ error_messages.company }}</span>
             </div>
             <div>
-                <input type="email" name="email" class="form-inputs__e-mail" placeholder="E-mail" />
+                <input type="email" name="email" class="form-inputs__e-mail" placeholder="E-mail" placeholder="email@gmail.com" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" required title="Format mail@nazwapoczty.pl."/>
                 <span class="error-message">{{ error_messages.username }}</span>
             </div>
             <div>
-                <input type="password" name="password" class="form-inputs__password" placeholder="Hasło" />
-                <input type="password" name="passwordRepeat" class="form-inputs__password" placeholder="Powtórz hasło" />
+                <input type="password" name="password" class="form-inputs__password" placeholder="Hasło" required/>
+                <input type="password" name="passwordRepeat" class="form-inputs__password" placeholder="Powtórz hasło" required/>
                 <span class="error-message">{{ error_messages.password }}</span>
             </div>
         </div>

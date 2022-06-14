@@ -3,6 +3,7 @@ import uuid
 from django.contrib.auth.models import User
 from django.core.validators import RegexValidator, MinValueValidator, MaxValueValidator
 from django.db import models
+from django.utils import timezone
 
 # Create your models here.
 
@@ -92,6 +93,12 @@ class Offer(models.Model):
 
     company = models.ForeignKey("Company", on_delete=models.CASCADE, related_name="offers")
 
+    @property
+    def formatted_time_created(self):
+        return self.time_created.astimezone(timezone.get_current_timezone()).strftime("%Y.%m.%d %H:%M")
+
+    time_created = models.DateTimeField(auto_now_add=True)
+
     position = models.CharField(
         max_length=100
     )
@@ -159,6 +166,10 @@ class Offer(models.Model):
 
     visit_counter = models.PositiveIntegerField(default=0)
 
+    @property
+    def tags_ids_comma_separated(self):
+        return ",".join([str(tag.id) for tag in self.tags.all()])
+
     tags = models.ManyToManyField("Tag")
 
     def json(self):
@@ -171,12 +182,55 @@ class Offer(models.Model):
             "work_time": dict(self.WorkTimes.choices)[self.work_time],
             "contract_type": dict(self.ContractTypes.choices)[self.contract_type],
             "description": self.description,
+            "email": self.email,
             "phone_number": self.phone_number,
             "salary_min": self.salary_min,
             "salary_max": self.salary_max,
             "visit_counter": self.visit_counter,
             "tags": [tag.json() for tag in self.tags.all()],
         }
+
+    @classmethod
+    def view_filter(_class,
+        position:str = None,
+        city:str = None,
+        contract_type: list = None,
+        work_mode: list = None,
+        work_time: list = None,
+        salary_min: int = None,
+        salary_max: int = None,
+        tags: list = None,
+    ):
+
+        objects = Offer.objects.all()
+
+        if position is not None:
+            objects = objects.filter(position__icontains=position)
+
+        if city is not None:
+            objects = objects.filter(city__icontains=city)
+
+
+        if contract_type is not None:
+            objects = objects.filter(contract_type__in=contract_type)
+
+        if work_mode is not None:
+            objects = objects.filter(work_mode__in=work_mode)
+
+        if work_time is not None:
+            objects = objects.filter(work_time__in=work_time)
+
+
+        if salary_min is not None:
+            objects = objects.filter(salary_min__gte=salary_min)
+        if salary_max is not None:
+            objects = objects.filter(salary_max__lte=salary_max)
+
+        if tags is not None:
+            for tag in tags:
+                objects = objects.filter(tags__in=[tag,])
+
+        return objects
 
     def __str__(self):
         all_tags = ", ".join([tag.text for tag in self.tags.all()])

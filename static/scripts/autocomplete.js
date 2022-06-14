@@ -2,6 +2,7 @@
 
 tags = [];
 tagsTemp = [];
+tagsTemp = [];
 tagsColors = [];
 tagsId = [];
 
@@ -19,6 +20,26 @@ window.addEventListener("load", async function (event) {
 
   tagsColors = responseData.data.map((tag) => tag.color);
   tagsId = responseData.data.map((tag) => tag.id);
+
+  var add_offer_tags = document.getElementById("add-offer-tags");
+  id_edit = add_offer_tags.getAttribute("current_tags");
+  id_edits = id_edit.split(",");
+
+  for (i = 0; i < tags.length; i++) {
+    tagTempId = tagsId[i];
+
+    for (j = 0; j < id_edits.length; j++) {
+      if (id_edits[j] == tagTempId) {
+        addDiv(i);
+      }
+    }
+  }
+
+  deleteTag(i);
+
+  input_tags = document.getElementById("hiddenInput");
+  input_tags.value = document.getElementById("hiddenInput").defaultValue =
+    tab_tags;
 });
 
 //_______________AUTOCOMPLETE______________________
@@ -126,21 +147,46 @@ document.getElementById("addTag").addEventListener("click", function () {
   for (i = 0; i < tagsTemp.length; i++) {
     tagTemp = tags[i];
     if (tagTemp == tagName) {
-      codeHTML =
-        '<div class="add-offer-tags-autocomplete__chosen" id="' +
-        tagsId[i] +
-        '" style="background-color: ' +
-        tagsColors[i] +
-        '"> ' +
-        tagTemp +
-        '<span class="closeIcon">&times;</span></div>';
-
-      document.getElementById("selectedTags").innerHTML += codeHTML;
-
-      tab_tags.push(tagsId[i]);
+      addDiv(i);
     }
   }
 
+  deleteTag(i);
+
+  input_tags = document.getElementById("hiddenInput");
+  input_tags.value = document.getElementById("hiddenInput").defaultValue =
+    tab_tags;
+});
+
+document
+  .getElementsByName("add-offer")[0]
+  .addEventListener("submit", function (e) {
+    if (tab_tags.length < 1) {
+      alert("Należy dodać przynajmniej 1 tag.");
+      e.preventDefault();
+    } else if (tab_tags.length > 4) {
+      alert("Należy wprowadzić maksymalnie 4 tagi.");
+      e.preventDefault();
+    }
+  });
+
+function addDiv(i) {
+  var chosen_tags = document.createElement("div");
+  chosen_tags.className = "add-offer-tags-autocomplete__chosen";
+  chosen_tags.id = tagsId[i];
+  chosen_tags.style.backgroundColor = tagsColors[i];
+  var tag_name = document.createTextNode(tagsTemp[i]);
+  chosen_tags.appendChild(tag_name);
+  var delete_icon = document.createElement("span");
+  delete_icon.className = "closeIcon";
+  delete_icon.innerHTML = "&times;";
+  chosen_tags.appendChild(delete_icon);
+  var selected_tags = document.getElementById("selectedTags");
+  selected_tags.appendChild(chosen_tags);
+  tab_tags.push(tagsId[i]);
+}
+
+function deleteTag(i) {
   document.querySelectorAll(".closeIcon").forEach((item) => {
     item.addEventListener("click", function () {
       this.parentNode.remove();
@@ -154,19 +200,4 @@ document.getElementById("addTag").addEventListener("click", function () {
       }
     });
   });
-
-  input_tags = document.getElementById("hiddenInput");
-  input_tags.value = document.getElementById("hiddenInput").defaultValue =
-    tab_tags;
-});
-
-document.getElementsByName("add-offer")[0].addEventListener("submit", function (e) {
-  if(tab_tags.length < 1) {
-    alert("Należy dodać przynajmniej 1 tag.");
-    e.preventDefault();
-  }
-  else if(tab_tags.length > 4) {
-    alert("Należy wprowadzić maksymalnie 4 tagi.");
-    e.preventDefault();
-  }
-})
+}
